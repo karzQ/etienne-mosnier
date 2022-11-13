@@ -1,0 +1,24 @@
+ {
+    "accueil": {
+        "text": "",
+        "images": [
+            { "id": 0, "src": "src/assets/img/image_liste.png", "target": "#", "tag": "architecture", "hover": "Biopierre" },
+            { "id": 0, "src": "src/assets/img/image_liste.png", "target": "#", "tag": "architecture", "hover": "Biopierre" },
+            { "id": 0, "src": "src/assets/img/image_liste.png", "target": "#", "tag": "architecture", "hover": "Biopierre" },
+            { "id": 0, "src": "src/assets/img/image_liste.png", "target": "#", "tag": "architecture", "hover": "Biopierre" },
+            { "id": 0, "src": "src/assets/img/image_liste.png", "target": "#", "tag": "architecture", "hover": "Biopierre" },
+            { "id": 0, "src": "src/assets/img/image_liste.png", "target": "#", "tag": "architecture", "hover": "Biopierre" },
+            { "id": 0, "src": "src/assets/img/image_liste.png", "target": "#", "tag": "architecture", "hover": "Biopierre" }
+        ],
+        "titre": "Test",
+        "sous-pages": [
+            { 
+                "id": 0,
+                "src": "src/assets/img/image_liste.png",
+                "target": "#",
+                "tag": "architecture",
+                "hover": "Biopierre" 
+            }
+        ]
+    }
+ }

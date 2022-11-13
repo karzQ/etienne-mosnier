@@ -1,0 +1,78 @@
+.Home {
+    width: 100%;
+    height: 100%;
+    
+    display: grid;
+
+    justify-content: center;
+    align-content: center;
+
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-auto-flow: column;
+    grid-gap: 39.7px;
+}
+
+.leftSide, .rightSide {
+    position: relative;
+    /* background-color: antiquewhite; */
+    height: 52%;
+    align-self: center;
+}
+
+.leftSide {
+    display: flex;
+    flex-direction: row;
+    /* color: black; */
+}
+
+.leftSide .left, .leftSide .right {
+    position: relative;
+    width: 50%;
+    height: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: right;
+}
+
+.leftSide .left {
+    height: 100%;
+    padding-right: 19.85px;
+    text-align: right;
+}
+
+.leftSide .left .projectName{
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: xxx-large;
+    line-height: normal;
+    word-spacing: 100vw;
+}
+
+.leftSide .left .spans {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+
+.leftSide .left .spans span {
+    font-weight: bold;
+}
+
+
+.leftSide .right {
+    padding-left: 19.85px;
+    font-size: small;
+}
+
+.rightSide {
+    display: grid;
+    
+    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 39.7px;
+}
