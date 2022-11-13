@@ -1,4 +1,5 @@
 import React from "react";
+import { baseUrl } from "../../config";
 import './header.css'
 
 
@@ -10,7 +11,7 @@ const Header = () => {
         <div className='header'
             onMouseLeave={() => isShown && setIsShown(val => false)}>
             <img className='cailloux'
-                src={`src/assets/img/${isShown ? 'cailloux.gif' : 'cailloux_fixed.png'}`}
+                src={`${baseUrl}/assets/img/${isShown ? 'cailloux.gif' : 'cailloux_fixed.png'}`}
                 onMouseOver={() => setIsShown(val => true)} />
 
             {

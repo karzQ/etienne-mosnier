@@ -1,5 +1,6 @@
 import React from "react";
 import './home.css'
+import { baseUrl } from "../../../config";
 
 const Home = () => {
     return (
@@ -36,16 +37,16 @@ const Home = () => {
 
             <div className='rightSide'>
                 {/* En haut à gauche */}
-                <img src='src/assets/img/epernon.png' />
+                <img src={`${baseUrl}/assets/img/epernon.png`} />
                 
                 {/* En haut à droite */}
-                <img src='src/assets/img/patrimonialisation.png' />
+                <img src={`${baseUrl}/assets/img/patrimonialisation.png`} />
                 
                 {/* En bas à gauche */}
-                <img src='src/assets/img/boite a outils.png' />
+                <img src={`${baseUrl}/assets/img/boite a outils.png`} />
                 
                 {/* En bas à droite */}
-                <img src='src/assets/img/documentation.png' />
+                <img src={`${baseUrl}/assets/img/documentation.png`} />
             </div>
         </div>
     )

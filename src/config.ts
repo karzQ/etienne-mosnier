@@ -1,0 +1,1 @@
+export const baseUrl = 'https://frabjous-pika-33094a.netlify.app'
