@@ -54,7 +54,7 @@ const Part = () => {
             </div>
 
             <div className='rightSide'>
-                <div className="images">
+                <div className={`images ${filteredImages.length > 4 ? 'scrollable' : ''}`}>
                     {
                         filteredImages.map((img, id) => {
                             return (
@@ -70,7 +70,6 @@ const Part = () => {
                                                 </>
                                         )
                                     }
-                                    {/* <img className="image" src={`${baseUrl}/${img.src}`} /> */}
                                     <img className="image" src={img.src} />
                                 </div>
                             )

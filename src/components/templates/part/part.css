@@ -68,24 +68,22 @@
 }
 
 .rightSide {
-    display: grid;
-    
-    grid-auto-columns: 1fr;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 1fr;
+    display: flex;
     grid-gap: 39.7px;
+    align-items: flex-start;
 }
 
 .rightSide .images {
-    overflow: scroll;
+    width: 571px;
 
-    display: grid;
-    
-    grid-auto-columns: 1fr;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 1fr;
+    display: flex;
     grid-gap: 39.7px;
-    width: max-content;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.rightSide .images.scrollable {
+    overflow: scroll;
     height: 650px;
 }
 
