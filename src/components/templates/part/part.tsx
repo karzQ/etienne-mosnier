@@ -1,7 +1,10 @@
-import React from "react";
 import './part.css'
-import { images, filters } from "./config";
+
+import { filters, images } from "./config";
+
+import React from "react";
 import { baseUrl } from "../../../config";
+
 const Part = () => {
 
     const [image, setImage] = React.useState<number | null>(null);
@@ -67,7 +70,8 @@ const Part = () => {
                                                 </>
                                         )
                                     }
-                                    <img className="image" src={`${baseUrl}/${img.src}`} />
+                                    {/* <img className="image" src={`${baseUrl}/${img.src}`} /> */}
+                                    <img className="image" src={img.src} />
                                 </div>
                             )
                         })

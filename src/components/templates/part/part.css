@@ -86,7 +86,7 @@
     grid-auto-rows: 1fr;
     grid-gap: 39.7px;
     width: max-content;
-    height: fit-content;
+    height: 650px;
 }
 
 .rightSide .images .imageContainer {

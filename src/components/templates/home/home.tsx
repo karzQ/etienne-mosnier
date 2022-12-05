@@ -1,6 +1,11 @@
-import React from "react";
 import './home.css'
+
+import React from "react";
 import { baseUrl } from "../../../config";
+import img_documentation from '../../../assets/img/documentation.png';
+import img_epernon from '../../../assets/img/epernon.png';
+import img_patrimonialisation from '../../../assets/img/patrimonialisation.png';
+import img_toolbox from '../../../assets/img/boite a outils.png';
 
 const Home = () => {
     return (
@@ -37,16 +42,16 @@ const Home = () => {
 
             <div className='rightSide'>
                 {/* En haut à gauche */}
-                <img src={`${baseUrl}/assets/img/epernon.png`} />
+                <img src={img_epernon} />
                 
                 {/* En haut à droite */}
-                <img src={`${baseUrl}/assets/img/patrimonialisation.png`} />
+                <img src={img_patrimonialisation} />
                 
                 {/* En bas à gauche */}
-                <img src={`${baseUrl}/assets/img/boite a outils.png`} />
+                <img src={img_toolbox} />
                 
                 {/* En bas à droite */}
-                <img src={`${baseUrl}/assets/img/documentation.png`} />
+                <img src={img_documentation} />
             </div>
         </div>
     )

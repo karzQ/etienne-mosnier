@@ -1,7 +1,9 @@
-import React from "react";
-import { baseUrl } from "../../config";
 import './header.css'
 
+import React from "react";
+import { baseUrl } from "../../config";
+import cailloux_gif from '../../assets/img/cailloux.gif'
+import cailloux_static from '../../assets/img/cailloux_fixed.png'
 
 const Header = () => {
 
@@ -11,7 +13,7 @@ const Header = () => {
         <div className='header'
             onMouseLeave={() => isShown && setIsShown(val => false)}>
             <img className='cailloux'
-                src={`${baseUrl}/assets/img/${isShown ? 'cailloux.gif' : 'cailloux_fixed.png'}`}
+                src={isShown ? cailloux_gif : cailloux_static}
                 onMouseOver={() => setIsShown(val => true)} />
 
             {
