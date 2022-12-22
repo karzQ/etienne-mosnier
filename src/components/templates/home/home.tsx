@@ -1,4 +1,5 @@
 import './home.css'
+import 'animate.css'
 
 import React from "react";
 import { baseUrl } from "../../../config";
@@ -11,14 +12,14 @@ const Home = () => {
     return (
         <div className='Home'>
             <div className="leftSide">
-                <div className="left">
+                <div className="left animate__animated animate__fadeInLeft">
                     <div className="projectName">Projet Personnel DNSEP</div>
                     <div className='spans'>
                         <span>Étienne MOSNIER</span>
                         <span>Design des communs</span>
                     </div> 
                 </div>
-                <div className="right">
+                <div className="right animate__animated animate__fadeInDown">
                     <span>Eratusam enitioritius seque ne cuptatium quidelis 
                         num int ullatum res idenien imagnia ne sapeditaque 
                         offic tem qui volectem ipsaped itatio omnimpore 
@@ -40,7 +41,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className='rightSide'>
+            <div className='rightSide animate__animated animate__fadeInRight'>
                 {/* En haut à gauche */}
                 <img src={img_epernon} />
                 

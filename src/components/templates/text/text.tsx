@@ -1,4 +1,5 @@
 import './text.css'
+import 'animate.css'
 
 import React from "react";
 import { baseUrl } from "../../../config";
@@ -10,20 +11,20 @@ import img_toolbox from '../../../assets/img/boite a outils.png';
 const Text = () => {
     return (
         <div className='Text'>
-            <div className="left">
+            <div className="left animate__animated animate__fadeInLeft">
                 <div className="projectName">
                     Patrimonialisation des techniques
                 </div>
             </div>
 
             <div className="middle">
-                <div className='additional_texts'>
+                <div className='additional_texts animate__animated  animate__fadeInUp animate__delay-1s'>
                     <span>fdgdrfrgfhgfvgbnhytrg</span>
                     <span>gfdtrsvgbhytrfghnjkuytghjkuytgfhbnkjutgfbnhjuytg</span>
                     <span>hgjgfbhytgfhnjgytghjuythjyghghgchhghghghgghhgfghhgghhgfhf</span>
                     <span>hgjgfbhytgfhnjgytghjuythjyghghgchhghghghgghhgfghhgghhgfhf</span>
                 </div>
-                <span className='text'>Eratusam enitioritius seque ne cuptatium quidelis 
+                <span className='text animate__animated  animate__fadeInDown animate__delay-1s'>Eratusam enitioritius seque ne cuptatium quidelis 
                     num int ullatum res idenien imagnia ne sapeditaque 
                     offic tem qui volectem ipsaped itatio omnimpore 
                     ventiat emporepra comnitatur, que numquias quaessi mporess equatur? Feris molestor sapedi voluptium 
@@ -43,7 +44,7 @@ const Text = () => {
                 </span>
             </div>
 
-            <div className='right'>
+            <div className='right animate__animated  animate__fadeInRight'>
                 <img src={img_epernon} />
             </div>
         </div>

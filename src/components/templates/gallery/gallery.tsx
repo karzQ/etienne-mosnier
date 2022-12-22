@@ -27,7 +27,7 @@ const Gallery = () => {
 
     return (
         <div className='Gallery'>
-            <div className="leftSide">
+            <div className="leftSide animate__animated animate__fadeInUp">
                 <div className="left">
                     <span className="projectName">Boîte à outils : Revalorisation des territoires</span>
                 </div>
@@ -53,7 +53,7 @@ const Gallery = () => {
                 </div>
             </div>
 
-            <div className='rightSide'>
+            <div className='rightSide animate__animated animate__fadeInDown'>
                 <div className={`images ${filteredImages.length > 4 ? 'scrollable' : ''}`}>
                     {
                         filteredImages.map((img, id) => {

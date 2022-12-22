@@ -32,4 +32,7 @@
 .links {
     display: flex;
     gap: 15px;
+
+    animation: "animate__fadeInRight";
+    animation-duration: 2s;
 }

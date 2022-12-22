@@ -1,4 +1,5 @@
 import './header.css'
+import 'animate.css'
 
 import React from "react";
 import { baseUrl } from "../../config";
@@ -18,7 +19,7 @@ const Header = () => {
 
             {
                 isShown && (
-                    <div className="links">
+                    <div className="links animate__animated animate__fadeInRight animate__faster">
                         <a href="#">Epernon</a>
                         <a href="#">Patrimonialisation</a>
                         <a href="#">Boîte à outils</a>
