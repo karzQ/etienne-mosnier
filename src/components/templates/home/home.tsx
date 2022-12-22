@@ -11,15 +11,15 @@ import img_toolbox from '../../../assets/img/boite a outils.png';
 const Home = () => {
     return (
         <div className='Home'>
-            <div className="leftSide">
-                <div className="left animate__animated animate__fadeInLeft">
+            <div className="leftSide animate__animated animate__fadeInLeft">
+                <div className="left">
                     <div className="projectName">Projet Personnel DNSEP</div>
                     <div className='spans'>
                         <span>Étienne MOSNIER</span>
                         <span>Design des communs</span>
                     </div> 
                 </div>
-                <div className="right animate__animated animate__fadeInDown">
+                <div className="right">
                     <span>Eratusam enitioritius seque ne cuptatium quidelis 
                         num int ullatum res idenien imagnia ne sapeditaque 
                         offic tem qui volectem ipsaped itatio omnimpore 

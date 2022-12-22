@@ -6,9 +6,11 @@ import { baseUrl } from "../../config";
 import cailloux_gif from '../../assets/img/cailloux.gif'
 import cailloux_static from '../../assets/img/cailloux_fixed.png'
 
-const Header = () => {
-
+const Header = (props: any) => {
+    const {setActivePage} = props
     const [isShown, setIsShown] = React.useState(false);
+
+    
 
     return (
         <div className='header'
@@ -20,9 +22,9 @@ const Header = () => {
             {
                 isShown && (
                     <div className="links animate__animated animate__fadeInRight animate__faster">
-                        <a href="#">Epernon</a>
-                        <a href="#">Patrimonialisation</a>
-                        <a href="#">Boîte à outils</a>
+                        <a href="#" onClick={() => setActivePage('home')}>Accueil</a>
+                        <a href="#" onClick={() => setActivePage('text')}>Patrimonialisation</a>
+                        <a href="#" onClick={() => setActivePage('gallery')}>Boîte à outils</a>
                         <a href="#">Documentation</a>
                     </div>
                 )

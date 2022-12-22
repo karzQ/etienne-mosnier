@@ -9,12 +9,20 @@ import { useState } from 'react'
 
 const App = () => {
 
+  const [activePage, setActivePage] = useState('home')
+
   return (
     <div className="App">
-      <Header />
-      {/* <Home /> */}
-      {/* <Gallery /> */}
-      <Text />
+      <Header setActivePage={setActivePage} />
+      {activePage == 'home' && (
+        <Home />
+      )}
+      {activePage == 'gallery' && (
+        <Gallery />
+      )}
+      {activePage == 'text' && (
+        <Text />
+      )}
     </div>
   )
 }
