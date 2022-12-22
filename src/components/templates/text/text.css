@@ -1,0 +1,65 @@
+.Text {
+    width: 100%;
+    height: 100%;
+    
+    display: grid;
+
+    justify-content: center;
+    align-content: center;
+
+    grid-auto-columns: 1fr 2fr;
+    grid-auto-rows: 1fr;
+    grid-auto-flow: column;
+    grid-gap: 39.7px;
+}
+
+.left, .right, .middle {
+    position: relative;
+    /* background-color: antiquewhite; */
+    height: 52%;
+    align-self: center;
+}
+
+.left .projectName{
+    margin-top: 0;
+    font-weight: bold;
+    font-size: xxx-large;
+    line-height: normal;
+    word-spacing: 100vw;
+}
+
+.middle {
+    display: flex;
+    flex-direction: row;
+}
+
+.middle .text {
+    min-width: 560px;
+}
+
+.middle .additional_texts {
+    display: flex;
+    flex-direction: column;
+
+    padding : 0px 39.7px;
+    gap: 39.7px;
+    color: grey;
+    font-style: italic;
+    text-align: right;
+    min-width: 300px;
+}
+
+.middle .additional_texts span {
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.left {
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+}
+
+.right {
+    min-width: fit-content;
+}

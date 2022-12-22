@@ -1,9 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
-import Home from './components/templates/home/home'
-import Part from './components/templates/part/part'
+
+import Gallery from './components/templates/gallery/gallery'
 import Header from './components/Header/header'
+import Home from './components/templates/home/home'
+import Text from './components/templates/text/text'
+import reactLogo from './assets/react.svg'
+import { useState } from 'react'
 
 const App = () => {
 
@@ -11,7 +13,8 @@ const App = () => {
     <div className="App">
       <Header />
       {/* <Home /> */}
-      <Part />
+      {/* <Gallery /> */}
+      <Text />
     </div>
   )
 }

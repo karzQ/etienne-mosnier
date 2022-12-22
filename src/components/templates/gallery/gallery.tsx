@@ -1,11 +1,11 @@
-import './part.css'
+import './gallery.css'
 
 import { filters, images } from "./config";
 
 import React from "react";
 import { baseUrl } from "../../../config";
 
-const Part = () => {
+const Gallery = () => {
 
     const [image, setImage] = React.useState<number | null>(null);
     const [flt, setFilter] = React.useState<string | null>(null);
@@ -26,7 +26,7 @@ const Part = () => {
     }
 
     return (
-        <div className='Part'>
+        <div className='Gallery'>
             <div className="leftSide">
                 <div className="left">
                     <span className="projectName">Boîte à outils : Revalorisation des territoires</span>
@@ -96,4 +96,4 @@ const Part = () => {
     )
 }
 
-export default Part;
+export default Gallery;

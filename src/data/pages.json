@@ -1,0 +1,58 @@
+ {
+    "pages": [
+        {
+            "nom": "boîte à outils",
+            "template": "gallery",
+            "titre": "Boîte à outils : Revalorisation des territoires",
+            "images": [
+                { "id": 0, "src": "img_liste", "target": "#", "tag": "architecture", "hover": "Biopierre" },
+                { "id": 1, "src": "img_liste", "target": "#", "tag": "design", "hover": "Biopierre"  },
+                { "id": 2, "src": "img_liste", "target": "#", "tag": "design", "hover": "Biopierre"  },
+                { "id": 3, "src": "img_liste", "target": "#", "tag": "art", "hover": "Biopierre"  },
+                { "id": 4, "src": "img_liste", "target": "#", "tag": "architecture", "hover": "Biopierre"  },
+                { "id": 5, "src": "img_liste", "target": "#", "tag": "art", "hover": "Biopierre"  },
+                { "id": 6, "src": "img_liste", "target": "#", "tag": "architecture", "hover": "Biopierre"  },
+                { "id": 7, "src": "img_liste", "target": "#", "tag": "art" ," hover": "Biopierre" }
+            ],
+            "filtres": [
+                { "id": 0, "name": "architecture" },
+                { "id": 1, "name": "design" },
+                { "id": 2, "name": "art" }
+            ]
+        },
+        {
+            "nom": "patrimonialisation",
+            "template": "text",
+            "titre": "Boîte à outils : Revalorisation des territoires",
+            "images": [
+                { "id": 0, "src": "img_liste", "target": "#", "tag": "architecture", "hover": "Biopierre" }
+            ],
+            "complément": [
+                { "id": 0, "texte": "fdgdrfrgfhgfvgbnhytrg" },
+                { "id": 1, "texte": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" },
+                { "id": 2, "texte": "hgjgfbhytgfhnjgytghjuythjyghghgchhghghghgghhgfghhgghhgfhf" },
+                { "id": 3, "texte": "hghgfghgfhgfhhhghgffghfhgfghkjlklgkilihjvkj:ml:mù!gfhùghfmù*jgh" }
+            ]
+        },
+        {
+            "nom": "accueil",
+            "template": "gallery",
+            "titre": "Boîte à outils : Revalorisation des territoires",
+            "images": [
+                { "id": 0, "src": "img_liste", "target": "#", "tag": "architecture", "hover": "Biopierre" },
+                { "id": 1, "src": "img_liste", "target": "#", "tag": "design", "hover": "Biopierre"  },
+                { "id": 2, "src": "img_liste", "target": "#", "tag": "design", "hover": "Biopierre"  },
+                { "id": 3, "src": "img_liste", "target": "#", "tag": "art", "hover": "Biopierre"  },
+                { "id": 4, "src": "img_liste", "target": "#", "tag": "architecture", "hover": "Biopierre"  },
+                { "id": 5, "src": "img_liste", "target": "#", "tag": "art", "hover": "Biopierre"  },
+                { "id": 6, "src": "img_liste", "target": "#", "tag": "architecture", "hover": "Biopierre"  },
+                { "id": 7, "src": "img_liste", "target": "#", "tag": "art" ," hover": "Biopierre" }
+            ],
+            "filtres": [
+                { "id": 0, "name": "architecture" },
+                { "id": 1, "name": "design" },
+                { "id": 2, "name": "art" }
+            ]
+        }
+    ]
+}
