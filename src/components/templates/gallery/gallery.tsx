@@ -47,7 +47,7 @@ const Gallery = () => {
                         Me volo ma dunt veremodit eiusame eveles et et volestrum escientis nem archil modio quis quost, is eturiscia ipsam andi nihicipsum quam, con pa solorit quam 
                         vero dolor sequo quam et que nest officabo. Ommolestiur ab id quameni hiliqui assequam fuga. Et omnis 
                         sunt vollorehenem samusci llorit, omnime odiosanit, 
-                        optatur?
+                        optatur? 
                         Optus ditium cus nonsed mossitiorem. Nequi dest, si-
                     </span>
                 </div>
