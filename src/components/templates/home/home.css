@@ -13,20 +13,18 @@
     grid-gap: 39.7px;
 }
 
-.leftSide, .rightSide {
+.Home .leftSide, .rightSide {
     position: relative;
-    /* background-color: antiquewhite; */
     height: 52%;
     align-self: center;
 }
 
-.leftSide {
+.Home .leftSide {
     display: flex;
     flex-direction: row;
-    /* color: black; */
 }
 
-.leftSide .left, .leftSide .right {
+.Home .leftSide .left, .leftSide .right {
     position: relative;
     width: 50%;
     height: 50%;
@@ -34,16 +32,16 @@
     display: flex;
 
     flex-direction: column;
-    align-items: right;
+    align-self: auto;
 }
 
-.leftSide .left {
+.Home .leftSide .left {
     height: 100%;
     padding-right: 19.85px;
     text-align: right;
 }
 
-.leftSide .left .projectName{
+.Home .leftSide .left .projectName{
     margin-top: 0;
     margin-bottom: 40px;
     font-weight: bold;
@@ -52,23 +50,23 @@
     word-spacing: 100vw;
 }
 
-.leftSide .left .spans {
+.Home .leftSide .left .spans {
     display: flex;
     flex-direction: column;
     align-items: right;
 }
 
-.leftSide .left .spans span {
+.Home .leftSide .left .spans span {
     font-weight: bold;
 }
 
 
-.leftSide .right {
+.Home .leftSide .right {
     padding-left: 19.85px;
     font-size: small;
 }
 
-.rightSide {
+.Home .rightSide {
     display: grid;
     
     grid-auto-columns: 1fr;

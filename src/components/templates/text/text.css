@@ -13,14 +13,14 @@
     grid-gap: 39.7px;
 }
 
-.left, .right, .middle {
+.Text .left, .right, .middle {
     position: relative;
     /* background-color: antiquewhite; */
     height: 52%;
     align-self: center;
 }
 
-.left .projectName{
+.Text .left .projectName{
     margin-top: 0;
     font-weight: bold;
     font-size: xxx-large;
@@ -28,16 +28,16 @@
     word-spacing: 100vw;
 }
 
-.middle {
+.Text .middle {
     display: flex;
     flex-direction: row;
 }
 
-.middle .text {
+.Text .middle .text {
     min-width: 560px;
 }
 
-.middle .additional_texts {
+.Text .middle .additional_texts {
     display: flex;
     flex-direction: column;
 
@@ -49,17 +49,17 @@
     min-width: 300px;
 }
 
-.middle .additional_texts span {
+.Text .middle .additional_texts span {
     -webkit-hyphens: auto;
     hyphens: auto;
 }
 
-.left {
+.Text .left {
     display: flex;
     flex-direction: row;
     text-align: right;
 }
 
-.right {
+.Text .right {
     min-width: fit-content;
 }

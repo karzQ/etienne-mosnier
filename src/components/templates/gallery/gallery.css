@@ -10,21 +10,21 @@
     grid-gap: 39.7px;
 }
 
-.leftSide, .rightSide {
+.Gallery .leftSide, .rightSide {
     position: relative;
     /* background-color: antiquewhite; */
     height: 52%;
     align-self: center;
 }
 
-.leftSide {
+.Gallery .leftSide {
     display: flex;
     flex-direction: row;
 
     max-width: 880px;
 }
 
-.leftSide .left, .leftSide .right {
+.Gallery .leftSide .left, .leftSide .right {
     position: relative;
     width: 50%;
     height: 50%;
@@ -33,16 +33,16 @@
     display: flex;
 
     flex-direction: column;
-    align-items: right;
+    align-self: auto;
 }
 
-.leftSide .left {
+.Gallery .leftSide .left {
     height: 100%;
     padding-right: 19.85px;
     text-align: right;
 }
 
-.leftSide .left .projectName{
+.Gallery .leftSide .left .projectName{
     margin-top: 0;
     margin-bottom: 40px;
     font-weight: bold;
@@ -50,29 +50,29 @@
     line-height: normal;
 }
 
-.leftSide .left .spans {
+.Gallery .leftSide .left .spans {
     display: flex;
     flex-direction: column;
     align-items: right;
 }
 
-.leftSide .left .spans span {
+.Gallery .leftSide .left .spans span {
     font-weight: bold;
 }
 
 
-.leftSide .right {
+.Gallery .leftSide .right {
     padding-left: 19.85px;
     font-size: small;
 }
 
-.rightSide {
+.Gallery .rightSide {
     display: flex;
     grid-gap: 39.7px;
     align-items: flex-start;
 }
 
-.rightSide .images {
+.Gallery .rightSide .images {
     width: 571px;
 
     display: flex;
@@ -81,12 +81,12 @@
     flex-wrap: wrap;
 }
 
-.rightSide .images.scrollable {
+.Gallery .rightSide .images.scrollable {
     overflow: scroll;
     height: 650px;
 }
 
-.rightSide .images .imageContainer {
+.Gallery .rightSide .images .imageContainer {
     position: relative;
 
     max-width: 264px;
@@ -95,7 +95,7 @@
     cursor: pointer;
 }
 
-.rightSide .images .imageContainer .blackVeil {
+.Gallery .rightSide .images .imageContainer .blackVeil {
     position: absolute;
     top: 0;
     left: 0;
@@ -107,7 +107,7 @@
     height: 100%;
 }
 
-.rightSide .images .imageContainer .text {
+.Gallery .rightSide .images .imageContainer .text {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -122,21 +122,21 @@
     color: white;
 }
 
-.rightSide .filters {
+.Gallery .rightSide .filters {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.rightSide .filters .filter-container {
+.Gallery .rightSide .filters .filter-container {
     position: relative;
 }
 
-.rightSide .filters h2{
+.Gallery .rightSide .filters h2{
     margin-top: 0;
 }
 
-.rightSide .filters .filter-container .filter {
+.Gallery .rightSide .filters .filter-container .filter {
     width: fit-content;
     padding: 2px 8px;
     border: 1px black solid;
@@ -144,12 +144,12 @@
     cursor: pointer;
 }
 
-.rightSide .filters .filter-container .filter.selected {
+.Gallery .rightSide .filters .filter-container .filter.selected {
     padding: 3px 10px;
     border: 2px black solid;
     font-weight: bold;
 }
 
-.rightSide .filters .filter-container .filter:hover {
+.Gallery .rightSide .filters .filter-container .filter:hover {
     opacity: 0.5;
 }
