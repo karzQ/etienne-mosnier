@@ -12,40 +12,30 @@ const Text = () => {
     return (
         <div className='Text'>
             <div className="left animate__animated animate__fadeInLeft">
-                <div className="projectName">
+                <div className="title">
                     Patrimonialisation des techniques
+                </div>
+                <div className='subtitle'>
+                    This is a subtitle
                 </div>
             </div>
 
             <div className="middle">
                 <div className='additional_texts animate__animated  animate__fadeInUp animate__delay-1s'>
-                    <span>fdgdrfrgfhgfvgbnhytrg</span>
-                    <span>gfdtrsvgbhytrfghnjkuytghjkuytgfhbnkjutgfbnhjuytg</span>
-                    <span>hgjgfbhytgfhnjgytghjuythjyghghgchhghghghgghhgfghhgghhgfhf</span>
-                    <span>hgjgfbhytgfhnjgytghjuythjyghghgchhghghghgghhgfghhgghhgfhf</span>
+                    <span className='content_annotations'>4. Hicham Saddou, “Patrimoine et patrimonialisation : Processus et nouvel enjeu de valorisation territoriale.”, O Ideário Patrimonial, 2020.</span>
+                    <span>Guy Di Méo, “Processus de patrimonialisation et construction des territoires”, Colloque ”Patrimoine et industrie en Poitou-Charentes : connaître pour valoriser”, septembre 2007, p. 87-109.</span>
+                    <span>Etienne Berthold, Mathieu Dormaels, Josée Laplace (dirs.), “Patrimoine et sacralisation”, Éditions Multimondes, Montréal, 2008</span>
+                    <span>Madina Regnault, Olivier Givre (dirs.), “Patrimonialisations croisées”, Presses universitaires de Lyon, Lyon, 2015.</span>
                 </div>
-                <span className='text animate__animated  animate__fadeInDown animate__delay-1s'>Eratusam enitioritius seque ne cuptatium quidelis 
-                    num int ullatum res idenien imagnia ne sapeditaque 
-                    offic tem qui volectem ipsaped itatio omnimpore 
-                    ventiat emporepra comnitatur, que numquias quaessi mporess equatur? Feris molestor sapedi voluptium 
-                    faccum, qui dolorum simincta doluptas dendae. Nequia dit erume nobis et arumquas magniendi tem 
-                    rem et fugiti ut quia voleste lam es ent la que nam eos 
-                    quiandi dolo exero blautem aspiciet pro doluptatem 
-                    etur sed magnia dest mollam iusdae nis sumqui officimaiore sunt volum exped ma soluptas verchil exeris 
-                    quos explatist andae quos aut eat accab invelig enihit 
-                    verio. Eceperi dolo conseque nullaci dolorit et et et 
-                    voluptas veribusame cum sin nihictur, ut laccae vidis 
-                    pro ducipis vid moluptium, untibusande dolupta eribus.
-                    Me volo ma dunt veremodit eiusame eveles et et volestrum escientis nem archil modio quis quost, is eturiscia ipsam andi nihicipsum quam, con pa solorit quam 
-                    vero dolor sequo quam et que nest officabo. Ommolestiur ab id quameni hiliqui assequam fuga. Et omnis 
-                    sunt vollorehenem samusci llorit, omnime odiosanit, 
-                    optatur?
-                    Optus ditium cus nonsed mossitiorem. Nequi dest, si-
+                <span className='text animate__animated  animate__fadeInDown animate__delay-1s'>On peut donc constater l'existence d'un certain désintérêt du public pour ces questions de patrimoine. À quoi peut-on attribuer cela ? Une première hypothèse émerge : le manque de transversalité dans les processus de patrimonialisation. En effet, comme vu précédemment, le patrimoine se voit installer au sein d’un lieu d’exposition, pour donner à voir, mais pas forcément pour être vécu. En effet, pour se projeter dans une histoire patrimoniale, les éléments qui la constituent doivent faire partie du milieu, cela offre la possibilité d’une interaction entre le territoire et l’usager. Par exemple, les villes historiques ont un enjeu urbain de la patrimonialisation, elles cherchent à donner à leurs habitants, et aux visiteurs une lecture de leur patrimoine au travers d’édifices architecturaux, monuments… Toutes sortes d’éléments distinctifs qui permettent de mettre en valeur ce patrimoine au sein du territoire. Mais cela peut mener à une forme de sacralisation de celui-ci, et notamment une « sacralisation des objets patrimoniaux ». Cela découle d’une volonté qui consiste à placer une certaine spiritualité dans ce qui fait patrimoine, afin de projeter le sens de ces éléments de l’espace réel, à l’espace imaginé. On peut imaginer qu’un tel processus peut permettre à chacun de s’approprier un patrimoine qui lui est propre, et ainsi d’être en mesure de se positionner par rapport à ce dernier. Cependant, un tel phénomène vient figer ce qui fait patrimoine, tant sur le plan temporel, que spatial. En effet, cette action de sacraliser provoque une perte de droit sur ces éléments, car il ne serait plus personnifié, moins tangible. Cette sacralisation d’un patrimoine dépend également d’une volonté politique de valorisation touristique. Créer des marqueurs d’unicité, pour créer de l’attractivité, et ainsi instaurer un marché économique sur ces « objets de patrimoines ». Les différents protocoles mis en place pour une patrimonialisation, peuvent être contestables, car ils revêtent, le plus souvent, d’un intérêt de politique urbaine et touristique, plutôt que d’une volonté de transmission d’une culture. Cependant l’idée de transmission n’est-elle pas centrale dans cette notion de patrimoine ? Ne doit-on pas transmettre pour préserver, sauvegarder ce qui fait patrimoine ?
                 </span>
             </div>
 
             <div className='right animate__animated  animate__fadeInRight'>
-                <img src={img_epernon} />
+                <div className='image_container'>
+                    <img src={img_epernon} />
+                    <span className='image_title'>This is a title (example) - MOSNIER Etienne.</span>
+                </div>
             </div>
         </div>
     )

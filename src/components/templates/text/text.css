@@ -20,12 +20,11 @@
     align-self: center;
 }
 
-.Text .left .projectName{
+.Text .left .title{
     margin-top: 0;
     font-weight: bold;
     font-size: xxx-large;
     line-height: normal;
-    word-spacing: 100vw;
 }
 
 .Text .middle {
@@ -42,11 +41,13 @@
     flex-direction: column;
 
     padding : 0px 39.7px;
-    gap: 39.7px;
+    gap: 15px;
     color: grey;
     font-style: italic;
     text-align: right;
     min-width: 300px;
+    font-size: 10px;
+    line-height: 14px;
 }
 
 .Text .middle .additional_texts span {
@@ -54,12 +55,46 @@
     hyphens: auto;
 }
 
+
+.Text .middle .additional_texts span.content_annotations {
+    margin-bottom: 30px;
+}
+
 .Text .left {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     text-align: right;
+}
+
+.Text .left .title {
+    margin-bottom: 40px;
+}
+
+.Text .left .subtitle {
+    margin-top: 0;
+    font-weight:bold;
+    font-size: x-large;
+    line-height: normal;
 }
 
 .Text .right {
     min-width: fit-content;
+}
+
+.Text .right .image_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Text .right .image_container img {
+    margin-bottom: 10px;
+}
+
+.Text .right .image_container .image_title {
+    color: grey;
+    font-style: italic;
+    text-align: center;
+    min-width: 300px;
+    font-size: 10px;
 }

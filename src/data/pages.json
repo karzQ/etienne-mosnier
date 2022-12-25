@@ -21,17 +21,58 @@
             ]
         },
         {
+            "nom": "epernon",
+            "template": "text",
+            "titre": "Boîte à outils : Revalorisation des territoires",
+            "images": [
+                { "id": 0, "src": "img_liste", "target": "#", "tag": "architecture", "hover": "Biopierre" }
+            ],
+            "annotations": [
+                { "id": 0, "texte": "fdgdrfrgfhgfvgbnhytrg" },
+                { "id": 1, "texte": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" },
+                { "id": 2, "texte": "hgjgfbhytgfhnjgytghjuythjyghghgchhghghghgghhgfghhgghhgfhf" },
+                { "id": 3, "texte": "hghgfghgfhgfhhhghgffghfhgfghkjlklgkilihjvkj:ml:mù!gfhùghfmù*jgh" }
+            ],
+            "pages": [
+                {
+                    "id": 0,
+                    "titre": "Test titre",
+                    "textes": [
+                        { "id": 0, "texte": "", "font": null},
+                        { "id": 1, "texte": "", "font": "helvetica"}
+                    ],
+                    "annotations": [
+                        { "id": 0, "texte": "fdgdrfrgfhgfvgbnhytrg" },
+                        { "id": 1, "texte": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" }
+                    ],
+                    "image": "img_liste.png"
+                }
+            ]
+        },
+        {
             "nom": "patrimonialisation",
             "template": "text",
             "titre": "Boîte à outils : Revalorisation des territoires",
             "images": [
                 { "id": 0, "src": "img_liste", "target": "#", "tag": "architecture", "hover": "Biopierre" }
             ],
-            "complément": [
+            "annotations": [
                 { "id": 0, "texte": "fdgdrfrgfhgfvgbnhytrg" },
                 { "id": 1, "texte": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" },
                 { "id": 2, "texte": "hgjgfbhytgfhnjgytghjuythjyghghgchhghghghgghhgfghhgghhgfhf" },
                 { "id": 3, "texte": "hghgfghgfhgfhhhghgffghfhgfghkjlklgkilihjvkj:ml:mù!gfhùghfmù*jgh" }
+            ],
+            "pages": [
+                {
+                    "id": 0,
+                    "titre": "Test titre",
+                    "texte": "",
+                    "annotations": [
+                        { "id": 0, "texte": "fdgdrfrgfhgfvgbnhytrg" },
+                        { "id": 1, "texte": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" }
+                    ],
+                    "image": "img_liste.png"
+                }
             ]
         },
         {

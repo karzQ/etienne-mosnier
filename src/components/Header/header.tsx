@@ -23,6 +23,7 @@ const Header = (props: any) => {
                 isShown && (
                     <div className="links animate__animated animate__fadeInRight animate__faster">
                         <a href="#" onClick={() => setActivePage('home')}>Accueil</a>
+                        <a href="#" onClick={() => setActivePage('text')}>Epernon</a>
                         <a href="#" onClick={() => setActivePage('text')}>Patrimonialisation</a>
                         <a href="#" onClick={() => setActivePage('gallery')}>Boîte à outils</a>
                         <a href="#">Documentation</a>
