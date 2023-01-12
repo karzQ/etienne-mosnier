@@ -1,23 +1,26 @@
 import './App.css'
 
-import Header from './components/Header/header'
-import { useState, useEffect } from 'react'
 import { architecture, templates } from './config'
+import { useEffect, useState } from 'react'
+
+import Header from './components/Header/header'
 
 const App = () => {
 
-  const pages = architecture.pages
+  const [pages] = useState(architecture.pages)
   const [selectedLink, setSelectedLink] = useState(null)
-  const [activePage, setActivePage] = useState<any | null>(null)
+  const [activePage, setActivePage] = useState<any>(pages.filter((page:any) => page.id === 'accueil')[0])
 
   const DynamicComponent = (props: any) => {
     const Component = templates[props.template]
-    return <Component />
+    return <Component {...props} />
   }
 
   useEffect(() => {
-    if (activePage && activePage.id !== selectedLink) {
-      setActivePage((val: any | null) => pages.filter((item: any) => item.id === selectedLink)[0])
+    console.log({selectedLink})
+    if (selectedLink && activePage && activePage.id !== selectedLink) {
+      console.log({pages, selectedLink, activePage})
+      setActivePage((val: any) => pages.filter((item: any) => item.id === selectedLink)[0])
     }
   }, [selectedLink])
 

@@ -5,7 +5,7 @@ export type FiltersComponent = {
     name: string
 }
 
-export type TextComponent = {
+export type SubTextComponent = {
     id: number,
     text: string,
     font?: string = null,
@@ -30,11 +30,11 @@ export type Subtitles = {
     text: string
 }
 
-export type PagesComponent = {
+export type PageComponent = {
     id: number,
     title: string,
-    text: string,
-    texts?: TextComponent[],
+    text?: string,
+    texts?: SubTextComponent[],
     annotations?: AnnotationsComponent[],
     image: ImageComponent
 }
@@ -53,8 +53,10 @@ export type TextComponent = {
     name: string,
     template: string,
     title: string,
+    subtitle: string,
+    annotations: AnnotationsComponent[],
     images: ImageComponent[],
-    pages: PagesComponent[]
+    pages: PageComponent[]
 }
 
 export type LinkComponent = {
