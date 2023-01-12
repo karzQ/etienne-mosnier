@@ -4,8 +4,9 @@ import { filters, images } from "./config";
 
 import React from "react";
 import { baseUrl } from "../../../config";
+import { GalleryComponent } from '../../../vite-env';
 
-const Gallery = () => {
+const Gallery = (props: GalleryComponent) => {
 
     const [image, setImage] = React.useState<number | null>(null);
     const [flt, setFilter] = React.useState<string | null>(null);

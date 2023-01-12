@@ -1,28 +1,32 @@
 import './App.css'
 
-import Gallery from './components/templates/gallery/gallery'
 import Header from './components/Header/header'
-import Home from './components/templates/home/home'
-import Text from './components/templates/text/text'
-import reactLogo from './assets/react.svg'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { architecture, templates } from './config'
 
 const App = () => {
 
-  const [activePage, setActivePage] = useState('home')
+  const pages = architecture.pages
+  const [selectedLink, setSelectedLink] = useState(null)
+  const [activePage, setActivePage] = useState<any | null>(null)
+
+  const DynamicComponent = (props: any) => {
+    const Component = templates[props.template]
+    return <Component />
+  }
+
+  useEffect(() => {
+    if (activePage && activePage.id !== selectedLink) {
+      setActivePage((val: any | null) => pages.filter((item: any) => item.id === selectedLink)[0])
+    }
+  }, [selectedLink])
 
   return (
     <div className="App">
-      <Header setActivePage={setActivePage} />
-      {activePage == 'home' && (
-        <Home />
-      )}
-      {activePage == 'gallery' && (
-        <Gallery />
-      )}
-      {activePage == 'text' && (
-        <Text />
-      )}
+      <Header links={pages} setSelectedLink={setSelectedLink} />
+      {
+        activePage && <DynamicComponent {...activePage} />
+      }
     </div>
   )
 }

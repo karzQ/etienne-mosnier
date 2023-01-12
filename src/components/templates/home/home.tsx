@@ -7,8 +7,9 @@ import img_documentation from '../../../assets/img/documentation.png';
 import img_epernon from '../../../assets/img/epernon.png';
 import img_patrimonialisation from '../../../assets/img/patrimonialisation.png';
 import img_toolbox from '../../../assets/img/boite a outils.png';
+import { HomeComponent } from '../../../vite-env';
 
-const Home = () => {
+const Home = (props: HomeComponent) => {
     return (
         <div className='Home'>
             <div className="leftSide animate__animated animate__fadeInLeft">
