@@ -32,8 +32,18 @@
     flex-direction: row;
 }
 
-.Text .middle .text {
+.Text .middle .text, .texts_container {
     min-width: 560px;
+}
+
+.Text .middle .texts_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.Text .middle .texts_container .subtext {
+    width: 100%;
 }
 
 .Text .middle .additional_texts {

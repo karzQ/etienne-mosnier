@@ -10,6 +10,23 @@ const Text = (props: TextComponent) => {
     const { title, subtitle, images, pages, annotations } = props
     const [pageNumber, setPageNumber] = useState<number>(0)
 
+    const TextsList = (props: any) => {
+        const {texts} = props
+        return (
+            <div className="texts_container  animate__animated  animate__fadeInDown  animate__delay-1s">
+                {
+                    texts.length > 0 && texts.map((text: SubTextComponent, id: number) => (
+                        <span key={`${id}-${text.id}`}
+                            className='subtext'
+                            style={text.font ? {'fontFamily': text.font} : {}} >
+                            {text.text}
+                        </span>
+                    ))
+                }
+            </div>
+        )
+    }
+
     return (
         <div className='Text'>
             <div className="left animate__animated animate__fadeInLeft">
@@ -36,12 +53,7 @@ const Text = (props: TextComponent) => {
                 }
 
                 {
-                    pages[pageNumber]?.texts && pages[pageNumber].texts?.map((text: SubTextComponent, id: number) => (
-                        <span key={`${id}-${text.id}`} className='text animate__animated  animate__fadeInDown animate__delay-1s'
-                            style={text.font ? {'fontFamily': text.font} : {}} >
-                            {text.text}
-                        </span>
-                    ))
+                    pages[pageNumber]?.texts && <TextsList texts={pages[pageNumber]?.texts} />
                 }
             </div>
 
