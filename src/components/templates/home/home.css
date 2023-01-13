@@ -85,8 +85,8 @@
 }
 
 .Home .rightSide .imageContainer, .Home .rightSide .imageContainer .image {
-    max-width: auto;
-    max-height: auto;
+    width: auto;
+    height: 211px;
 }
 
 .Home .rightSide .imageContainer .blackVeil {
