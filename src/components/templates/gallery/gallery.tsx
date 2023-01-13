@@ -74,7 +74,6 @@ const Gallery = (props: GalleryComponent) => {
                                         )
                                     }
                                     <Image src={image.src} />
-                                    <img className="image" src={`/src/assets/img/${image.src}`} />
                                 </div>
                             )
                         })
