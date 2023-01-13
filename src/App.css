@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 3px;
 }
@@ -19,9 +23,6 @@
   display: flex;
 
   padding: 60px;
-
-  overflow-y: hidden;
-  overflow-x: hidden;
 
   justify-content: center;
 }

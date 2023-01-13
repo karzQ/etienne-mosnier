@@ -17,6 +17,7 @@ export type ImageComponent = {
     src: string,
     href?: string,
     tag?: string,
+    legend?: string,
     text?: string
 }
 
@@ -25,14 +26,14 @@ export type AnnotationsComponent = {
     text: string
 }
 
-export type Subtitles = {
+export type SubtitleComponent = {
     id: number,
     text: string
 }
 
 export type PageComponent = {
     id: number,
-    title: string,
+    subtitle: string,
     text?: string,
     texts?: SubTextComponent[],
     annotations?: AnnotationsComponent[],
@@ -44,6 +45,7 @@ export type GalleryComponent = {
     name: string,
     template: string,
     title: string,
+    text: string,
     images: ImageComponent[],
     filters: FiltersComponent[]
 }
@@ -53,9 +55,8 @@ export type TextComponent = {
     name: string,
     template: string,
     title: string,
-    subtitle: string,
     annotations: AnnotationsComponent[],
-    images: ImageComponent[],
+    image: ImageComponent,
     pages: PageComponent[]
 }
 
@@ -68,6 +69,7 @@ export type HomeComponent = {
     id: string,
     name: string,
     template: string,
+    subtitles: SubtitleComponent[],
     title: string,
     images: ImageComponent[],
     links: LinkComponent[]

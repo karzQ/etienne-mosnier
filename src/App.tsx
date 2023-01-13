@@ -17,9 +17,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    console.log({selectedLink})
     if (selectedLink && activePage && activePage.id !== selectedLink) {
-      console.log({pages, selectedLink, activePage})
       setActivePage((val: any) => pages.filter((item: any) => item.id === selectedLink)[0])
     }
   }, [selectedLink])

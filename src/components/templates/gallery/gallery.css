@@ -50,13 +50,13 @@
     line-height: normal;
 }
 
-.Gallery .leftSide .left .spans {
+.Gallery .leftSide .left .subtitles {
     display: flex;
     flex-direction: column;
     align-items: right;
 }
 
-.Gallery .leftSide .left .spans span {
+.Gallery .leftSide .left .subtitles span {
     font-weight: bold;
 }
 

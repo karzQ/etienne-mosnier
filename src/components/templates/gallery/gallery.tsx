@@ -1,14 +1,15 @@
 import './gallery.css'
 
-import { filters, images } from "./config";
+import { GalleryComponent, ImageComponent, SubtitleComponent } from '../../../vite-env';
 
+import { Capitalize } from '../../../helpers/functions';
 import React from "react";
-import { baseUrl } from "../../../config";
-import { GalleryComponent } from '../../../vite-env';
 
 const Gallery = (props: GalleryComponent) => {
 
-    const [image, setImage] = React.useState<number | null>(null);
+    const {title, text, images, filters} = props
+
+    const [hoverImage, setHoverImage] = React.useState<ImageComponent | null>(null);
     const [flt, setFilter] = React.useState<string | null>(null);
     const [filteredImages, setFilteredImages] = React.useState<Array<any>>(images);
 
@@ -30,7 +31,7 @@ const Gallery = (props: GalleryComponent) => {
         <div className='Gallery'>
             <div className="leftSide animate__animated animate__fadeInUp">
                 <div className="left">
-                    <span className="projectName">Boîte à outils : Revalorisation des territoires</span>
+                    <span className="projectName">{title}</span>
                 </div>
                 <div className="right">
                     <span>Eratusam enitioritius seque ne cuptatium quidelis 
@@ -57,21 +58,21 @@ const Gallery = (props: GalleryComponent) => {
             <div className='rightSide animate__animated animate__fadeInDown'>
                 <div className={`images ${filteredImages.length > 4 ? 'scrollable' : ''}`}>
                     {
-                        filteredImages.map((img, id) => {
+                        filteredImages.map((image: ImageComponent, id) => {
                             return (
-                                <div className="imageContainer" key={id}
-                                    onClick={() => console.log(img.target)}
-                                    onMouseEnter={() => setImage(val => img.id)}
-                                    onMouseLeave={() => setImage(val => null)}>
+                                <div key={`${id}-${image.id}`} className="imageContainer"
+                                    onClick={() => console.log(image.href)}
+                                    onMouseEnter={() => setHoverImage(val => image)}
+                                    onMouseLeave={() => setHoverImage(val => null)}>
                                     {
-                                        image === img.id && (
-                                                <>
-                                                    <div className="blackVeil"></div>
-                                                    <span className="text">{img.hover}</span>
-                                                </>
+                                        hoverImage && hoverImage.id === image.id && (
+                                            <>
+                                                <div className="blackVeil"></div>
+                                                <span className="text animate__animated animate__fadeInUp animate__faster">{image.text}</span>
+                                            </>
                                         )
                                     }
-                                    <img className="image" src={img.src} />
+                                    <img className="image" src={`/src/assets/img/${image.src}`} />
                                 </div>
                             )
                         })
@@ -80,12 +81,12 @@ const Gallery = (props: GalleryComponent) => {
                 <div className='filters'>
                     <h2>Collections</h2>
                     {
-                        filters.map((filter, id) => {
+                        filters && filters.length > 0 && filters.map((filter, id) => {
                             return (
-                                <span className="filter-container">
-                                    <div className={`filter ${(flt && flt === filter) && 'selected'}`}
-                                    onClick={() => applyFilter(filter)}
-                                        key={id}>{filter}</div>
+                                <span key={`${id}-${filter.id}`} className="filter-container">
+                                    <div className={`filter ${(flt && flt === filter.name) && 'selected'}`}
+                                    onClick={() => applyFilter(filter.name)}
+                                        key={id}>{Capitalize(filter.name)}</div>
                                 </span>
                             )
                         })

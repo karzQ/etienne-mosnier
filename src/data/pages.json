@@ -3,17 +3,17 @@
         {
             "id": "accueil",
             "name": "accueil",
-            "template": "gallery",
+            "template": "home",
             "title": "Projet Personnel DNSEP",
             "subtitles": [
-                { "id": 0, "text": "Étienne MOSNIER"},
-                { "id": 1, "text": "Design des communs"}
+                { "id": 0, "text": "Design des communs"},
+                { "id": 1, "text": "Étienne MOSNIER"}
             ],
             "images": [
-                { "id": 0, "src": "img_liste", "href": "#", "text": "Biopierre" },
-                { "id": 1, "src": "img_liste", "href": "#", "text": "Biopierre"  },
-                { "id": 2, "src": "img_liste", "href": "#", "text": "Biopierre"  },
-                { "id": 3, "src": "img_liste", "href": "#", "text": "Biopierre"  }
+                { "id": 0, "src": "epernon.png", "href": "#", "text": "Epernon" },
+                { "id": 1, "src": "patrimonialisation.png", "href": "#", "text": "Patrimonialisation"  },
+                { "id": 2, "src": "boite a outils.png", "href": "#", "text": "Boîte à outils : Revalorisation des territoires"  },
+                { "id": 3, "src": "documentation.png", "href": "#", "text": "Documentation"  }
             ]
         },
         {
@@ -21,9 +21,6 @@
             "name": "epernon",
             "template": "text",
             "title": "Epernon",
-            "images": [
-                { "id": 0, "src": "img_liste", "href": "#", "tag": "architecture", "text": "Biopierre" }
-            ],
             "annotations": [
                 { "id": 0, "text": "fdgdrfrgfhgfvgbnhytrg" },
                 { "id": 1, "text": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" },
@@ -33,7 +30,7 @@
             "pages": [
                 {
                     "id": 0,
-                    "title": "Test page 1",
+                    "subtitle": "Test page 1",
                     "texts": [
                         { "id": 0, "text": "", "font": null},
                         { "id": 1, "text": "", "font": "helvetica"}
@@ -42,11 +39,15 @@
                         { "id": 0, "text": "fdgdrfrgfhgfvgbnhytrg" },
                         { "id": 1, "text": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" }
                     ],
-                    "image": "img_liste.png"
+                    "image": {
+                        "id": 0,
+                        "src": "image_liste.png",
+                        "legend": "Biopierre"
+                    }
                 },
                 {
                     "id": 1,
-                    "title": "Test page 2",
+                    "subtitle": "Test page 2",
                     "texts": [
                         { "id": 0, "text": "", "font": null, "classNames": ""},
                         { "id": 1, "text": "", "font": "helvetica", "classNames": ""}
@@ -55,7 +56,11 @@
                         { "id": 0, "text": "fdgdrfrgfhgfvgbnhytrg" },
                         { "id": 1, "text": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" }
                     ],
-                    "image": "img_liste.png"
+                    "image": {
+                        "id": 0,
+                        "src": "image_liste.png",
+                        "legend": "Biopierre"
+                    }
                 }
             ]
         },
@@ -64,9 +69,6 @@
             "name": "patrimonialisation",
             "template": "text",
             "title": "Boîte à outils : Revalorisation des territoires",
-            "images": [
-                { "id": 0, "src": "img_liste", "href": "#", "tag": "architecture", "text": "Biopierre" }
-            ],
             "annotations": [
                 { "id": 0, "text": "fdgdrfrgfhgfvgbnhytrg" },
                 { "id": 1, "text": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" },
@@ -76,43 +78,59 @@
             "pages": [
                 {
                     "id": 0,
-                    "title": "Test page 1",
+                    "subtitle": "Test page 1",
                     "text": "fdgdrfrgfhgfvgbnhytrg",
                     "annotations": [
                         { "id": 0, "text": "fdgdrfrgfhgfvgbnhytrg" },
                         { "id": 1, "text": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" }
                     ],
-                    "image": {"id": 0, "src": "img_liste.png"}
+                    "image": {
+                        "id": 0,
+                        "src": "image_liste.png",
+                        "legend": "Biopierre"
+                    }
                 },
                 {
                     "id": 1,
-                    "title": "Test page 2",
+                    "subtitle": "Test page 2",
                     "text": "fdgdrfrgfhgfvgbnhytrg",
                     "annotations": [
                         { "id": 0, "text": "fdgdrfrgfhgfvgbnhytrg" },
                         { "id": 1, "text": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" }
                     ],
-                    "image": {"id": 0, "src": "img_liste.png"}
+                    "image": {
+                        "id": 0,
+                        "src": "image_liste.png",
+                        "legend": "Biopierre"
+                    }
                 },
                 {
                     "id": 2,
-                    "title": "Test page 3",
+                    "subtitle": "Test page 3",
                     "text": "fdgdrfrgfhgfvgbnhytrg",
                     "annotations": [
                         { "id": 0, "text": "fdgdrfrgfhgfvgbnhytrg" },
                         { "id": 1, "text": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" }
                     ],
-                    "image": {"id": 0, "src": "img_liste.png"}
+                    "image": {
+                        "id": 0,
+                        "src": "img_liste",
+                        "legend": "Biopierre"
+                    }
                 },
                 {
                     "id": 3,
-                    "title": "Test page 4",
+                    "subtitle": "Test page 4",
                     "text": "fdgdrfrgfhgfvgbnhytrg",
                     "annotations": [
                         { "id": 0, "text": "fdgdrfrgfhgfvgbnhytrg" },
                         { "id": 1, "text": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" }
                     ],
-                    "image": {"id": 0, "src": "img_liste.png"}
+                    "image": {
+                        "id": 0,
+                        "src": "image_liste.png",
+                        "legend": "Biopierre"
+                    }
                 }
             ]
         },
@@ -122,26 +140,20 @@
             "template": "gallery",
             "title": "Boîte à outils : Revalorisation des territoires",
             "images": [
-                { "id": 0, "src": "img_liste", "href": "#", "tag": "architecture", "text": "Biopierre" },
-                { "id": 1, "src": "img_liste", "href": "#", "tag": "design", "text": "Biopierre"  },
-                { "id": 2, "src": "img_liste", "href": "#", "tag": "design", "text": "Biopierre"  },
-                { "id": 3, "src": "img_liste", "href": "#", "tag": "art", "text": "Biopierre"  },
-                { "id": 4, "src": "img_liste", "href": "#", "tag": "architecture", "text": "Biopierre"  },
-                { "id": 5, "src": "img_liste", "href": "#", "tag": "art", "text": "Biopierre"  },
-                { "id": 6, "src": "img_liste", "href": "#", "tag": "architecture", "text": "Biopierre"  },
-                { "id": 7, "src": "img_liste", "href": "#", "tag": "art" ," text": "Biopierre" }
+                { "id": 0, "src": "image_liste.png", "href": "#", "tag": "architecture", "text": "Biopierre" },
+                { "id": 1, "src": "image_liste.png", "href": "#", "tag": "design", "text": "Biopierre"  },
+                { "id": 2, "src": "image_liste.png", "href": "#", "tag": "design", "text": "Biopierre"  },
+                { "id": 3, "src": "image_liste.png", "href": "#", "tag": "art", "text": "Biopierre"  },
+                { "id": 4, "src": "image_liste.png", "href": "#", "tag": "architecture", "text": "Biopierre"  },
+                { "id": 5, "src": "image_liste.png", "href": "#", "tag": "art", "text": "Biopierre"  },
+                { "id": 6, "src": "image_liste.png", "href": "#", "tag": "architecture", "text": "Biopierre"  },
+                { "id": 7, "src": "image_liste.png", "href": "#", "tag": "art" ," text": "Biopierre" }
             ],
             "filters": [
                 { "id": 0, "name": "architecture" },
                 { "id": 1, "name": "design" },
                 { "id": 2, "name": "art" }
             ]
-        },
-        {
-            "id": "documentation",
-            "name": "documentation",
-            "template": "text",
-            "title": "Documentation"
         }
     ]
 }

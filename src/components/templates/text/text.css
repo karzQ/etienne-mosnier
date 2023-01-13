@@ -108,3 +108,11 @@
     min-width: 300px;
     font-size: 10px;
 }
+
+.stepper {
+    position: absolute;
+    bottom: 15px;
+    width:  600px;
+
+    left: calc(50% - 250px);
+}
