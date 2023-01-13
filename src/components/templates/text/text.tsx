@@ -76,7 +76,7 @@ const Text = (props: TextComponent) => {
                 </div>
 
                 <div className="middle">
-                    <div className='additional_texts animate__animated  animate__fadeInUp animate__delay-1s'>
+                    <div className='additional_texts animate__animated  animate__fadeInUp'>
                         {
                             annotations && annotations.length > 0 && annotations.map((item: AnnotationsComponent, id: number) => (
                                 <span key={`${id}-${item.id}`} className='content_annotations'>{item.text}</span>
@@ -85,7 +85,7 @@ const Text = (props: TextComponent) => {
                     </div>
                     {
                         activePage?.text && (
-                            <span className='text animate__animated  animate__fadeInDown animate__delay-1s'>{activePage?.text}</span>
+                            <span className='text animate__animated  animate__fadeInDown'>{activePage?.text}</span>
                         )
                     }
 
