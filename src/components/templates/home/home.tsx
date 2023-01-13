@@ -2,6 +2,7 @@ import './home.css'
 
 import { HomeComponent, ImageComponent, SubtitleComponent } from '../../../vite-env';
 
+import Image from '../../Image/Image';
 import {useState} from "react";
 
 const Home = (props: HomeComponent) => {
@@ -59,7 +60,7 @@ const Home = (props: HomeComponent) => {
                                     </>
                                 )
                             }
-                            <img className="image" src={`/src/assets/img/${image.src}`} />
+                            <Image src={image.src} />
                         </div>
                     ))
                 }

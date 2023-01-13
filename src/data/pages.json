@@ -10,10 +10,10 @@
                 { "id": 1, "text": "Étienne MOSNIER"}
             ],
             "images": [
-                { "id": 0, "src": "epernon.png", "href": "#", "text": "Epernon" },
-                { "id": 1, "src": "patrimonialisation.png", "href": "#", "text": "Patrimonialisation"  },
-                { "id": 2, "src": "boite a outils.png", "href": "#", "text": "Boîte à outils : Revalorisation des territoires"  },
-                { "id": 3, "src": "documentation.png", "href": "#", "text": "Documentation"  }
+                { "id": 0, "src": "epernon", "href": "#", "text": "Epernon" },
+                { "id": 1, "src": "patrimonialisation", "href": "#", "text": "Patrimonialisation"  },
+                { "id": 2, "src": "boite a outils", "href": "#", "text": "Boîte à outils : Revalorisation des territoires"  },
+                { "id": 3, "src": "documentation", "href": "#", "text": "Documentation"  }
             ]
         },
         {
@@ -41,7 +41,7 @@
                     ],
                     "image": {
                         "id": 0,
-                        "src": "image_liste.png",
+                        "src": "image_liste",
                         "legend": "Biopierre"
                     }
                 },
@@ -58,7 +58,7 @@
                     ],
                     "image": {
                         "id": 0,
-                        "src": "image_liste.png",
+                        "src": "image_liste",
                         "legend": "Biopierre"
                     }
                 }
@@ -86,7 +86,7 @@
                     ],
                     "image": {
                         "id": 0,
-                        "src": "image_liste.png",
+                        "src": "image_liste",
                         "legend": "Biopierre"
                     }
                 },
@@ -100,7 +100,7 @@
                     ],
                     "image": {
                         "id": 0,
-                        "src": "image_liste.png",
+                        "src": "image_liste",
                         "legend": "Biopierre"
                     }
                 },
@@ -128,7 +128,7 @@
                     ],
                     "image": {
                         "id": 0,
-                        "src": "image_liste.png",
+                        "src": "image_liste",
                         "legend": "Biopierre"
                     }
                 }
@@ -140,14 +140,14 @@
             "template": "gallery",
             "title": "Boîte à outils : Revalorisation des territoires",
             "images": [
-                { "id": 0, "src": "image_liste.png", "href": "#", "tag": "architecture", "text": "Biopierre" },
-                { "id": 1, "src": "image_liste.png", "href": "#", "tag": "design", "text": "Biopierre"  },
-                { "id": 2, "src": "image_liste.png", "href": "#", "tag": "design", "text": "Biopierre"  },
-                { "id": 3, "src": "image_liste.png", "href": "#", "tag": "art", "text": "Biopierre"  },
-                { "id": 4, "src": "image_liste.png", "href": "#", "tag": "architecture", "text": "Biopierre"  },
-                { "id": 5, "src": "image_liste.png", "href": "#", "tag": "art", "text": "Biopierre"  },
-                { "id": 6, "src": "image_liste.png", "href": "#", "tag": "architecture", "text": "Biopierre"  },
-                { "id": 7, "src": "image_liste.png", "href": "#", "tag": "art" ," text": "Biopierre" }
+                { "id": 0, "src": "image_liste", "href": "#", "tag": "architecture", "text": "Biopierre" },
+                { "id": 1, "src": "image_liste", "href": "#", "tag": "design", "text": "Biopierre"  },
+                { "id": 2, "src": "image_liste", "href": "#", "tag": "design", "text": "Biopierre"  },
+                { "id": 3, "src": "image_liste", "href": "#", "tag": "art", "text": "Biopierre"  },
+                { "id": 4, "src": "image_liste", "href": "#", "tag": "architecture", "text": "Biopierre"  },
+                { "id": 5, "src": "image_liste", "href": "#", "tag": "art", "text": "Biopierre"  },
+                { "id": 6, "src": "image_liste", "href": "#", "tag": "architecture", "text": "Biopierre"  },
+                { "id": 7, "src": "image_liste", "href": "#", "tag": "art" ," text": "Biopierre" }
             ],
             "filters": [
                 { "id": 0, "name": "architecture" },

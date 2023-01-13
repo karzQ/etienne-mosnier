@@ -6,6 +6,7 @@ import { createTheme, useTheme } from '@mui/material/styles';
 import { useCallback, useEffect, useState } from "react";
 
 import Button from '@mui/material/Button';
+import Image from '../../Image/Image';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import MobileStepper from '@mui/material/MobileStepper';
@@ -28,11 +29,11 @@ const Text = (props: TextComponent) => {
 
     const handleNext = () => {
         setPageNumber((prevActiveStep) => prevActiveStep + 1);
-      };
-    
-      const handleBack = () => {
+    };
+
+    const handleBack = () => {
         setPageNumber((prevActiveStep) => prevActiveStep - 1);
-      };
+    };
 
     const TextsList = (props: any) => {
         const {texts} = props
@@ -95,8 +96,8 @@ const Text = (props: TextComponent) => {
                 </div>
 
                 <div className='right animate__animated  animate__fadeInRight'>
-                    <div className='image_container'>
-                        <img src={`/src/assets/img/${activePage.image.src}`} />
+                    <div className='image_container'>{}
+                        <Image src={activePage.image.src}/>
                         {
                             activePage.image.legend && <span className='image_title'>{activePage.image.legend}</span>
                         }
@@ -113,22 +114,22 @@ const Text = (props: TextComponent) => {
                     sx={{ maxWidth: 500, flexGrow: 1 }}
                     nextButton={
                         <Button size="small" onClick={handleNext} disabled={pageNumber === pages.length-1}>
-                        Continuer
-                        {theme.direction === 'rtl' ? (
-                            <KeyboardArrowLeft />
-                        ) : (
-                            <KeyboardArrowRight />
-                        )}
+                            Continuer
+                            {theme.direction === 'rtl' ? (
+                                <KeyboardArrowLeft />
+                            ) : (
+                                <KeyboardArrowRight />
+                            )}
                         </Button>
                     }
                     backButton={
                         <Button size="small" onClick={handleBack} disabled={pageNumber === 0}>
-                        {theme.direction === 'rtl' ? (
-                            <KeyboardArrowRight />
-                        ) : (
-                            <KeyboardArrowLeft />
-                        )}
-                        Retour
+                            {theme.direction === 'rtl' ? (
+                                <KeyboardArrowRight />
+                            ) : (
+                                <KeyboardArrowLeft />
+                            )}
+                            Retour
                         </Button>
                     }
                 />
