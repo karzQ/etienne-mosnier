@@ -3,6 +3,7 @@ import './gallery.css'
 import { GalleryComponent, ImageComponent, SubtitleComponent } from '../../../vite-env';
 
 import { Capitalize } from '../../../helpers/functions';
+import Image from "../../Image/Image";
 import React from "react";
 
 const Gallery = (props: GalleryComponent) => {
@@ -72,6 +73,7 @@ const Gallery = (props: GalleryComponent) => {
                                             </>
                                         )
                                     }
+                                    <Image src={image.src} />
                                     <img className="image" src={`/src/assets/img/${image.src}`} />
                                 </div>
                             )
