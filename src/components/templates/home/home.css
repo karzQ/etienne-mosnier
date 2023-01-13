@@ -84,7 +84,12 @@
     cursor: pointer;
 }
 
-.Home .rightSide .imageContainer, .Home .rightSide .imageContainer .image {
+.Home .rightSide .imageContainer {
+    width: auto;
+    height: auto;
+}
+
+.Home .rightSide .imageContainer .image {
     width: auto;
     height: 211px;
 }
