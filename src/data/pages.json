@@ -6,8 +6,8 @@
             "template": "home",
             "title": "Projet Personnel DNSEP",
             "subtitles": [
-                { "id": 0, "text": "Design des communs"},
-                { "id": 1, "text": "Étienne MOSNIER"}
+                { "id": 0, "text": "Étienne MOSNIER"},
+                { "id": 1, "text": "Design des communs"}
             ],
             "images": [
                 { "id": 0, "src": "epernon", "href": "#", "text": "Epernon" },
