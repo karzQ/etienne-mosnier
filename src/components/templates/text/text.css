@@ -15,8 +15,8 @@
 
 .Text .left {
     max-width: 343px;
-    hyphens: auto;
-    -webkit-hyphens: auto;
+    /* hyphens: auto; */
+    /* -webkit-hyphens: auto; */
 }
 
 .Text .left, .right, .middle {
@@ -37,7 +37,7 @@
     font-weight: bold;
     font-size: xxx-large;
     line-height: normal;
-    hyphens: auto;
+    /* hyphens: auto; */
     margin-bottom: 40px;
 }
 

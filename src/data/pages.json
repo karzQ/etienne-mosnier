@@ -24,7 +24,7 @@
             "pages": [
                 {
                     "id": 0,
-                    "title": "Epernon, un territoire pluriel",
+                    "title": "Epernon, un \nterritoire pluriel",
                     "subtitle": "Retour historique sur cette commune",
                     "texts": [
                         { "id": 0, "text": "La commune d’Epernon, située dans le département d’Eure-et-Loir, est construite sur un éperon rocheux. La ville commence à se développer au Moyen  ge, notamment à partir du Xe siècle, grâce à son emplacement. En effet ? Cette commune borde le département des Yvelines, et la région de Normandie, ce qui a fait d’Epernon un rempart efficace lors des différentes invasions anglo-saxonnes durant La guerre de Cent Ans. Au XIXe siècle, Epernon va se transfigurer grâce à la découverte de nombreuses carrières, pour que cette commune rurale devienne une commune en voie d’industrialisation. L’apparition du travail de la pierre sur le territoire va permettre à Epernon d’acquérir une certaine renommée. En effet, la roche extraite des carrières permet d’équiper en pierres de meules de nombreux moulins dans la Beauce, mais également de fournir en pavés les grands chantiers haussmanniens. C’est à ce moment que le chemin de fer arrive à Epernon, permettant ainsi que le produit des savoir-faire locaux soit exporté. Au milieu du XXe siècle, à la suite des deux guerres mondiales, une nouvelle industrie se met en place à Epernon, l’industrie chimique. Cela se traduit par la construction de nombreuses usines en périphérie de la commune, qui vont venir transformer durablement le paysage rural.{{1}}", "font": null},
@@ -42,7 +42,7 @@
                 },
                 {
                     "id": 1,
-                    "title": "Epernon, un territoire pluriel",
+                    "title": "Epernon, un \nterritoire pluriel",
                     "subtitle": "États des différents savoirs locaux",
                     "texts": [
                         { "id": 0, "text": "Epernon se situe sur le bassin limoneux de la Beauce, appelé également le « grenier de la France »{{2}}. En effet, avant la Révolution française, la densité urbaine était très faible, car la majorité des terres servaient à l’agriculture, plus précisément aux cultures céréalières comme le blé, l’orge ou le maïs. Ce territoire agricole commence à s’urbaniser à partir du XIXe siècle, mais aussi à s’industrialiser. Le monde rural commence à faire face à l’innovation technique, avec l’apparition de différents outils qui facilitent la production, mais aussi l’exportation des céréales. Avec l’arrivée du chemin de fer à Epernon en 1843, les activités se diversifient, permettant à de nouvelles pratiques ouvrières de prospérer, notamment celles liées au travail de la pierre. De telles pratiques permettent la construction de différents ouvrages comme des ponts, aqueducs… inhérents à cette typologie de chantier. La durée des différents travaux liés à l’apparition du chemin de fer a permis de pérenniser les pratiques de la pierre au sein de la commune. Par la suite, cela a permis l’éclosion de nouvelles activités comme la conception de pierre de meules et de pavés.{{3}}", "font": null, "classNames": ""},
@@ -61,7 +61,7 @@
                 },
                 {
                     "id": 2,
-                    "title": "Epernon, un territoire pluriel",
+                    "title": "Epernon, \nun territoire pluriel",
                     "subtitle": "Une situation géologique particulière",
                     "texts": [
                         { "id": 0, "text": "La géologie du territoire d’Epernon a eu un impact évident sur l’arrivée des savoirs et pratiques de la pierre dans la commune. Avant 1830, et le début de l’exploitation des carrières, chacun pouvait extraire les pierres de grès, en tout lieu, selon ces besoins. Cette pratique a été encouragée par les localités, elle permettait « d’épierrer les terres ». Cela se faisait contre un « droit de meule », ainsi était rétribué financièrement le propriétaire du terrain ou a été prélevée la pierre. Le début de l’exploitation industrielle des carrières intervient lorsque des sociétés meulières de La Ferté-sous-Jouarre entendirent la rumeur qu’il existe des gisements de grès, d’une qualité équivalente aux leurs. C’est en 1843 qu’est créé la première société meulière à Epernon, avec l’arrivé d’investisseurs venus de La Ferté-sous-Jouarre, qui achetèrent des terrains agricoles où des gisements de grès étaient exploitables, où des terrassiers venaient retirer la glaise pour rendre apparente la roche. Cela modifiera durablement le paysage d’Epernon.", "font": null, "classNames": ""},
