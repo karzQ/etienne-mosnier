@@ -5,7 +5,7 @@ const Image = (props: {src: string}) => {
 
     useEffect(() => {
         (async () => {
-            const path = await import(`../../assets/img/${props.src}.png`);
+            const path = await import(`../../assets/img/${props.src}.jpg`);
             setImagePath(path.default);
         })();
     }, [props.src])
