@@ -16,6 +16,7 @@
 .Text .left {
     max-width: 343px;
     hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .Text .left, .right, .middle {
@@ -65,6 +66,12 @@
     min-width: 300px;
     font-size: 10px;
     line-height: 14px;
+}
+
+.Text .middle .additional_texts .numbered {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
 }
 
 .Text .middle .additional_texts span {

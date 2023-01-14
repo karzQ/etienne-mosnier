@@ -4,6 +4,7 @@ import { architecture, templates } from './config'
 import { useEffect, useState } from 'react'
 
 import Header from './components/Header/header'
+import credits from './credits'
 
 const App = () => {
 
@@ -15,6 +16,10 @@ const App = () => {
     const Component = templates[props.template]
     return <Component {...props} />
   }
+
+  useEffect(() => {
+    console.log(credits)
+  }, [])
 
   useEffect(() => {
     if (selectedLink && activePage && activePage.id !== selectedLink) {

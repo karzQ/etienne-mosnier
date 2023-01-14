@@ -5,6 +5,7 @@ import { AnnotationsComponent, PageComponent, SubTextComponent, TextComponent } 
 import { createTheme, useTheme } from '@mui/material/styles';
 import { useCallback, useEffect, useState } from "react";
 
+import { ApplySup } from '../../../helpers/functions'
 import Button from '@mui/material/Button';
 import Image from '../../Image/Image';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
@@ -36,7 +37,7 @@ const Text = (props: TextComponent) => {
         setPageNumber((val: number) => val > 0 ? val - 1 : val);
     };
 
-    const TextsList = (props: any) => {
+    const TextsList = (props: {texts: SubTextComponent[]}) => {
         const {texts} = props
         return (
             <div className="texts_container  animate__animated  animate__fadeInDown">
@@ -44,12 +45,40 @@ const Text = (props: TextComponent) => {
                     texts.length > 0 && texts.map((text: SubTextComponent, id: number) => (
                         <span key={`${id}-${text.id}`}
                             className='subtext'
-                            style={text.font ? {'fontFamily': text.font} : {}} >
-                            {text.text}
+                            style={text.font ? {'fontFamily': text.font} : {}} 
+                            dangerouslySetInnerHTML={{ __html: ApplySup(text.text) }}>
                         </span>
                     ))
                 }
             </div>
+        )
+    }
+
+    const Annotations = (props: {annotations: AnnotationsComponent[]}) => {
+        const {annotations} = props
+        const numbered = annotations.filter((item: AnnotationsComponent) => item.isNumbered)
+        const rest = annotations.filter((item: AnnotationsComponent) => !item.isNumbered)
+
+        return (
+            <>
+                <div className="numbered">
+                    {
+                        numbered && numbered.map((item: AnnotationsComponent, id: number) => (
+                            <span key={`${id}-${item.id}`} className='content_annotations'>
+                                <sup>{item.annotationNumber}</sup>{item.text}
+                            </span>
+                        ))
+                    }
+                </div>
+
+                <div className="not_numbered">
+                    {
+                        rest && rest.map((item: AnnotationsComponent, id: number) => (
+                            <span key={`${id}-${item.id}`} className='content_annotations'>{item.text}</span>
+                        ))
+                    }
+                </div>
+            </>
         )
     }
 
@@ -79,15 +108,19 @@ const Text = (props: TextComponent) => {
 
                 <div className="middle">
                     <div className={'additional_texts animate__animated  animate__fadeInUp'}>
-                        {
+                        {/* {
                             activePage.annotations && activePage.annotations.length > 0 && activePage.annotations.map((item: AnnotationsComponent, id: number) => (
                                 <span key={`${id}-${item.id}`} className='content_annotations'>{item.text}</span>
                             ))
+                        } */}
+                        {
+                            activePage.annotations && activePage.annotations.length > 0 && <Annotations annotations={activePage.annotations} />
                         }
                     </div>
                     {
                         activePage?.text && (
-                            <span className={'text animate__animated  animate__fadeInDown'}>{activePage?.text}</span>
+                            <span className={'text animate__animated  animate__fadeInDown'}
+                                dangerouslySetInnerHTML={{ __html: ApplySup(activePage?.text) }}></span>
                         )
                     }
 

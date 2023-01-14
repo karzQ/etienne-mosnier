@@ -23,7 +23,9 @@ export type ImageComponent = {
 
 export type AnnotationsComponent = {
     id: number,
-    text: string
+    text: string,
+    isNumbered?: boolean,
+    annotationNumber?: number
 }
 
 export type SubtitleComponent = {
