@@ -14,31 +14,32 @@ import MobileStepper from '@mui/material/MobileStepper';
 const Text = (props: TextComponent) => {
 
     const theme = useTheme();
-    const { title, pages, annotations } = props
+    const { pages } = props
     const [pageNumber, setPageNumber] = useState<number>(0)
+    const [action, setAction] = useState<string>('init')
     const [activePage, setActivePage] = useState<any>(pages[pageNumber])
     const handleUserKeyPress = useCallback((event: any) => {
         const { keyCode } = event;
-        if(keyCode === 39){
-            setPageNumber((val: number) => val < pages.length-1 ? val + 1 : val);
+        if (keyCode === 39) {
+            handleNext()
         }
-        else if(keyCode === 37 ){
-            setPageNumber((val: number) => val > 0 ? val - 1 : val);
+        else if (keyCode === 37) {
+            handleBack()
         }
     }, []);
 
     const handleNext = () => {
-        setPageNumber((prevActiveStep) => prevActiveStep + 1);
+        setPageNumber((val: number) => val < pages.length-1 ? val + 1 : val);
     };
 
     const handleBack = () => {
-        setPageNumber((prevActiveStep) => prevActiveStep - 1);
+        setPageNumber((val: number) => val > 0 ? val - 1 : val);
     };
 
     const TextsList = (props: any) => {
         const {texts} = props
         return (
-            <div className="texts_container  animate__animated  animate__fadeInDown  animate__delay-1s">
+            <div className="texts_container  animate__animated  animate__fadeInDown">
                 {
                     texts.length > 0 && texts.map((text: SubTextComponent, id: number) => (
                         <span key={`${id}-${text.id}`}
@@ -66,9 +67,9 @@ const Text = (props: TextComponent) => {
     return (
         <>
             <div className='Text'>
-                <div className="left animate__animated animate__fadeInLeft">
+                <div className={"left animate__animated animate__fadeInLeft"}>
                     <div className="title">
-                        {title}
+                        {activePage.title}
                     </div>
 
                     <div className="subtitle">
@@ -77,16 +78,16 @@ const Text = (props: TextComponent) => {
                 </div>
 
                 <div className="middle">
-                    <div className='additional_texts animate__animated  animate__fadeInUp'>
+                    <div className={'additional_texts animate__animated  animate__fadeInUp'}>
                         {
-                            annotations && annotations.length > 0 && annotations.map((item: AnnotationsComponent, id: number) => (
+                            activePage.annotations && activePage.annotations.length > 0 && activePage.annotations.map((item: AnnotationsComponent, id: number) => (
                                 <span key={`${id}-${item.id}`} className='content_annotations'>{item.text}</span>
                             ))
                         }
                     </div>
                     {
                         activePage?.text && (
-                            <span className='text animate__animated  animate__fadeInDown'>{activePage?.text}</span>
+                            <span className={'text animate__animated  animate__fadeInDown'}>{activePage?.text}</span>
                         )
                     }
 

@@ -13,6 +13,11 @@
     grid-gap: 39.7px;
 }
 
+.Text .left {
+    max-width: 343px;
+    hyphens: auto;
+}
+
 .Text .left, .right, .middle {
     position: relative;
     /* background-color: antiquewhite; */
@@ -40,10 +45,12 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    text-align: justify;
 }
 
 .Text .middle .texts_container .subtext {
     width: 100%;
+    padding-bottom: 20px;
 }
 
 .Text .middle .additional_texts {

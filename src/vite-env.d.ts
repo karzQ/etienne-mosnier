@@ -33,6 +33,7 @@ export type SubtitleComponent = {
 
 export type PageComponent = {
     id: number,
+    title: string,
     subtitle: string,
     text?: string,
     texts?: SubTextComponent[],
@@ -55,7 +56,6 @@ export type TextComponent = {
     name: string,
     template: string,
     title: string,
-    annotations: AnnotationsComponent[],
     image: ImageComponent,
     pages: PageComponent[]
 }

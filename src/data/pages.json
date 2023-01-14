@@ -20,24 +20,19 @@
             "id": "epernon",
             "name": "epernon",
             "template": "text",
-            "title": "Epernon",
-            "annotations": [
-                { "id": 0, "text": "fdgdrfrgfhgfvgbnhytrg" },
-                { "id": 1, "text": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" },
-                { "id": 2, "text": "hgjgfbhytgfhnjgytghjuythjyghghgchhghghghgghhgfghhgghhgfhf" },
-                { "id": 3, "text": "hghgfghgfhgfhhhghgffghfhgfghkjlklgkilihjvkj:ml:mù!gfhùghfmù*jgh" }
-            ],
+            "title": "Epernon terrain d’enquête",
             "pages": [
                 {
                     "id": 0,
-                    "subtitle": "Test page 1",
+                    "title": "Epernon, un territoire pluriel",
+                    "subtitle": "Retour historique sur cette commune",
                     "texts": [
-                        { "id": 0, "text": "", "font": null},
-                        { "id": 1, "text": "", "font": "helvetica"}
+                        { "id": 0, "text": "La commune d’Epernon, située dans le département d’Eure-et-Loir, est construite sur un éperon rocheux. La ville commence à se développer au Moyen  ge, notamment à partir du Xe siècle, grâce à son emplacement. En effet ? Cette commune borde le département des Yvelines, et la région de Normandie, ce qui a fait d’Epernon un rempart efficace lors des différentes invasions anglo-saxonnes durant La guerre de Cent Ans. Au XIXe siècle, Epernon va se transfigurer grâce à la découverte de nombreuses carrières, pour que cette commune rurale devienne une commune en voie d’industrialisation. L’apparition du travail de la pierre sur le territoire va permettre à Epernon d’acquérir une certaine renommée. En effet, la roche extraite des carrières permet d’équiper en pierres de meules de nombreux moulins dans la Beauce, mais également de fournir en pavés les grands chantiers haussmanniens. C’est à ce moment que le chemin de fer arrive à Epernon, permettant ainsi que le produit des savoir-faire locaux soit exporté. Au milieu du XXe siècle, à la suite des deux guerres mondiales, une nouvelle industrie se met en place à Epernon, l’industrie chimique. Cela se traduit par la construction de nombreuses usines en périphérie de la commune, qui vont venir transformer durablement le paysage rural.{{1}}", "font": null},
+                        { "id": 1, "text": "Je suis né dans cette commune, tout comme ma mère, et mes grands-parents également. Notre histoire familiale, mon histoire, est intrinsèquement liée à celle de l’endroit où nous avons vécu. Cependant, j’avais peu connaissance de l’Histoire d’Epernon, qui fut marquante à l’échelle locale, et qui participa à forger l’identité de ce territoire, et de lui offrir une certaine renommée. Au cours d’un de mes passages à Epernon, j’ai pu découvrir de manière inopinée, une partie de cette histoire, celle qui traite de la pierre et des savoirs qui l’entoure. Je portais une vision extrêmement limitée de cette ville, uniquement contextualisée dans le temps présent. Les questionnements qui ont émergé de cette découverte de mon territoire sont multiples, et ont nourri mon travail de recherche. Cette découverte m’a permis de me créer un nouveau point de vue, de nouvelles attaches avec cette commune d’Epernon.", "font": "helvetica"}
                     ],
                     "annotations": [
-                        { "id": 0, "text": "fdgdrfrgfhgfvgbnhytrg" },
-                        { "id": 1, "text": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" }
+                        { "id": 0, "isNumbered": true, "annotationNumber": 1, "text": "Ville d’Epernon, “Histoire, au fil du temps”, (https://www.ville-epernon.fr/au-fil-du-temps, consulté le 08 juillet 2022)" },
+                        { "id": 1, "text": "Jean-Paul Duc (dir.), “Histoire des carrières d’Epernon”, Association Epernon Patrimoine et Alentours, Epernon, 2012" }
                     ],
                     "image": {
                         "id": 0,
@@ -47,14 +42,140 @@
                 },
                 {
                     "id": 1,
-                    "subtitle": "Test page 2",
+                    "title": "Epernon, un territoire pluriel",
+                    "subtitle": "États des différents savoirs locaux",
                     "texts": [
-                        { "id": 0, "text": "", "font": null, "classNames": ""},
-                        { "id": 1, "text": "", "font": "helvetica", "classNames": ""}
+                        { "id": 0, "text": "Epernon se situe sur le bassin limoneux de la Beauce, appelé également le « grenier de la France »{{2}}. En effet, avant la Révolution française, la densité urbaine était très faible, car la majorité des terres servaient à l’agriculture, plus précisément aux cultures céréalières comme le blé, l’orge ou le maïs. Ce territoire agricole commence à s’urbaniser à partir du XIXe siècle, mais aussi à s’industrialiser. Le monde rural commence à faire face à l’innovation technique, avec l’apparition de différents outils qui facilitent la production, mais aussi l’exportation des céréales. Avec l’arrivée du chemin de fer à Epernon en 1843, les activités se diversifient, permettant à de nouvelles pratiques ouvrières de prospérer, notamment celles liées au travail de la pierre. De telles pratiques permettent la construction de différents ouvrages comme des ponts, aqueducs… inhérents à cette typologie de chantier. La durée des différents travaux liés à l’apparition du chemin de fer a permis de pérenniser les pratiques de la pierre au sein de la commune. Par la suite, cela a permis l’éclosion de nouvelles activités comme la conception de pierre de meules et de pavés.{{3}}", "font": null, "classNames": ""},
+                        { "id": 1, "text": "Certains membres de ma famille, comme mes arrière-grands-parents, des tantes, des oncles… vivaient, ou vivent encore de l’agriculture. Au travers d’eux, j’ai pu découvrir le passé agricole de mon territoire. J’ai pu moi-même, à mon échelle, participer à certaines tâches, qui m’ont permis d’appréhender certaines caractéristiques de ce travail. Cela ne fut pas le cas pour les pratiques de la pierre, sans doute car cela ne fait pas partie de mon héritage familial, mais aussi, comme j’ai pu le dire précédemment, car je n’avais pas pris connaissance de ces savoirs jusqu’à peu. Une question me vient alors, comment pourrait-on réinvestir des savoirs au-delà de leur condition de patrimoine, qu’il soit familial, ou territorial ? Mais avant de répondre à cela, il me semble utile de retracer l’histoire des patrimoines techniques qui entourent les pratiques de la pierre.", "font": "helvetica", "classNames": ""}
                     ],
                     "annotations": [
-                        { "id": 0, "text": "fdgdrfrgfhgfvgbnhytrg" },
-                        { "id": 1, "text": "gfdtrsvgbhytrfghnjkuytghjkuytgfhbn,kjutgfbnhjuytg" }
+                        { "id": 0, "isNumbered": true, "annotationNumber": 2, "text": "Claire König, “Beauce : grenier à blé de la France”, Futura Sciences, paru le 11 août 2008" },
+                        { "id": 1, "isNumbered": true, "annotationNumber": 3, "text": "Jean-Claude Farcy, “ Le monde rural face au changement technique: le cas de la Beauce au XIXème siècle “, Histoire, économie et société, paru en 1983" },
+                        { "id": 2, "text": "Michel Michel, “Développement des villes moyennes. Chartres, Dreux, Evreux.”, Éditions de la sorbonne, Tome 1, Paru en 1984" }
+                    ],
+                    "image": {
+                        "id": 0,
+                        "src": "image_liste",
+                        "legend": "Biopierre"
+                    }
+                },
+                {
+                    "id": 2,
+                    "title": "Epernon, un territoire pluriel",
+                    "subtitle": "Une situation géologique particulière",
+                    "texts": [
+                        { "id": 0, "text": "La géologie du territoire d’Epernon a eu un impact évident sur l’arrivée des savoirs et pratiques de la pierre dans la commune. Avant 1830, et le début de l’exploitation des carrières, chacun pouvait extraire les pierres de grès, en tout lieu, selon ces besoins. Cette pratique a été encouragée par les localités, elle permettait « d’épierrer les terres ». Cela se faisait contre un « droit de meule », ainsi était rétribué financièrement le propriétaire du terrain ou a été prélevée la pierre. Le début de l’exploitation industrielle des carrières intervient lorsque des sociétés meulières de La Ferté-sous-Jouarre entendirent la rumeur qu’il existe des gisements de grès, d’une qualité équivalente aux leurs. C’est en 1843 qu’est créé la première société meulière à Epernon, avec l’arrivé d’investisseurs venus de La Ferté-sous-Jouarre, qui achetèrent des terrains agricoles où des gisements de grès étaient exploitables, où des terrassiers venaient retirer la glaise pour rendre apparente la roche. Cela modifiera durablement le paysage d’Epernon.", "font": null, "classNames": ""},
+                        { "id": 1, "text": "C’est au moment où j’engage ma recherche que je découvre la variété des typologies de terrains que l’on trouve sur Epernon. Je savais déjà qu’une partie des ouvrages construits dans cette commune étaient sur des terrains marécageux, et qu’il y avait un foisonnement de terrains agricoles. Cependant, même si une partie de la ville est installée sur une colline, je n’avais pas forcément conscience du lien existant avec une exploitation de la roche. Bien qu’au fil de mon exploration, j’ai fus amené à découvrir au « plateau de la Diane » ce que l’on nomme chez moi le « front de taille », qui est le vestige d’une carrière, où l’exploitation à cessé au milieu du XXe siècle, je fus surpris du peu de traces existantes dans les différents espaces urbains et ruraux que j’ai pu visité. Je me suis donc renseigné en étudiant des archives, de cartes, et j’ai découvert que certaines carrières sont soit encore exploitées aujourd’hui pour la production de sable de fontainebleau, de calcaire de Beauce, ou de granulats en tout genre, destiné le plus souvent aux entreprises du bâtiment. Ou bien ces carrières ont pu être ensevelies, pour créer des terrains constructibles, destinés à accueillir des unités d’habitation ou bien des usines de l’industrie chimique.", "font": "helvetica", "classNames": ""}
+                    ],
+                    "annotations": [
+                        { "id": 0, "isNumbered": true, "annotationNumber": 2, "text": "Claire König, “Beauce : grenier à blé de la France”, Futura Sciences, paru le 11 août 2008" },
+                        { "id": 1, "isNumbered": true, "annotationNumber": 3, "text": "Bureau de Recherches Géologiques et Minières, “Inventaire départemental des cavités souterraines d’Eure-et-Loir”, rapport final, paru en août 2005" }
+
+                    ],
+                    "image": {
+                        "id": 0,
+                        "src": "image_liste",
+                        "legend": "Biopierre"
+                    }
+                },
+                {
+                    "id": 4,
+                    "title": "L’industrie de la pierre à Epernon",
+                    "subtitle": "Les débuts de l’industrie de la pierre à Epernon",
+                    "texts": [
+                        { "id": 0, "text": "Les prémices de l’industrie apparaissent à la fin du XVIIe siècle, quand Louis XIV ordonna de grands travaux au château de Versailles. Dans le but d'irriguer les fontaines des jardins, il fut décidé de détourner le cours de l’Eure, pour ce faire un aqueduc fut construit à Maintenon, et les carrières de grès déjà établis à cette époque à Epernon furent sommées de produire les pierres nécessaires à la construction de l’édifice. C’est ensuite au milieu du XVIIIe siècle que commença l’essor de l’industrie de la pierre à Epernon. Cette dernière est venue apporter de nombreux changements pour cette ville. En effet, la population sparnonienne est composée, pour la plupart, d’agriculteurs. Un changement démographique se met donc en place, avec une immigration de carriers et de meuliers venus d’autres cantons, il faut savoir qu’à cette époque, les déplacements intercantonaux sont soumis à la présentation d’un passeport, « pour prouver qu’on n’est pas un indigent ni un vagabond ». Une fois arrivés à destination, ils sont logés soit chez un citoyen de la commune : un logeur, soit dans une grotte construite à même la carrière. C’est à ce moment que le dur labeur des ouvriers débute.", "font": null, "classNames": ""},
+                        { "id": 1, "text": "Assez rapidement, je fus intéressé par le sort de ces ouvriers, qui vivaient de cette pratique difficile, dangereuse. C’est en visitant l’exposition du conservatoire des meules et pavés à Epernon, que j’ai pu découvrir l’histoire de ces ouvriers, qui venaient le plus souvent de la Creuse ou du Limousin, qui ont pris l’habitude d’aller de carrière en carrière, en se passant le mot, pour indiquer les endroits où il y a de l’embauche. Ils partaient à pied, à plusieurs, pour ne pas être attaqués durant leur périple, c’est arrivé au niveau de la Loire que chacun se sépara, pour se diriger vers son lieu de travail respectif. En discutant avec des amis, des membres de ma famille, on a pu constater que l’histoire de ces personnes qui ont transfiguré cette ville était méconnue, tout comme le grand nombre de savoirs associé à leur pratique de la pierre.", "font": "helvetica", "classNames": ""}
+                    ],
+                    "annotations": [
+                        { "id": 0, "isNumbered": true, "annotationNumber": 2, "text": "Jean-Paul Duc (dir.), “Histoire des carrières d’Epernon”, Association Epernon Patrimoine et Alentours, Epernon, 2012, op. cit., p 56" },
+                        { "id": 1, "isNumbered": true, "annotationNumber": 3, "text": "Aire de mise en valeur de l’Architecture et du Patrimoine, “Epernon, une cité industrielle” Portes Euréliennes d'Île-de-France, paru en 2017" }
+                    ],
+                    "image": {
+                        "id": 0,
+                        "src": "image_liste",
+                        "legend": "Biopierre"
+                    }
+                },
+                {
+                    "id": 5,
+                    "title": "L’industrie de la pierre à Epernon",
+                    "subtitle": "L’exploitation des carrières à Epernon à partir du XIXe siècle",
+                    "texts": [
+                        { "id": 0, "text": "Le début de l’exploitation des carrières, à Epernon, est plutôt chaotique. De nombreuses sociétés se créent, soit par des entrepreneurs venus de La Ferté-sous-Jouarre, ou bien par des locaux qui sentent la manne financière qui pourrait émaner d’un tel investissement. On retrouve donc la trace de nombreuses sociétés meulières, qui ont souvent eu une existence éphémère, en effet la mauvaise gestion de ces investisseurs provoque des faillites en cascades, donnant l’opportunité à d’autres entrepreneurs d’acquérir ces sociétés à moindre coût. Après la guerre de 1870, et l’occupation prussienne, l’avenir de ces sociétés s’assombrit, car, en premier lieu, la conception des moulins évolue, la pierre est délaissée pour le métal, mais également, car cette date correspond à la fin des travaux haussmanniens, ce qui provoque une baisse de la demande pour les pavés fabriqués à Epernon. Pour pallier cela, et pour tenter de perdurer ces pratiques de la pierre, l’ensemble des sociétés de ce secteur décident de fusionner. C’est l’avènement de la Société Générale meulière, qui exerce un monopole au sein du territoire, sur l’extraction du grès, la fabrication et la commercialisation de meules.", "font": null, "classNames": ""},
+                        { "id": 1, "text": "Lors de mes différentes visites au conservatoire, au travers de mes lectures, j’ai pu ressentir la rudesse de ces métiers liés à la pierre. Les terrassiers qui avaient la tâche ingrate, de creuser la terre, à l’aide de pioches et de pelles, pour préparer la carrière et faire apparaître les bancs de pierre. Les tailleurs et piqueurs venaient ensuite pour extraire le grès, ébaucher la pierre de meules, après que le maître-carrier ait examiné le banc, son épaisseur, ses veines, en tapant dessus avec un « têtu », c’est ensuite aux rouliers de transporter ces pierres à l’atelier en chariots. La plupart des meules qui sortaient des ateliers d’Epernon, étaient des meules dites « anglaises », qui sont constitués d’un assemblage de différents morceaux de pierres. Au cours de ma visite, j’ai donc pu retracer le quotidien de ces ouvriers à l’espérance de vie réduite, entre 40 et 45 ans, au vu des nombreux accidents qui arrivaient sur les chantiers, mais également des maladies qui pouvaient contracter comme la silicose. Cela m’a questionné sur l’évolution de ces savoirs ouvriers au sein d’Epernon, et sur leur capacité à évoluer avec l’apparition des normes, et les différentes évolutions sociales. ", "font": "helvetica", "classNames": ""}
+                    ],
+                    "annotations": [
+                        { "id": 0, "isNumbered": true, "annotationNumber": 2, "text": "Mouette Barboff, “Les meuliers. Meules et pierres meulières dans le Bassin Parisien”, Agapin, 2002, Etrépilly, Presses du Village." }
+                    ],
+                    "image": {
+                        "id": 0,
+                        "src": "image_liste",
+                        "legend": "Biopierre"
+                    }
+                },
+                {
+                    "id": 6,
+                    "title": "L’industrie de la pierre à Epernon",
+                    "subtitle": "L’évolution des pratiques de la pierre",
+                    "texts": [
+                        { "id": 0, "text": "Dès 1911, les pierres de meules deviennent de plus en plus désuètes, à force que les minoteries remplacent les moulins. Pour que les savoirs de la pierre subsistent à Epernon, les pratiques ont évolué, avec la création de « L’Abrasienne ». L’idée de cette société est de concevoir des meules composites, faites de silex et d’émeri. Un changement de politique intervient donc, avec l’importation des matières premières. En effet, ces matériaux viennent de la baie de Somme, mais aussi de l’île de Naxos en Grèce, cela implique une importation par bateau jusqu’à Anvers, et ensuite en train jusqu’à Epernon. Cette situation vient mettre à mal le travail des ouvriers dans les carrières, qui se sentent délaissés. Dès l’aube de la Première Guerre mondiale, les différents ateliers se figent, l’activité change, afin de produire des pièces détachées destinées à l’armement. Durant l’entre deux-guerre, et à la veille de la victoire du Front populaire, le droit de grève est exercé dans les différentes sociétés sparnoniennes, avec comme revendications la réduction du temps de travail, et les congés payés, ce qui fut officialisé quelques jours après la fin de la grève, suite à la victoire du Front populaire.", "font": null, "classNames": ""},
+                        { "id": 1, "text": "Pendant quatre ans, chaque matin, pour aller au collège, je traversais la rue de Cady à Epernon. C'est dans cette rue que se situé la première usine de “L’Abrasienne”. Je n’ai aucun souvenir que durant cette époque, de m'être retrouvé en face d’un édifice ressemblant à une usine. Aujourd’hui, m’intéressant à ces savoirs de la pierre, je suis retourné dans cette rue, je l’ai traversé à nouveau, et toujours aucune trace de ce bâtiment, ni même un vestige pouvant signifier l’emplacement de cette usine. Cependant après mes recherches, j’apprends qu’une seconde usine existait, au moulin de Vinerville, là le bâtiment existe encore, mais il a été aménagé en logements. Maintenant que mon regard est à la recherche d’éléments, d’indices me permettant de retracer les différents savoirs et pratiques de la pierre qui ont pu exister à Epernon, je suis assez surpris du peu de traces que j’ai pu découvrir, comme si qu’à l’époque où ces pratiques se sont arrêtées, on à chercher à enfouir ce qui aurait pu faire histoire.", "font": "helvetica", "classNames": ""}
+                    ],
+                    "annotations": [
+                        { "id": 0, "isNumbered": true, "annotationNumber": 2, "text": "Jean-Paul Duc, “Les usines de l’Abrasienne à Epernon et à Hanches”, Le Monde des Moulins, 24, avril 2008" },
+                        { "id": 1, "isNumbered": true, "annotationNumber": 3, "text": "Jean-Paul Duc (dir.), “Histoire des carrières d’Epernon”, Association Epernon Patrimoine et Alentours, Epernon, 2012" }
+                    ],
+                    "image": {
+                        "id": 0,
+                        "src": "image_liste",
+                        "legend": "Biopierre"
+                    }
+                },
+                {
+                    "id": 7,
+                    "title": "Désindustrialisation et pertes de savoirs",
+                    "subtitle": "La perte des savoirs de la pierre à Epernon",
+                    "texts": [
+                        { "id": 0, "text": "Comme dit précédemment, l’industrialisation du secteur agricole a fragilisé les pratiques de la pierre, notamment pour ce qui est de la fabrication de pierres de meules de moins en moins demandée. Cependant, le travail de conception de pavés subsistait. Mais la technique du Macadam se démocratise. Cette invention de John Loundon McAdam consiste à déverser des couches successives de pierres concassées, liées avec du sable et de l’eau et ensuite compresser. Cette nouvelle pratique bien plus efficiente en termes de temps, et de moyen vient rapidement supplanter le revêtement par pavage. Cela sonnera le glas de nombreuses sociétés qui fabriquaient des pavés, et tout particulièrement pour la Société Générale meulière d’Epernon. C’est ainsi que les dernières pratiques, et les derniers savoirs de la pierre se sont évaporés sur le territoire. Les carrières ferment donc les unes après les autres, laissant de côté de nombreux ouvriers harassés par leurs tâches, après un siècle fastueux sur le plan industriel à Epernon. Il reste donc à ce territoire à se renouveler, imaginer la mise en place de nouvelles pratiques, et de nouveaux savoirs.", "font": null, "classNames": ""},
+                        { "id": 1, "text": "Au fur et à mesure de ma recherche, en apprenant à quel point furent prépondérants les différents savoirs et pratiques de la pierre à Epernon, je suis d’autant plus étonné du peu de traces, de vestiges qui viennent relater cette histoire. Pourquoi n’ont-ils pas réussi à diversifier leur production ? À appliquer leurs connaissances à de nouvelles pratiques qui auraient permis à ce patrimoine de subsister ? Encore des questions aujourd’hui sans réponse. Mais je souhaite ici quand même émettre une hypothèse. N’y avait-il pas à cette époque une volonté politique de métropolisation du territoire ? Une volonté qui se serait traduite par un manque de soutien lors de cette crise connue par le secteur d’activité de la pierre. Additionné à une envie de moderniser l’industrie au sein du territoire, à travers la création de différentes usines pétrochimiques qui représentaient l’avenir à ce moment-là.", "font": "helvetica", "classNames": ""}
+                    ],
+                    "annotations": [
+                        { "id": 0, "isNumbered": true, "annotationNumber": 2, "text": "Sabine Barles, “La rue parisienne au xixe siècle : standardisation et contrôle ?”, dans Romantisme, 171, 2016, p 15-28." },
+                        { "id": 1, "isNumbered": true, "annotationNumber": 3, "text": "Jean-Paul Duc (dir.), “Histoire des carrières d’Epernon”, Association Epernon Patrimoine et Alentours, Epernon, 2012" }
+                    ],
+                    "image": {
+                        "id": 0,
+                        "src": "image_liste",
+                        "legend": "Biopierre"
+                    }
+                },
+                {
+                    "id": 8,
+                    "title": "Désindustrialisation et pertes de savoirs",
+                    "subtitle": "Le déplacement des savoirs",
+                    "texts": [
+                        { "id": 0, "text": "Durant la Seconde Guerre mondiale, Epernon fut sévèrement bombardée, à tel point qu’à la fin de cette guerre, la ville se verra décerner la médaille de guerre au titre de ville martyr. La gare fut détruite, compromettant l’ensemble des importations de matières premières, et l’exportation des productions sparnonienne. Mais Epernon va rebondir. Les lois de décentralisation industrielle de 1952 ont permis au maire de l’époque, Alfred Manceau, d’accueillir en périphérie du centre-ville des usines parisiennes qui ne souhaitaient pas s’excentrer de manière excessive de Paris, en proposant de céder leurs terrains vacants. L’implantation des différentes usines, dans la nouvelle zone industrielle de la rue Saint-Denis, va faire accroître de manière exceptionnelle la population d’Epernon. Les différents maires qui se succèdent décident donc, parallèlement à l’apparition de ces usines, de la construction d’unités d’habitation afin d’accueillir ces nouveaux venus, qui sont souvent des jeunes couples avec enfant, ce qui provoque un rajeunissement de la population d’Epernon.", "font": null, "classNames": ""},
+                        { "id": 1, "text": "Mon grand-père, sparnonien de naissance, a été un des premiers à travailler dans une de ces nouvelles usines. Il était salarié de la société Grace. Une entreprise, qui existe encore aujourd’hui, et qui est spécialisée dans l’industrie pétrochimique. Les productions sont diversifiées, les salariés fabriquent aussi bien des emballages plastiques destinés au conditionnement des productions agroalimentaires, que des joints liquide en caoutchouc. Je n’ai que peu de souvenirs de mon grand-père nous narrant ses années dans cette usine, mais j’ai toujours eu la sensation qu’il était heureux de travailler là-bas. J’ai donc posé des questions à ma mère, sa fille. Elle me parla de monsieur Baroin, alias « Nounours », qui comme le montre sûrement ce surnom, était apprécié par l’ensemble de ces employés. Elle se souvient de jours heureux qui, selon elle, n’étaient peut-être que le simulacre de cette époque d’après-guerre, notamment durant la période des Trente Glorieuses.", "font": "helvetica", "classNames": ""}
+                    ],
+                    "annotations": [
+                        { "id": 0, "isNumbered": true, "annotationNumber": 2, "text": "Jean-Paul Duc, “La zone industrielle d’Epernon”, Association Epernon Patrimoine et Alentours, Epernon, 2016" }
+                    ],
+                    "image": {
+                        "id": 0,
+                        "src": "image_liste",
+                        "legend": "Biopierre"
+                    }
+                },
+                {
+                    "id": 9,
+                    "title": "Désindustrialisation et pertes de savoirs",
+                    "subtitle": "Influences de la désindustrialisation sur Epernon",
+                    "texts": [
+                        { "id": 0, "text": "Durant la période des trente glorieuses, le développement de la ville s’accroît de manière effrénée. De nouvelles infrastructures voient le jour, une station d’épurations, des écoles, un collège, de nouvelles voies de circulations… Tout cela sans dénaturer le centre-ville et son patrimoine architectural. Mais arriva le choc pétrolier, en 1983, qui impacta bien évidemment l’ensemble de la zone industrielle. C’est l’heure de la désindustrialisation. La France est aujourd’hui le pays le plus désindustrialisé d’Europe. L’ouverture à la concurrence, la disparition de la machine-outil au profit de l’automatisation des chaînes de travail, font partie des raisons de cette disparition de nombreux emplois industriels. Cette désindustrialisation toucha, bien évidemment, Épernon, favorisant un phénomène de métropolisation. En effet, la réduction du marché du travail à Épernon, à imposé aux travailleurs, ouvriers de se déplacer vers la grande région la plus proche, l’Ile-de-France, et notamment Paris, transfigurant Épernon de ville industrielle prospère à ville dortoir. Pour pallier à cela et recréer de l’activité dans la ville, les différentes municipalités ont engagé de grands travaux dans le secteur des loisirs, avec une dotation d’infrastructures sportives exceptionnelles, ainsi que différents pôles culturels, image d’une patrimonialisation de plus en plus prégnante au sein de ce territoire.", "font": null, "classNames": ""},
+                        { "id": 1, "text": "Moi-même j’ai pu voir mon territoire évoluer. Je me souviens, étant enfant j'allais dans les vergers, voler quelques pommes à ce pauvre cueilleur. Aujourd’hui sur ces terrains se trouvent différentes habitations, construites à vitesse éclair, et de pauvre facture, pour qu’Épernon devienne une commune résidentielle, qui assume son statut de ville dortoir. L’ensemble de ces travaux avait pour objectif de faire d’Épernon une métropole. Cela a eu comme effet néfaste de la dénué de son identité, de son histoire. J’en suis la preuve, étant né là-bas, ayant encore ma famille là-bas, je ne connais que quelques bribes de ce qui est le passé de ma commune. Mais l’étude de ce territoire m’aura fait changer la vision que je porte sur ce territoire, j’ai pu l’identifier à travers ce patrimoine des savoirs et des pratiques autour de la pierre.", "font": "helvetica", "classNames": ""}
+                    ],
+                    "annotations": [
+                        { "id": 0, "isNumbered": true, "annotationNumber": 2, "text": "Jean Fourastié, “Les Trentes Glorieuses”, Fayard, Paris, 21 février 1979." }
                     ],
                     "image": {
                         "id": 0,
