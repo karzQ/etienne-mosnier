@@ -1,5 +1,8 @@
+@import './import-fonts.css';
+
 * {
   box-sizing: border-box;
+  font-family: 'Degular';
 }
 
 html {

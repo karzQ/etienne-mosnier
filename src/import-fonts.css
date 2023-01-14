@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Degular';
+    src: url('fonts/Degular Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Degular';
+    src: url('fonts/Degular Bold.ttf');
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Degular';
+    src: url('fonts/Degular Bold Italic.ttf');
+    font-weight: bold;
+    font-style: italic, oblique;
+}

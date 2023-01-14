@@ -97,9 +97,8 @@ const Text = (props: TextComponent) => {
         <>
             <div className='Text'>
                 <div className={"left animate__animated animate__fadeInLeft"}>
-                    <div className="title">
-                        {activePage.title}
-                    </div>
+                    <div className="title"
+                        dangerouslySetInnerHTML={{ __html: activePage.title}}></div>
 
                     <div className="subtitle">
                         {activePage.subtitle}

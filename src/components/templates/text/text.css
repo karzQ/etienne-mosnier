@@ -26,10 +26,24 @@
     align-self: center;
 }
 
+.Text .left {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
 .Text .left .title{
     margin-top: 0;
     font-weight: bold;
     font-size: xxx-large;
+    line-height: normal;
+    hyphens: auto;
+    margin-bottom: 40px;
+}
+
+.Text .left .subtitle {
+    margin-top: 0;
+    font-size: x-large;
     line-height: normal;
 }
 
@@ -54,6 +68,10 @@
     padding-bottom: 20px;
 }
 
+.Text .middle .texts_container .subtext sup {
+    font-size: 8px;
+}
+
 .Text .middle .additional_texts {
     display: flex;
     flex-direction: column;
@@ -71,7 +89,7 @@
 .Text .middle .additional_texts .numbered {
     display: flex;
     flex-direction: column;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .Text .middle .additional_texts span {
@@ -82,23 +100,6 @@
 
 .Text .middle .additional_texts span.content_annotations {
     margin-bottom: 30px;
-}
-
-.Text .left {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-}
-
-.Text .left .title {
-    margin-bottom: 40px;
-}
-
-.Text .left .subtitle {
-    margin-top: 0;
-    font-weight:bold;
-    font-size: x-large;
-    line-height: normal;
 }
 
 .Text .right {
