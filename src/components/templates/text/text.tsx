@@ -15,7 +15,7 @@ import MobileStepper from '@mui/material/MobileStepper';
 const Text = (props: TextComponent) => {
 
     const theme = useTheme();
-    const { pages } = props
+    const { id, pages } = props
     const [pageNumber, setPageNumber] = useState<number>(0)
     const [action, setAction] = useState<string>('init')
     const [activePage, setActivePage] = useState<any>(pages[pageNumber])
@@ -38,14 +38,27 @@ const Text = (props: TextComponent) => {
     };
 
     const TextsList = (props: {texts: SubTextComponent[]}) => {
-        const {texts} = props
+        const { texts } = props
+        
+        const ApplyStyles = (id: number, text: any) => {
+            const styles: any = {}
+
+            if (text.font) {
+                styles['fontFamily'] = text.font
+            }
+            if (id === 1) {
+                styles['fontStyle'] = 'italic'
+            }
+
+            return styles
+        }
+
         return (
             <div className="texts_container  animate__animated  animate__fadeInDown">
                 {
                     texts.length > 0 && texts.map((text: SubTextComponent, id: number) => (
-                        <span key={`${id}-${text.id}`}
+                        <span style={ApplyStyles(id, text)} key={`${id}-${text.id}`}
                             className='subtext'
-                            style={text.font ? {'fontFamily': text.font} : {}} 
                             dangerouslySetInnerHTML={{ __html: ApplySup(text.text) }}>
                         </span>
                     ))
@@ -81,6 +94,10 @@ const Text = (props: TextComponent) => {
             </>
         )
     }
+
+    useEffect(() => {
+        console.log({props})
+    }, [])
 
     useEffect(() => {
         setActivePage((val: any) => pages[pageNumber])
@@ -129,8 +146,8 @@ const Text = (props: TextComponent) => {
                 </div>
 
                 <div className='right animate__animated  animate__fadeInRight'>
-                    <div className='image_container'>{}
-                        <Image src={activePage.image.src}/>
+                    <div className='image_container'>
+                        <Image name={id} src={activePage.image.src}/>
                         {
                             activePage.image.legend && <span className='image_title'>{activePage.image.legend}</span>
                         }
