@@ -13,12 +13,6 @@
     grid-gap: 39.7px;
 }
 
-.Text .left {
-    max-width: 343px;
-    /* hyphens: auto; */
-    /* -webkit-hyphens: auto; */
-}
-
 .Text .left, .right, .middle {
     position: relative;
     /* background-color: antiquewhite; */
@@ -76,7 +70,7 @@
     display: flex;
     flex-direction: column;
 
-    padding : 0px 39.7px;
+    padding-right: 39.7px;
     gap: 15px;
     color: grey;
     font-style: italic;
