@@ -87,6 +87,11 @@
 .Text .middle .additional_texts .numbered {
     display: flex;
     flex-direction: column;
+    gap: 20px
+}
+
+.Text .middle .additional_texts .not_numbered {
+    gap: 20px
 }
 
 .Text .middle .additional_texts span {
@@ -94,10 +99,10 @@
     hyphens: auto;
 }
 
-
+/* 
 .Text .middle .additional_texts span.content_annotations {
     margin-bottom: 20px;
-}
+} */
 
 .Text .right {
     min-width: fit-content;
