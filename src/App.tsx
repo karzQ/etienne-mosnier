@@ -1,5 +1,6 @@
 import './App.css'
 
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { architecture, templates } from './config'
 import { useEffect, useState } from 'react'
 
@@ -14,7 +15,9 @@ const App = () => {
 
   const DynamicComponent = (props: any) => {
     const Component = templates[props.template]
-    return <Component {...props} />
+    return (
+        <Component {...props} />
+    )
   }
 
   useEffect(() => {
@@ -30,9 +33,16 @@ const App = () => {
   return (
     <div className="App">
       <Header links={pages} setSelectedLink={setSelectedLink} />
-      {
-        activePage && <DynamicComponent {...activePage} />
-      }
+      <BrowserRouter>
+        <Routes>
+          <Route path={activePage ? `/${activePage.id}` : '/error'}>
+            {
+              activePage && <DynamicComponent {...activePage} />
+            }
+          </Route>
+        </Routes>
+      </BrowserRouter>
+      
     </div>
   )
 }
