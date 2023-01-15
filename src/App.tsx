@@ -1,8 +1,8 @@
 import './App.css'
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, BrowserRouter as Router, Routes, redirect } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
 import { architecture, templates } from './config'
-import { useEffect, useState } from 'react'
 
 import Header from './components/Header/header'
 import credits from './credits'
@@ -16,7 +16,24 @@ const App = () => {
   const DynamicComponent = (props: any) => {
     const Component = templates[props.template]
     return (
-        <Component {...props} />
+      <Component {...props} />
+    )
+  }
+
+  const CustomRoute = (props: any) => {
+    return (
+      <Routes>
+        <Route path={`/${activePage.id}`} element={activePage ? <DynamicComponent {...props} /> : <ErrorPage />} />
+        <Route path='/' element={activePage ? <Navigate to={`/${activePage.id}`}/>  : <ErrorPage />} />
+      </Routes>
+    )
+  }
+
+  const ErrorPage = (props: any) => {
+    return (
+      <div>
+        An error has occured
+      </div>
     )
   }
 
@@ -32,17 +49,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header links={pages} setSelectedLink={setSelectedLink} />
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path={activePage ? `/${activePage.id}` : '/error'}> */}
-            {
-              activePage && <DynamicComponent {...activePage} />
-            }
-          {/* </Route>
-        </Routes>
-      </BrowserRouter> */}
-      
+      <Router>
+        <Header links={pages} setSelectedLink={setSelectedLink} />
+        <CustomRoute {...activePage} />
+      </Router>
     </div>
   )
 }

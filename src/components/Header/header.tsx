@@ -4,6 +4,7 @@ import 'animate.css'
 import React, { useEffect } from "react";
 
 import { Capitalize } from '../../helpers/functions';
+import { Link } from 'react-router-dom';
 import cailloux_gif from '../../assets/img/cailloux.gif'
 import cailloux_static from '../../assets/img/cailloux_fixed.png'
 
@@ -22,7 +23,7 @@ const Header = (props: any) => {
                     <div className="links animate__animated animate__fadeInRight animate__faster">
                         {
                             links && links.length > 0 && links.map((item: any, id: number) => (
-                                <a key={`${id}-${item.id}`} href="#" onClick={() => setSelectedLink(item.id)}>{Capitalize(item.name)}</a>
+                                <Link key={`${id}-${item.id}`} to={`/${item.id}`} onClick={() => setSelectedLink(item.id)}>{Capitalize(item.name)}</Link>
                             ))
                         }
                     </div>
