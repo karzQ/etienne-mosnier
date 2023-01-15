@@ -33,15 +33,15 @@ const App = () => {
   return (
     <div className="App">
       <Header links={pages} setSelectedLink={setSelectedLink} />
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
-          <Route path={activePage ? `/${activePage.id}` : '/error'}>
+          <Route path={activePage ? `/${activePage.id}` : '/error'}> */}
             {
               activePage && <DynamicComponent {...activePage} />
             }
-          </Route>
+          {/* </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
       
     </div>
   )
