@@ -2,11 +2,11 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Degular';
 }
 
 html {
   overflow: hidden;
+  font-family: 'Degular Display';
 }
 
 ::-webkit-scrollbar {

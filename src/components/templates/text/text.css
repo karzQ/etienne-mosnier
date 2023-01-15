@@ -34,12 +34,14 @@
     line-height: normal;
     /* hyphens: auto; */
     margin-bottom: 40px;
+    font-family: 'Degular Display Title';
 }
 
 .Text .left .subtitle {
     margin-top: 0;
     font-size: x-large;
     line-height: normal;
+    font-family: 'Degular Display Subtitle';
 }
 
 .Text .middle {
@@ -61,6 +63,7 @@
 .Text .middle .texts_container .subtext {
     width: 100%;
     padding-bottom: 20px;
+    font-family: 'Degular Display Text';
 }
 
 .Text .middle .texts_container .subtext sup {
@@ -74,7 +77,7 @@
     padding-right: 39.7px;
     gap: 35px;
     color: grey;
-    font-style: italic;
+    font-family: 'Degular Display Note';
     text-align: right;
     min-width: 200px;
     font-size: 10px;

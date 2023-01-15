@@ -43,11 +43,8 @@ const Text = (props: TextComponent) => {
         const ApplyStyles = (id: number, text: any) => {
             const styles: any = {}
 
-            if (text.font) {
-                styles['fontFamily'] = text.font
-            }
             if (id === 1) {
-                styles['fontStyle'] = 'italic'
+                styles['fontFamily'] = 'Degular Display Italic'
             }
 
             return styles
