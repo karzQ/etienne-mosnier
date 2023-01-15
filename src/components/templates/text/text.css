@@ -115,7 +115,7 @@
 
 .Text .right .image_container .image_title {
     color: grey;
-    font-style: italic;
+    /* font-style: italic; */
     text-align: center;
     min-width: 300px;
     font-size: 12px;
