@@ -2,10 +2,10 @@ import './text.css'
 import 'animate.css'
 
 import { AnnotationsComponent, PageComponent, SubTextComponent, TextComponent } from '../../../vite-env';
+import { ApplySup, SanitizeFilename } from '../../../helpers/functions'
 import { createTheme, useTheme } from '@mui/material/styles';
 import { useCallback, useEffect, useState } from "react";
 
-import { ApplySup } from '../../../helpers/functions'
 import Button from '@mui/material/Button';
 import Image from '../../Image/Image';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
@@ -54,7 +54,7 @@ const Text = (props: TextComponent) => {
         }
 
         return (
-            <div className="texts_container  animate__animated  animate__fadeInDown">
+            <>
                 {
                     texts.length > 0 && texts.map((text: SubTextComponent, id: number) => (
                         <span style={ApplyStyles(id, text)} key={`${id}-${text.id}`}
@@ -63,7 +63,7 @@ const Text = (props: TextComponent) => {
                         </span>
                     ))
                 }
-            </div>
+            </>
         )
     }
 
@@ -124,15 +124,11 @@ const Text = (props: TextComponent) => {
 
                 <div className="middle">
                     <div className={'additional_texts animate__animated  animate__fadeInUp'}>
-                        {/* {
-                            activePage.annotations && activePage.annotations.length > 0 && activePage.annotations.map((item: AnnotationsComponent, id: number) => (
-                                <span key={`${id}-${item.id}`} className='content_annotations'>{item.text}</span>
-                            ))
-                        } */}
                         {
                             activePage.annotations && activePage.annotations.length > 0 && <Annotations annotations={activePage.annotations} />
                         }
                     </div>
+
                     {
                         activePage?.text && (
                             <span className={'text animate__animated  animate__fadeInDown'}
@@ -140,16 +136,18 @@ const Text = (props: TextComponent) => {
                         )
                     }
 
-                    {
-                        activePage?.texts && <TextsList texts={activePage?.texts} />
-                    }
+                    <div className="texts_container  animate__animated  animate__fadeInDown">
+                        {
+                            activePage?.texts && <TextsList texts={activePage?.texts} />
+                        }
+                    </div>
                 </div>
 
                 <div className='right animate__animated  animate__fadeInRight'>
                     <div className='image_container'>
                         <Image name={id} src={activePage.image.src}/>
                         {
-                            activePage.image.legend && <span className='image_title'>{activePage.image.legend}</span>
+                            activePage.image.legend && <span className='image_title'>{SanitizeFilename(activePage.image.src)}</span>
                         }
                     </div>
                 </div>

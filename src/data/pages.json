@@ -275,6 +275,27 @@
                 { "id": 1, "name": "design" },
                 { "id": 2, "name": "art" }
             ]
+        },
+        {
+            "id": "archivage",
+            "name": "archivage",
+            "template": "gallery",
+            "title": "Archivage",
+            "images": [
+                { "id": 0, "src": "image_liste", "href": "#", "tag": "architecture", "text": "Biopierre" },
+                { "id": 1, "src": "image_liste", "href": "#", "tag": "design", "text": "Biopierre"  },
+                { "id": 2, "src": "image_liste", "href": "#", "tag": "design", "text": "Biopierre"  },
+                { "id": 3, "src": "image_liste", "href": "#", "tag": "art", "text": "Biopierre"  },
+                { "id": 4, "src": "image_liste", "href": "#", "tag": "architecture", "text": "Biopierre"  },
+                { "id": 5, "src": "image_liste", "href": "#", "tag": "art", "text": "Biopierre"  },
+                { "id": 6, "src": "image_liste", "href": "#", "tag": "architecture", "text": "Biopierre"  },
+                { "id": 7, "src": "image_liste", "href": "#", "tag": "art" ," text": "Biopierre" }
+            ],
+            "filters": [
+                { "id": 0, "name": "architecture" },
+                { "id": 1, "name": "design" },
+                { "id": 2, "name": "art" }
+            ]
         }
     ]
 }

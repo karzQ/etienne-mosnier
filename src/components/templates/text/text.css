@@ -24,10 +24,11 @@
     display: flex;
     flex-direction: column;
     text-align: right;
+    min-width: 375px;
 }
 
 .Text .left .title{
-    margin-top: -10px;
+    margin-top: -15px;
     font-weight: bold;
     font-size: xxx-large;
     line-height: normal;
@@ -71,11 +72,11 @@
     flex-direction: column;
 
     padding-right: 39.7px;
-    gap: 15px;
+    gap: 35px;
     color: grey;
     font-style: italic;
     text-align: right;
-    min-width: 300px;
+    min-width: 200px;
     font-size: 10px;
     line-height: 14px;
 }
@@ -83,7 +84,6 @@
 .Text .middle .additional_texts .numbered {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
 }
 
 .Text .middle .additional_texts span {
@@ -93,7 +93,7 @@
 
 
 .Text .middle .additional_texts span.content_annotations {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .Text .right {
@@ -104,10 +104,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
 .Text .right .image_container img {
     margin-bottom: 10px;
+    width: 100%;
+    height: auto;
 }
 
 .Text .right .image_container .image_title {
@@ -115,7 +118,7 @@
     font-style: italic;
     text-align: center;
     min-width: 300px;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .stepper {
