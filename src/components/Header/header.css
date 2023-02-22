@@ -42,3 +42,8 @@
     text-decoration: inherit;
     color: orangered;
 }
+
+.links .separator {
+    user-select: none;
+    -webkit-user-select: none;
+}

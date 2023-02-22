@@ -26,7 +26,7 @@ const Header = (props: any) => {
                                 <>
                                     <Link key={`${id}-${item.id}`} to={`/${item.id}`} onClick={() => setSelectedLink(item.id)}>{Capitalize(item.name)}</Link>
                                     {
-                                        id < links.length-1 ? '|' : ''
+                                        id < links.length-1 ? <span className='separator'>|</span> : ''
                                     }
                                 </>
                             ))
