@@ -1,9 +1,8 @@
 import './text.css'
 import 'animate.css'
 
-import { AnnotationsComponent, PageComponent, SubTextComponent, TextComponent } from '../../../vite-env';
+import { AnnotationsComponent, SubTextComponent, TextComponent } from '../../../vite-env';
 import { ApplySup, SanitizeFilename } from '../../../helpers/functions'
-import { createTheme, useTheme } from '@mui/material/styles';
 import { useCallback, useEffect, useState } from "react";
 
 import Button from '@mui/material/Button';
@@ -11,12 +10,15 @@ import Image from '../../Image/Image';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import MobileStepper from '@mui/material/MobileStepper';
+import { useParams } from 'react-router-dom'
+import { useTheme } from '@mui/material/styles';
 
 const Text = (props: TextComponent) => {
 
+    const {pageId} = useParams()
     const theme = useTheme();
     const { id, pages } = props
-    const [pageNumber, setPageNumber] = useState<number>(0)
+    const [pageNumber, setPageNumber] = useState<number>(pageId ? +pageId : 0)
     const [action, setAction] = useState<string>('init')
     const [activePage, setActivePage] = useState<any>(pages[pageNumber])
     const handleUserKeyPress = useCallback((event: any) => {
@@ -160,20 +162,20 @@ const Text = (props: TextComponent) => {
                     nextButton={
                         <Button size="small" onClick={handleNext} disabled={pageNumber === pages.length-1}>
                             Continuer
-                            {theme.direction === 'rtl' ? (
+                            {/* {theme.direction === 'rtl' ? (
                                 <KeyboardArrowLeft />
                             ) : (
                                 <KeyboardArrowRight />
-                            )}
+                            )} */}
                         </Button>
                     }
                     backButton={
                         <Button size="small" onClick={handleBack} disabled={pageNumber === 0}>
-                            {theme.direction === 'rtl' ? (
+                            {/* {theme.direction === 'rtl' ? (
                                 <KeyboardArrowRight />
                             ) : (
                                 <KeyboardArrowLeft />
-                            )}
+                            )} */}
                             Retour
                         </Button>
                     }

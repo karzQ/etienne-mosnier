@@ -18,7 +18,7 @@ const Image = (props: any) => {
 
     return (
         <Suspense fallback='Loading..'>
-            <img src={imagePath} />
+            <img className="image" src={imagePath} />
         </Suspense>
     )
 }

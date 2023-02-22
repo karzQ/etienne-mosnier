@@ -75,22 +75,19 @@
     grid-auto-columns: 1fr;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 1fr;
-    grid-gap: 39.7px;
+    grid-gap: 12px;
 }
 
 .Home .rightSide .imageContainer {
     position: relative;
     cursor: pointer;
+    width: 100%;
+    height: 100%;
 }
 
-.Home .rightSide .imageContainer {
-    width: fit-content;
-    height: fit-content;
-}
-
-.Home .rightSide .imageContainer .image {
-    width: auto;
-    height: auto;
+.Home .rightSide .imageContainer > .image {
+    width: inherit;
+    height: inherit;
 }
 
 .Home .rightSide .imageContainer .blackVeil {
@@ -102,7 +99,7 @@
     opacity: 0.15;
 
     width: 100%;
-    height: calc(100% - 5px);
+    height: 100%;
 }
 
 .Home .rightSide .imageContainer .text {

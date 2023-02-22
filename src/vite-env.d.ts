@@ -76,3 +76,7 @@ export type HomeComponent = {
     images: ImageComponent[],
     links: LinkComponent[]
 }
+
+export type IntroComponent = {
+    
+}
