@@ -2,7 +2,7 @@ import './App.css'
 
 import { Navigate, Route, BrowserRouter as Router, Routes, redirect } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
-import { architecture, templates } from './config'
+import { architecture, templates } from './config/config'
 
 import Header from './components/Header/header'
 import credits from './credits'

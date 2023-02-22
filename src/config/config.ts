@@ -1,11 +1,11 @@
 import { green, grey, purple } from '@mui/material/colors'
 
-import Gallery from './components/templates/gallery/gallery'
-import Home from './components/templates/home/home'
-import Intro from './components/templates/intro/intro'
-import Text from './components/templates/text/text'
+import Gallery from '../components/templates/gallery/gallery'
+import Home from '../components/templates/home/home'
+import Intro from '../components/templates/intro/intro'
+import Text from '../components/templates/text/text'
 import createTheme from '@mui/material/styles/createTheme'
-import pages from './data/pages.json'
+import pages from '../data/pages.json'
 
 export const baseUrl = 'https://frabjous-pika-33094a.netlify.app'
 

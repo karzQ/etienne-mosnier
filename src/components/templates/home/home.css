@@ -2,6 +2,14 @@
     width: 100%;
     height: 100%;
     
+    display: flex;
+    flex-direction: column;
+}
+
+.Home .main {
+    width: inherit;
+    height: inherit;
+
     display: grid;
 
     justify-content: center;
@@ -13,18 +21,18 @@
     grid-gap: 39.7px;
 }
 
-.Home .leftSide, .rightSide {
+.Home .main .leftSide, .rightSide {
     position: relative;
     height: 52%;
     align-self: center;
 }
 
-.Home .leftSide {
+.Home .main .leftSide {
     display: flex;
     flex-direction: row;
 }
 
-.Home .leftSide .left, .leftSide .right {
+.Home .main .leftSide .left, .leftSide .right {
     position: relative;
     width: 50%;
     height: 50%;
@@ -35,13 +43,13 @@
     align-self: auto;
 }
 
-.Home .leftSide .left {
+.Home .main .leftSide .left {
     height: 100%;
     padding-right: 19.85px;
     text-align: right;
 }
 
-.Home .leftSide .left .projectName{
+.Home .main .leftSide .left .projectName{
     margin-top: 0;
     margin-bottom: 40px;
     font-weight: bold;
@@ -50,26 +58,26 @@
     word-spacing: 100vw;
 }
 
-.Home .leftSide .left .subtitles {
+.Home .main .leftSide .left .subtitles {
     display: flex;
     flex-direction: column;
     align-items: right;
     gap: 10px;
 }
 
-.Home .leftSide .left .subtitles .subtitle {
+.Home .main .leftSide .left .subtitles .subtitle {
     margin-top: 0;
     font-size: x-large;
     line-height: normal;
 }
 
 
-.Home .leftSide .right {
+.Home .main .leftSide .right {
     padding-left: 19.85px;
     font-size: small;
 }
 
-.Home .rightSide {
+.Home .main .rightSide {
     display: grid;
     
     grid-auto-columns: 1fr;
@@ -78,19 +86,19 @@
     grid-gap: 12px;
 }
 
-.Home .rightSide .imageContainer {
+.Home .main .rightSide .imageContainer {
     position: relative;
     cursor: pointer;
     width: 100%;
     height: 100%;
 }
 
-.Home .rightSide .imageContainer > .image {
+.Home .main .rightSide .imageContainer > .image {
     width: inherit;
     height: inherit;
 }
 
-.Home .rightSide .imageContainer .blackVeil {
+.Home .main .rightSide .imageContainer .blackVeil {
     position: absolute;
     top: 0;
     left: 0;
@@ -102,7 +110,7 @@
     height: 100%;
 }
 
-.Home .rightSide .imageContainer .text {
+.Home .main .rightSide .imageContainer .text {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -115,4 +123,20 @@
     z-index: 9999;
 
     color: white;
+}
+
+.Home .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Home .footer .i18n {
+    display: flex;
+    flex-direction: row;
+}
+
+.Home .footer .i18n .i18nButtons {
+    cursor: pointer;
+    margin: 0 2.5px;
 }
