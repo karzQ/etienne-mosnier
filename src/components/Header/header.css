@@ -31,8 +31,14 @@
 
 .links {
     display: flex;
-    gap: 15px;
+    gap: 5px;
+    color: orangered;
 
     animation: "animate__fadeInRight";
     animation-duration: 2s;
+}
+
+.links a {
+    text-decoration: inherit;
+    color: orangered;
 }

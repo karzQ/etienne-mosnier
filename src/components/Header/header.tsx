@@ -20,10 +20,15 @@ const Header = (props: any) => {
                 onMouseOver={() => setIsShown(val => true)} />
             {
                 isShown && (
-                    <div className="links animate__animated animate__fadeInRight animate__faster">
+                    <div className="links">
                         {
                             links && links.length > 0 && links.map((item: any, id: number) => (
-                                <Link key={`${id}-${item.id}`} to={`/${item.id}`} onClick={() => setSelectedLink(item.id)}>{Capitalize(item.name)}</Link>
+                                <>
+                                    <Link key={`${id}-${item.id}`} to={`/${item.id}`} onClick={() => setSelectedLink(item.id)}>{Capitalize(item.name)}</Link>
+                                    {
+                                        id < links.length-1 ? '|' : ''
+                                    }
+                                </>
                             ))
                         }
                     </div>
