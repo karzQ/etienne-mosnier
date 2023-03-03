@@ -2,15 +2,15 @@ import './home.css'
 
 import { HomeComponent, ImageComponent, SubtitleComponent } from '../../../vite-env';
 
-import Image from '../../Image/Image';
+import React from 'react';
 import { changeLanguage } from 'i18next';
-import {useState} from "react";
+import { useTranslation } from 'react-i18next';
 
 const Home = (props: HomeComponent) => {
 
-    const { title, subtitles, images } = props
-    const [hoverImage, setHoverImage] = useState<ImageComponent | null>(null);
- 
+    const { t } = useTranslation();
+    const { title, subtitles, images } = props;
+
     return (
         <div className='Home'>
             <div className='main'>
@@ -26,7 +26,7 @@ const Home = (props: HomeComponent) => {
                         </div>
                     </div>
                     <div className="right">
-                        <span></span>
+                        <span>{t('abstract')}</span>
                     </div>
                 </div>
 

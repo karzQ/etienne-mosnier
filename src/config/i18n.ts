@@ -1,4 +1,5 @@
-import detector from "i18next-browser-languagedetector";
+import Backend from "i18next-xhr-backend";
+import LanguageDetector from "i18next-browser-languagedetector";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import translationsEN from "../translations/en.json"
@@ -9,24 +10,28 @@ import translationsFR from "../translations/fr.json"
 // or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
 const resources = {
     en: {
-        translationsEN
+        translation : translationsEN
     },
     fr: {
-        translationsFR
+        translation : translationsFR
     }
 };
 
 i18n
-    .use(detector)
+    .use(Backend)
+    .use(LanguageDetector)
     .use(initReactI18next) // passes i18n down to react-i18next
     .init({
         resources,
-    lng: "fr", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
-    // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
-    // if you're using a language detector, do not define the lng option
+        lng: "fr", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
+        // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
+        // if you're using a language detector, do not define the lng option
 
-    interpolation: {
-      escapeValue: false // react already safes from xss
-    }
-});
+        fallbackLng: "fr",
+        debug: true,
+        
+        interpolation: {
+            escapeValue: false // react already safes from xss
+        }
+    });
 export default i18n;
