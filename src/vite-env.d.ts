@@ -28,7 +28,7 @@ export type AnnotationsComponent = {
     annotationNumber?: number
 }
 
-export type SubtitleComponent = {
+export type LinkComponent = {
     id: number,
     text: string
 }
@@ -62,16 +62,11 @@ export type TextComponent = {
     pages: PageComponent[]
 }
 
-export type LinkComponent = {
-    id: number,
-    pageId: string,
-}
-
 export type HomeComponent = {
     id: string,
     name: string,
     template: string,
-    subtitles: SubtitleComponent[],
+    subtitle: string,
     title: string,
     images: ImageComponent[],
     links: LinkComponent[]

@@ -1,6 +1,6 @@
 import './home.css'
 
-import { HomeComponent, ImageComponent, SubtitleComponent } from '../../../vite-env';
+import { HomeComponent, LinkComponent } from '../../../vite-env';
 
 import React from 'react';
 import { changeLanguage } from 'i18next';
@@ -9,33 +9,30 @@ import { useTranslation } from 'react-i18next';
 const Home = (props: HomeComponent) => {
 
     const { t } = useTranslation();
-    const { title, subtitles, images } = props;
+    const { title, subtitle, links } = props;
 
     return (
         <div className='Home'>
+            <div className='titles'>
+                <h1>{title}</h1>
+                <h4>{subtitle}</h4>
+            </div>
             <div className='main'>
                 <div className="leftSide">
-                    <div className="left">
-                        <div className="projectName">{title}</div>
-                        <div className='subtitles'>
-                            {
-                                subtitles && subtitles.length > 0 && subtitles.map((subtitle: SubtitleComponent, id: number) => (
-                                    <span key={`${id}-${subtitle.id}`} className='subtitle'>{subtitle.text}</span>
-                                ))
-                            }
-                        </div>
-                    </div>
-                    <div className="right">
-                        <span>{t('abstract')}</span>
+                    <div className='categories'>
+                        {
+                            links && links.length > 0 && links.map((link: LinkComponent, id: number) => (
+                                <div key={`${id}-${link.id}`} className='subtitle'>
+                                    <span>0{id+1} |</span>
+                                    <span>{link.text}</span>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
 
                 <div className='rightSide'>
-                    {
-                        images && images.length > 0 && images.map((image: ImageComponent, id: number) => (
-                            <div key={`${id}-${image.id}`} className="imageContainer" onClick={() => console.log(image.href)}></div>
-                        ))
-                    }
+                    <span>{t('abstract')}</span>
                 </div>
             </div>
             <div className='footer'>
