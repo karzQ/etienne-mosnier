@@ -118,15 +118,6 @@
     flex-direction: column;
 }
 
-.Home .titles h1 {
-    font-size: 4em;
-}
-
-.Home .titles h4 {
-    margin-top: 5px;
-    font-size: 1.5em;
-}
-
 .Home .main {
     position: relative;
     width: inherit;
@@ -146,9 +137,6 @@
 .Home .main .right {
     height: 100%;
     width: 67%;
-    text-align: justify;
-    hyphens: auto;
-
     color: black;
 }
 

@@ -32,12 +32,15 @@ html {
 }
 
 .titles h1 {
-
+  font-size: 4em;
 }
 
 .titles h4 {
-
+  margin-top: 5px;
+  font-size: 1.5em;
 }
+
+/* 54.925px => h4's placeholder */
 
 .link {
   font-size: 1.5em;
@@ -49,4 +52,6 @@ html {
   color: initial;
   font-size: 1.25em;
   line-height: 1.30;
+  text-align: justify;
+  hyphens: auto;
 }
