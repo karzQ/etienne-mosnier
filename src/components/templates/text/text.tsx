@@ -112,7 +112,7 @@ const Text = (props: TextComponent) => {
     return (
         <>
             <div className='Text'>
-                <div className={"left animate__animated animate__fadeInLeft"}>
+                <div className="left">
                     <div className="title"
                         dangerouslySetInnerHTML={{ __html: activePage.title}}></div>
 
@@ -122,7 +122,7 @@ const Text = (props: TextComponent) => {
                 </div>
 
                 <div className="middle">
-                    <div className={'additional_texts animate__animated  animate__fadeInUp'}>
+                    <div className={'additional_texts'}>
                         {
                             activePage.annotations && activePage.annotations.length > 0 && <Annotations annotations={activePage.annotations} />
                         }
@@ -130,29 +130,24 @@ const Text = (props: TextComponent) => {
 
                     {
                         activePage?.text && (
-                            <span className={'text animate__animated  animate__fadeInDown'}
+                            <span className={'text'}
                                 dangerouslySetInnerHTML={{ __html: ApplySup(activePage?.text) }}></span>
                         )
                     }
 
-                    <div className="texts_container  animate__animated  animate__fadeInDown">
+                    <div className="texts_container">
                         {
                             activePage?.texts && <TextsList texts={activePage?.texts} />
                         }
                     </div>
                 </div>
 
-                <div className='right animate__animated  animate__fadeInRight'>
-                    <div className='image_container'>
-                        <Image name={id} src={activePage.image.src}/>
-                        {
-                            activePage.image.legend && <span className='image_title'>{SanitizeFilename(activePage.image.src)}</span>
-                        }
-                    </div>
+                <div className='right'>
+                    
                 </div>
             </div>
 
-            <div className="stepper animate__animated  animate__fadeInUp">
+            <div className="stepper">
                 <MobileStepper
                     variant="progress"
                     steps={pages.length}
@@ -161,7 +156,7 @@ const Text = (props: TextComponent) => {
                     sx={{ maxWidth: 500, flexGrow: 1 }}
                     nextButton={
                         <Button size="small" onClick={handleNext} disabled={pageNumber === pages.length-1}>
-                            Continuer
+                            {pageNumber == 0 ?  "Commencer" : "Continuer"}
                             {/* {theme.direction === 'rtl' ? (
                                 <KeyboardArrowLeft />
                             ) : (
@@ -176,7 +171,7 @@ const Text = (props: TextComponent) => {
                             ) : (
                                 <KeyboardArrowLeft />
                             )} */}
-                            Retour
+                            {pageNumber == 0 ?  "" : "Retour"}
                         </Button>
                     }
                 />

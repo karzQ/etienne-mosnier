@@ -7,10 +7,10 @@
             "title": "Reprise de savoirs à l'ère post-industrielle",
             "subtitle": "Réinscrire la transmission et production des savoirs et savoir-faire dans des territoires de vie",
             "links": [
-                { "id": 0, "src": "epernon", "href": "#", "text": "Epernon et son industrie" },
-                { "id": 1, "src": "patrimonialisation", "href": "#", "text": "Réactiver un patrimoine"  },
-                { "id": 2, "src": "boite a outils", "href": "#", "text": "Boîte à outils : Reprises"  },
-                { "id": 3, "src": "documentation", "href": "#", "text": "Archivage de la pratique"  }
+                { "id": 0, "src": "epernon", "text": "Epernon et son industrie" },
+                { "id": 1, "src": "patrimonialisation", "text": "Réactiver un patrimoine"  },
+                { "id": 2, "src": "boite_a_outils", "text": "Boîte à outils : Reprises"  },
+                { "id": 3, "src": "archivage", "text": "Archivage de la pratique"  }
             ]
         },
         {

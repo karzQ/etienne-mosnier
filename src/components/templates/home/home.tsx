@@ -2,6 +2,7 @@ import './home.css'
 
 import { HomeComponent, LinkComponent } from '../../../vite-env';
 
+import { Link } from 'react-router-dom';
 import React from 'react';
 import { changeLanguage } from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -9,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 const Home = (props: HomeComponent) => {
 
     const { t } = useTranslation();
-    const { title, subtitle, links } = props;
+    const { title, subtitle, links, setSelectedLink } = props;
 
     return (
         <div className='Home'>
@@ -18,20 +19,19 @@ const Home = (props: HomeComponent) => {
                 <h4>{subtitle}</h4>
             </div>
             <div className='main'>
-                <div className="leftSide">
+                <div className="left">
                     <div className='categories'>
                         {
                             links && links.length > 0 && links.map((link: LinkComponent, id: number) => (
-                                <div key={`${id}-${link.id}`} className='subtitle'>
-                                    <span>0{id+1} |</span>
-                                    <span>{link.text}</span>
-                                </div>
+                                <Link key={`${id}-${link.id}`} to={`/${link.src}`} className='link' onClick={() => setSelectedLink(link.src)}>
+                                    <span>0{id+1} |<br></br>{link.text}</span>
+                                </Link>
                             ))
                         }
                     </div>
                 </div>
 
-                <div className='rightSide'>
+                <div className='right text'>
                     <span>{t('abstract')}</span>
                 </div>
             </div>

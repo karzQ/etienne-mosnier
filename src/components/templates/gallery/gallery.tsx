@@ -1,6 +1,6 @@
 import './gallery.css'
 
-import { GalleryComponent, ImageComponent, SubtitleComponent } from '../../../vite-env';
+import { GalleryComponent, ImageComponent } from '../../../vite-env';
 
 import { Capitalize } from '../../../helpers/functions';
 import Image from "../../Image/Image";
@@ -30,7 +30,7 @@ const Gallery = (props: GalleryComponent) => {
 
     return (
         <div className='Gallery'>
-            <div className="leftSide animate__animated animate__fadeInUp">
+            <div className="leftSide">
                 <div className="left">
                     <span className="projectName">{title}</span>
                 </div>
@@ -56,7 +56,7 @@ const Gallery = (props: GalleryComponent) => {
                 </div>
             </div>
 
-            <div className='rightSide animate__animated animate__fadeInDown'>
+            <div className='rightSide'>
                 <div className={`images ${filteredImages.length > 4 ? 'scrollable' : ''}`}>
                     {
                         filteredImages.map((image: ImageComponent, id) => {
@@ -69,7 +69,7 @@ const Gallery = (props: GalleryComponent) => {
                                         hoverImage && hoverImage.id === image.id && (
                                             <>
                                                 <div className="blackVeil"></div>
-                                                <span className="text animate__animated animate__fadeInUp animate__faster">{image.text}</span>
+                                                <span className="text">{image.text}</span>
                                             </>
                                         )
                                     }
@@ -79,21 +79,6 @@ const Gallery = (props: GalleryComponent) => {
                         })
                     }
                 </div>
-                <div className='filters'>
-                    <h2>Collections</h2>
-                    {
-                        filters && filters.length > 0 && filters.map((filter, id) => {
-                            return (
-                                <span key={`${id}-${filter.id}`} className="filter-container">
-                                    <div className={`filter ${(flt && flt === filter.name) && 'selected'}`}
-                                    onClick={() => applyFilter(filter.name)}
-                                        key={id}>{Capitalize(filter.name)}</div>
-                                </span>
-                            )
-                        })
-                    }
-                </div>
-                
             </div>
         </div>
     )

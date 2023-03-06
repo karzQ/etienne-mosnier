@@ -30,7 +30,8 @@ export type AnnotationsComponent = {
 
 export type LinkComponent = {
     id: number,
-    text: string
+    text: string,
+    src?: string
 }
 
 export type PageComponent = {
@@ -69,7 +70,8 @@ export type HomeComponent = {
     subtitle: string,
     title: string,
     images: ImageComponent[],
-    links: LinkComponent[]
+    links: LinkComponent[],
+    setSelectedLink: Function
 }
 
 export type IntroComponent = {

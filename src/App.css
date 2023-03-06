@@ -30,3 +30,23 @@ html {
 
   justify-content: center;
 }
+
+.titles h1 {
+
+}
+
+.titles h4 {
+
+}
+
+.link {
+  font-size: 1.5em;
+  line-height: 1.25;
+  font-weight: bolder;
+}
+
+.text span {
+  color: initial;
+  font-size: 1.25em;
+  line-height: 1.30;
+}

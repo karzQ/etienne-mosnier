@@ -2,7 +2,6 @@ import { green, grey, purple } from '@mui/material/colors'
 
 import Gallery from '../components/templates/gallery/gallery'
 import Home from '../components/templates/home/home'
-import Intro from '../components/templates/intro/intro'
 import Text from '../components/templates/text/text'
 import createTheme from '@mui/material/styles/createTheme'
 import pages from '../data/pages.json'
@@ -14,8 +13,7 @@ export const baseURL: string = ''
 export const templates: any = {
   gallery: Gallery,
   home: Home,
-  text: Text,
-  intro: Intro
+  text: Text
 }
 
 export const theme = createTheme({

@@ -14,6 +14,9 @@ const App = () => {
   const [activePage, setActivePage] = useState<any>(pages.filter((page:any) => page.id === 'accueil')[0])
 
   const DynamicComponent = (props: any) => {
+
+    console.log({props})
+
     const Component = templates[props.template]
     return (
       <Component {...props} />
@@ -21,6 +24,7 @@ const App = () => {
   }
 
   const CustomRoute = (props: any) => {
+    console.log({props})
     return (
       <Routes>
         <Route path={`/${activePage.id}`} element={activePage ? <DynamicComponent {...props} /> : <ErrorPage />} />
@@ -39,6 +43,7 @@ const App = () => {
 
   useEffect(() => {
     console.log(credits)
+    console.log(selectedLink)
   }, [])
 
   useEffect(() => {
@@ -51,7 +56,7 @@ const App = () => {
     <div className="App">
       <Router>
         <Header links={pages} setSelectedLink={setSelectedLink} />
-        <CustomRoute {...activePage} />
+        <CustomRoute {...activePage} setSelectedLink={setSelectedLink} />
       </Router>
     </div>
   )
