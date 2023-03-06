@@ -9,8 +9,20 @@ import { useTranslation } from 'react-i18next';
 
 const Home = (props: HomeComponent) => {
 
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const { title, subtitle, links, setSelectedLink } = props;
+
+    const [selectedLanguage, setSelectedLanguage] = React.useState(i18n.language)
+
+    const handleSelectedLanguage = (language: string) => {
+        console.log({i18n})
+        console.log({language})
+        setSelectedLanguage(value => language)
+    }
+
+    React.useEffect(() => {
+        changeLanguage(selectedLanguage)
+    }, [selectedLanguage])
 
     return (
         <div className='Home'>
@@ -38,9 +50,9 @@ const Home = (props: HomeComponent) => {
             <div className='footer'>
                 <span>Etienne Mosnier | DNSEP 2023 | option design | Mention Design des communs | Objets connectés design des données | ÉSAD | École supérieure d’art et de design d’Orléans | www.esadorleans.fr</span>
                 <span className='i18n'>
-                    <div className='i18nButtons' onClick={() => changeLanguage('fr')}>FR</div>
+                    <div className={selectedLanguage == 'fr' ? 'i18nButtons selected' : 'i18nButtons'} onClick={() => handleSelectedLanguage('fr')}>FR</div>
                     |
-                    <div className='i18nButtons' onClick={() => changeLanguage('en')}>EN</div>
+                    <div className={selectedLanguage == 'en' ? 'i18nButtons selected' : 'i18nButtons'} onClick={() => handleSelectedLanguage('en')}>EN</div>
                 </span>
             </div>
         </div>

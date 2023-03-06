@@ -180,9 +180,15 @@
 .Home .footer .i18n {
     display: flex;
     flex-direction: row;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .Home .footer .i18n .i18nButtons {
     cursor: pointer;
     margin: 0 2.5px;
+}
+
+.Home .footer .i18n .i18nButtons.selected {
+    font-weight: bolder;
 }
