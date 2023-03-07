@@ -25,7 +25,7 @@ const Home = (props: HomeComponent) => {
     }, [selectedLanguage])
 
     return (
-        <div className='Home'>
+        <div className='Home container'>
             <div className='titles'>
                 <h1>{title}</h1>
                 <h4>{subtitle}</h4>
@@ -47,14 +47,12 @@ const Home = (props: HomeComponent) => {
                     <span>{t('abstract')}</span>
                 </div>
             </div>
-            <div className='footer'>
-                <span>Etienne Mosnier | DNSEP 2023 | option design | Mention Design des communs | Objets connectés design des données | ÉSAD | École supérieure d’art et de design d’Orléans | www.esadorleans.fr</span>
-                <span className='i18n'>
-                    <div className={selectedLanguage == 'fr' ? 'i18nButtons selected' : 'i18nButtons'} onClick={() => handleSelectedLanguage('fr')}>FR</div>
-                    |
-                    <div className={selectedLanguage == 'en' ? 'i18nButtons selected' : 'i18nButtons'} onClick={() => handleSelectedLanguage('en')}>EN</div>
-                </span>
-            </div>
+            {/* <span>Etienne Mosnier | DNSEP 2023 | option design | Mention Design des communs | Objets connectés design des données | ÉSAD | École supérieure d’art et de design d’Orléans | www.esadorleans.fr</span> */}
+            <span className='i18n'>
+                <div className={selectedLanguage == 'fr' ? 'i18nButtons selected' : 'i18nButtons'} onClick={() => handleSelectedLanguage('fr')}>FR</div>
+                |
+                <div className={selectedLanguage == 'en' ? 'i18nButtons selected' : 'i18nButtons'} onClick={() => handleSelectedLanguage('en')}>EN</div>
+            </span>
         </div>
     )
 }

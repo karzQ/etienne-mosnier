@@ -1,16 +1,18 @@
 import React, { Suspense, useEffect, useState } from "react";
 
 const Image = (props: any) => {
-    const {src, name} = props
+    const {src, dir} = props
     const [imagePath, setImagePath] = useState(src);
+
+    console.log({src, dir})
 
     useEffect(() => {
         (async () => {
             let path: any = null
-            if (name) {
-                path = await import(`../../assets/img/${name}/${src}.jpg`);
+            if (dir) {
+                path = await import(`../../assets/img/${dir}/${src}.jpg`);
             } else {
-                path = await import(`../../assets/img/${src}.png`);
+                path = await import(`../../assets/img/${src}.jpg`);
             }
             setImagePath(path.default);
         })();

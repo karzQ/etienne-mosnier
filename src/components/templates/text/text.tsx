@@ -39,67 +39,13 @@ const Text = (props: TextComponent) => {
         setPageNumber((val: number) => val > 0 ? val - 1 : val);
     };
 
-    const TextsList = (props: {texts: SubTextComponent[]}) => {
-        const { texts } = props
-        
-        const ApplyStyles = (id: number, text: any) => {
-            const styles: any = {}
-
-            if (id === 1) {
-                styles['fontFamily'] = 'Degular Display Italic'
-            }
-
-            return styles
-        }
-
-        return (
-            <>
-                {
-                    texts.length > 0 && texts.map((text: SubTextComponent, id: number) => (
-                        <span style={ApplyStyles(id, text)} key={`${id}-${text.id}`}
-                            className='subtext'
-                            dangerouslySetInnerHTML={{ __html: ApplySup(text.text) }}>
-                        </span>
-                    ))
-                }
-            </>
-        )
-    }
-
-    const Annotations = (props: {annotations: AnnotationsComponent[]}) => {
-        const {annotations} = props
-        const numbered = annotations.filter((item: AnnotationsComponent) => item.isNumbered)
-        const rest = annotations.filter((item: AnnotationsComponent) => !item.isNumbered)
-
-        return (
-            <>
-                <div className="numbered">
-                    {
-                        numbered && numbered.map((item: AnnotationsComponent, id: number) => (
-                            <span key={`${id}-${item.id}`} className='content_annotations'>
-                                <sup>{item.annotationNumber}</sup>{item.text}
-                            </span>
-                        ))
-                    }
-                </div>
-
-                <div className="not_numbered">
-                    {
-                        rest && rest.map((item: AnnotationsComponent, id: number) => (
-                            <span key={`${id}-${item.id}`} className='content_annotations'>{item.text}</span>
-                        ))
-                    }
-                </div>
-            </>
-        )
-    }
-
     useEffect(() => {
         console.log({props})
     }, [])
 
     useEffect(() => {
         setActivePage((val: any) => pages[pageNumber])
+        console.log({activePage})
     }, [pageNumber])
 
     useEffect(() => {
@@ -111,70 +57,48 @@ const Text = (props: TextComponent) => {
 
     return (
         <>
-            <div className='Text'>
-                <div className="left">
-                    <div className="title"
-                        dangerouslySetInnerHTML={{ __html: activePage.title}}></div>
-
-                    <div className="subtitle">
-                        {activePage.subtitle}
-                    </div>
+            <div className='Text container'>
+                <div className="titles">
+                    <h1>{activePage.title}</h1>
+                    <h4>{activePage.subtitle}</h4>
                 </div>
 
-                <div className="middle">
-                    <div className={'additional_texts'}>
-                        {
-                            activePage.annotations && activePage.annotations.length > 0 && <Annotations annotations={activePage.annotations} />
-                        }
+                <div className="main">
+                    <div className={pageNumber == 0 ? "left intro" : "left"}>
+                        <div className="text">
+                            {
+                                activePage.texts && activePage.texts.map((text: any) => (
+                                    <span className={text.classNames}>{text.text}</span>
+                                ))
+                            }
+                        </div>
+
+                        <div className="stepper">
+                            <MobileStepper
+                                variant="progress"
+                                steps={pages.length}
+                                position="static"
+                                activeStep={pageNumber}
+                                sx={{ width: 500, justifyContent: 'flex-start', gap: 2, paddingLeft: 0}}
+                                nextButton={
+                                    <Button size="small" onClick={handleNext} disabled={pageNumber === pages.length-1}>
+                                        {pageNumber == 0 ?  "Commencer" : "Continuer"}
+                                    </Button>
+                                }
+                                backButton={
+                                    <Button size="small" onClick={handleBack} disabled={pageNumber === 0}>
+                                        Retour
+                                    </Button>
+                                }
+                            />
+                        </div>
                     </div>
-
-                    {
-                        activePage?.text && (
-                            <span className={'text'}
-                                dangerouslySetInnerHTML={{ __html: ApplySup(activePage?.text) }}></span>
-                        )
-                    }
-
-                    <div className="texts_container">
-                        {
-                            activePage?.texts && <TextsList texts={activePage?.texts} />
-                        }
+                    <div className={pageNumber == 0 ? "right intro" : "right"}>
+                        <div className='image'>
+                            <Image src={activePage.image} dir={id} />
+                        </div>
                     </div>
                 </div>
-
-                <div className='right'>
-                    
-                </div>
-            </div>
-
-            <div className="stepper">
-                <MobileStepper
-                    variant="progress"
-                    steps={pages.length}
-                    position="static"
-                    activeStep={pageNumber}
-                    sx={{ maxWidth: 500, flexGrow: 1 }}
-                    nextButton={
-                        <Button size="small" onClick={handleNext} disabled={pageNumber === pages.length-1}>
-                            {pageNumber == 0 ?  "Commencer" : "Continuer"}
-                            {/* {theme.direction === 'rtl' ? (
-                                <KeyboardArrowLeft />
-                            ) : (
-                                <KeyboardArrowRight />
-                            )} */}
-                        </Button>
-                    }
-                    backButton={
-                        <Button size="small" onClick={handleBack} disabled={pageNumber === 0}>
-                            {/* {theme.direction === 'rtl' ? (
-                                <KeyboardArrowRight />
-                            ) : (
-                                <KeyboardArrowLeft />
-                            )} */}
-                            {pageNumber == 0 ?  "" : "Retour"}
-                        </Button>
-                    }
-                />
             </div>
         </>
     )

@@ -12,7 +12,6 @@
 
 .Gallery .leftSide, .rightSide {
     position: relative;
-    /* background-color: antiquewhite; */
     height: 52%;
     align-self: center;
 }
