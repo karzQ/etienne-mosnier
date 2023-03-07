@@ -79,7 +79,10 @@ const Text = (props: TextComponent) => {
                                 steps={pages.length}
                                 position="static"
                                 activeStep={pageNumber}
-                                sx={{ width: 500, justifyContent: 'flex-start', gap: 2, paddingLeft: 0}}
+                                sx={{
+                                    display: 'flex', flexDirection: 'row',
+                                    width: 500, justifyContent: 'space-between', gap: 2, paddingLeft: 0
+                                }}
                                 nextButton={
                                     <Button size="small" onClick={handleNext} disabled={pageNumber === pages.length-1}>
                                         {pageNumber == 0 ?  "Commencer" : "Continuer"}

@@ -74,7 +74,7 @@ html {
 
 .container .main {
   display: flex;
-  gap: 37.5px;
+  gap: 20px;
 }
 
 .container .main .left.intro {
@@ -88,11 +88,19 @@ html {
 .footer {
   position: absolute;
 
-  width: 100%;
+  width: fit-content;
   bottom: 30px;
   left: 50px;
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+img.image {
+  outline: 2px solid orangered;
+}
+
+.MuiLinearProgress-root.MuiLinearProgress-colorPrimary.MuiLinearProgress-determinate.MuiMobileStepper-progress.css-fj57lw-MuiLinearProgress-root-MuiMobileStepper-progress {
+  width: 70%;
 }
