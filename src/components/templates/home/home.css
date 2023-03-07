@@ -162,8 +162,8 @@
     user-select: none;
     -webkit-user-select: none;
 
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px;
+    right: 0;
 }
 
 .Home .i18n .i18nButtons {

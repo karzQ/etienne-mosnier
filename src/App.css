@@ -89,8 +89,8 @@ html {
   position: absolute;
 
   width: fit-content;
-  bottom: 30px;
-  left: 50px;
+  bottom: 40px;
+  left: 60px;
 
   display: flex;
   flex-direction: row;
