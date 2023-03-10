@@ -36,7 +36,7 @@ const Home = (props: HomeComponent) => {
                         {
                             links && links.length > 0 && links.map((link: LinkComponent, id: number) => (
                                 <Link key={`${id}-${link.id}`} to={`/${link.src}`} className='link' onClick={() => setSelectedLink(link.src)}>
-                                    <span>0{id+1} |<br></br>{link.text}</span>
+                                    <span>0{id+1} | {link.text}</span>
                                 </Link>
                             ))
                         }

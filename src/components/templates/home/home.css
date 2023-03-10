@@ -138,19 +138,20 @@
     height: 100%;
     width: 70%;
     color: black;
+    text-align: justify;
 }
 
 .Home .main .left .categories {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 90%;
+    gap: 80px;
 }
 
 .Home .main .left .categories .link {
     display: flex;
     flex-direction: column;
-    width: 180px;
+    width: fit-content;
     text-decoration: none;
 }
 
@@ -162,7 +163,7 @@
     user-select: none;
     -webkit-user-select: none;
 
-    bottom: 30px;
+    bottom: 10px;
     right: 0;
 }
 

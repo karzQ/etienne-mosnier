@@ -27,7 +27,8 @@
                         { "id": 0, "text": "Épernon, cette commune où j’ai grandi. Épernon, ce territoire rural. Épernon, cette ville endormie. Mais Épernon, cette cité habitée par une histoire industrielle forte de savoir-faire aujourd’hui perdus. Cette histoire mérite d’être racontée. À partir du milieu du XVIIIe siècle, de nombreuses carrières de grès furent découvertes à Épernon et ses alentours. L’exploitation de ces ressources engendra de grandes transformations sur le territoire, au niveau économique ou encore démographique. Ces savoir-faire, liés au travail de la pierre, furent reconnus au-delà des frontières, offrant à Épernon une renommée inattendue. Cependant, de nouveaux bouleversements techniques et sociaux sonnèrent le glas de cet âge d’or, un siècle plus tard. La désindustrialisation ébranla Épernon, et les savoirs de la pierre disparurent à défaut de se renouveler, plongeant à nouveau ce territoire dans l’anonymat.", "classNames": ""}
                     ],
                     "annotations": [],
-                    "image": "0-vue_d_epernon_image_faite_au_plateau_de_la_diane."
+                    "image": "0-vue_d_epernon_image_faite_au_plateau_de_la_diane.",
+                    "legend": "Vue d’Épernon, image faite au plateau de la Diane."
                 },
                 {
                     "id": 1,
@@ -39,7 +40,8 @@
                         { "id": 2, "text": "Notre histoire familiale, mon histoire, est intrinsèquement liée à celle de l’endroit où nous avons vécu. Cependant, j’avais peu connaissance de l’Histoire d’Épernon, qui fut marquante à l’échelle locale, et qui participa à forger l’identité de ce territoire. Au cours d’un de mes passages à Épernon, j’ai pu découvrir de manière inopinée, une partie de cette histoire, celle qui traite de la pierre et des savoirs qui l’entoure. Je portais une vision extrêmement limitée de cette ville, uniquement contextualisée dans le temps présent. Les questionnements qui ont émergé de la découverte de mon territoire sont multiples, et ont nourri mon travail de recherche. Cette enquête m’a permis de construire un nouveau point de vue, et de nouvelles attaches avec la commune d’Épernon.", "classNames": ""}
                     ],
                     "annotations": [],
-                    "image": "1a-la_carriere_du_chateau_sur_le_plateau_de_la_diane_a_epernon."
+                    "image": "1a-la_carriere_du_chateau_sur_le_plateau_de_la_diane_a_epernon.",
+                    "legend": "La carrière du Château, sur le plateau de la Diane à Epernon."
                 },
                 {
                     "id": 2,
@@ -53,7 +55,8 @@
                     "annotations": [
                         { "id": 0, "isNumbered": true, "annotationNumber": 2, "text": "Claire König, «Beauce : grenier à blé de la France», Futura Sciences, paru le 11 août 2008." }
                     ],
-                    "image": "1b-le_chateau_de_maintenon_vu_a_travers_l_aqueduc_huile_sur_toile_de_francois-edmee_ricois_xixe_siecle."
+                    "image": "1b-le_chateau_de_maintenon_vu_a_travers_l_aqueduc_huile_sur_toile_de_francois-edmee_ricois_xixe_siecle.",
+                    "legend": "Le château de Maintenon vu à travers l’aqueduc, huile sur toile de François-Edmée Ricois, XIXe siècle."
                 },
                 {
                     "id": 3,
@@ -65,7 +68,8 @@
                         { "id": 2, "text": "Je savais déjà qu’une partie des ouvrages construits dans cette commune étaient sur des terrains marécageux, et qu’il y avait un foisonnement de terrains agricoles. Cependant, même si une partie de la ville est installée sur une colline, je n’avais pas forcément conscience du lien existant avec l’exploitation de la roche. Bien qu’au fil de mon exploration, je fus amené à découvrir au «plateau de la Diane» ce que l’on nomme chez moi le «front de taille», c’est-à-dire les vestiges d’une carrière dont l’ex- ploitation a cessé au milieu du XXe siècle, je fus surpris du peu de traces existantes dans les différents espaces urbains et ruraux que j’ai pu visiter. Je me suis donc rensei- gné en étudiant des archives, des cartes, et j’ai notam- ment découvert que certaines carrières étaient encore exploitées aujourd’hui. Celles-ci servent essentiellement à la production de sable de Fontainebleau, de calcaire de Beauce, ou de granulats en tout genre, destinés le plus souvent aux entreprises du bâtiment. Certaines sont ensevelies pour créer des terrains constructibles destinés à accueillir des unités d’habitation ou bien des usines de l’industrie chimique.", "classNames": ""}
                     ],
                     "annotations": [],
-                    "image": "1c-le_front_de_taille_ancienne_carriere_situee_sur_le_plateau_de_la_diane_a_epernon."
+                    "image": "1c-le_front_de_taille_ancienne_carriere_situee_sur_le_plateau_de_la_diane_a_epernon.",
+                    "legend": "Le front de taille, ancienne carrière située sur le Plateau de la Diane à Epernon."
                 },
                 {
                     "id": 5,
@@ -79,7 +83,8 @@
                     "annotations": [
                         { "id": 0, "isNumbered": true, "annotationNumber": 3, "text": "Jean-Paul Duc (dir.),Histoire des carrières d’Épernon, Association Épernon Patrimoine et Alentours, Épernon, 2012, op. cit., p. 56." }
                     ],
-                    "image": "2a-carriere_de_gres_a_epernon."
+                    "image": "2a-carriere_de_gres_a_epernon.",
+                    "legend": "Carrière de grès à Epernon."
                 },
                 {
                     "id": 6,
@@ -91,7 +96,8 @@
                         { "id": 2, "text": "Les terrassiers avaient la tâche ingrate de creuser la terre, à l’aide de pioches et de pelles, pour préparer la carrière et faire apparaître les bancs de pierre. Les tail- leurs et piqueurs venaient ensuite pour extraire le grès, ébaucher la pierre de meules, après que le maître-carrier ait examiné le banc, son épaisseur, ses veines, en tapant dessus avec un « têtu ». C’était ensuite aux rouliers de transporter ces pierres à l’atelier en chariots. La plupart des meules qui sortaient des ateliers d’Épernon étaient des meules dites «anglaises», constituées d’un assem- blage de différents morceaux de pierres. Au cours de ma visite, j’ai donc pu retracer le quotidien de ces ouvriers à l’espérance de vie réduite, entre 40 et 45 ans, au vu des nombreux accidents qui arrivaient sur les chantiers, mais également des maladies qu’ils pouvaient contracter comme la silicose. Cela m’a questionné sur l’évolution de ces savoirs ouvriers au sein d’Épernon, et sur leur capacité à évoluer avec l’apparition des normes, et les différentes évolutions sociales.", "classNames": ""}
                     ],
                     "annotations": [],
-                    "image": "2b-cour_et_atelier_de_la_societe_dupety-orsel_a_epernon."
+                    "image": "2b-cour_et_atelier_de_la_societe_dupety-orsel_a_epernon.",
+                    "legend": "Cour et atelier de la société Dupéty-Orsel à Epernon."
                 },
                 {
                     "id": 7,
@@ -103,7 +109,8 @@
                         { "id": 2, "text": "Pourtant, je n’avais aucun souvenir d’un édifice ressem- blant à une usine. Aujourd’hui, m’intéressant à ces savoirs de la pierre, je suis retourné dans cette rue, je l’ai traver- sée à nouveau, et toujours aucune trace de ce bâtiment, ni même un vestige pouvant signifier l’emplacement de cette usine. Cependant après mes recherches, j’appris qu’une seconde usine existait, au moulin de Vinerville. Là, le bâtiment existe encore, mais il a été aménagé en logements. Maintenant que mon regard est à la recherche d’éléments, d’indices me permettant de retracer les diffé- rents savoirs et pratiques de la pierre qui ont pu exister à Épernon, je suis assez surpris du peu de traces que j’ai pu découvrir. Comme si, à l’époque où ces pratiques se sont arrêtées, l’on avait cherché à enfouir ce qui aurait pu faire histoire.", "classNames": ""}
                     ],
                     "annotations": [],
-                    "image": "2c-l_usine_l_abrasienne_rue_de_cady_a_epernon."
+                    "image": "2c-l_usine_l_abrasienne_rue_de_cady_a_epernon.",
+                    "legend": "L’usine L’Abrasienne, rue de Cady à Epernon."
                 },
                 {
                     "id": 8,
@@ -115,7 +122,8 @@
                         { "id": 2, "text": "Pourquoi n’ont-ils pas réussi à diversifier leur production? À appliquer leurs connaissances à de nouvelles pratiques qui auraient permis à ce patrimoine de subsister ? Encore des questions aujourd’hui sans réponse. Mais je souhaite ici quand même émettre une hypothèse. N’y avait-il pas à cette époque une volonté politique de métropolisa- tion du territoire ? Une volonté qui se serait traduite par un manque de soutien lors de cette crise connue par le secteur d’activité de la pierre. Additionné à une envie de moderniser l’industrie au sein du territoire, à travers la création de différentes usines pétrochimiques qui repré- sentaient l’avenir à ce moment-là.", "classNames": ""}
                     ],
                     "annotations": [],
-                    "image": "3a-voirie_en_macadam."
+                    "image": "3a-voirie_en_macadam.",
+                    "legend": "Voirie en Macadam."
                 },
                 {
                     "id": 9,
@@ -127,7 +135,8 @@
                         { "id": 2, "text": "Une entreprise qui existe encore aujourd’hui, et qui est spécialisée dans l’industrie pétrochimique. Les produc- tions sont diversifiées, les salariés fabriquent aussi bien des emballages plastiques destinés au conditionnement des productions agroalimentaires, que des joints liquides en caoutchouc. Je n’ai que peu de souvenirs de mon grand- père nous narrant ses années dans cette usine, mais j’ai toujours eu la sensation qu’il était heureux de travailler là-bas. J’ai donc posé des questions à ma mère, sa fille. Elle me parla de monsieur Baroin, alias «Nounours», qui comme le montre sûrement ce surnom, était apprécié par l’ensemble de ces employés. Elle se souvient de jours heureux qui, selon elle, n’étaient peut-être que le simulacre de cette époque d’après-guerre, notamment durant la période des Trente Glorieuses.", "classNames": ""}
                     ],
                     "annotations": [],
-                    "image": "3b-la_societe_grace_a_son_ouverture_en_1966."
+                    "image": "3b-la_societe_grace_a_son_ouverture_en_1966.",
+                    "legend": "La société GRACE à son ouverture en 1966."
                 },
                 {
                     "id": 10,
@@ -139,7 +148,8 @@
                         { "id": 2, "text": "Aujourd’hui sur ces terrains se trouvent différentes habi- tations, construites à vitesse éclair et de pauvre facture pour qu’Épernon devienne une commune résidentielle, qui assume son statut de ville-dortoir. L’ensemble de ces travaux avait pour objectif de faire d’Épernon une métropole. Cela a eu comme effet néfaste de la détacher de son identité, de son histoire. J’en suis la preuve, étant né là-bas, ayant encore ma famille là-bas, je ne connais que quelques bribes de ce qui est le passé de ma commune. Mais l’étude de ce territoire m’aura fait changer la vision que je porte sur celui-ci, j’ai pu l’identifier à travers ce patrimoine des savoirs et des pratiques autour de la pierre.", "classNames": ""}
                     ],
                     "annotations": [],
-                    "image": "3c-vue_de_la_zone_industrielle_saint-denis_depuis_le_plateau_de_la_diane."
+                    "image": "3c-vue_de_la_zone_industrielle_saint-denis_depuis_le_plateau_de_la_diane.",
+                    "legend": "Vue de la zone industrielle Saint-Denis, depuis le Plateau de la Diane."
                 }
             ]
         },
@@ -157,7 +167,8 @@
                         { "id": 0, "text": "La démarche de sauvegarde, d’entretien, d’exposition et de médiation autour des savoirs de la pierre incarne une forme de patrimonialisation permettant d’inscrire cet héritage dans la mémoire collective. Néanmoins, au regard des transformations systémiques produites par la désindustrialisation sur nos territoires, de telles démarches de conservation sont-elles les seules manières d’hériter de notre Histoire collective ? Sont-elles pertinentes, et sont-elles suffisantes pour engager une mutation conjointe des formes de vie, de travail et de citoyenneté sur nos territoires ? Pourrait-on envisager d’autres formes de socialisation de la technique, remobilisant ces savoirs comme participants d’une émancipation collective ? Pourrait-on parler ici d’un design de nos existences, qui en recomposant ensemble les formes de savoirs - savoir penser, savoir faire, savoir vivre - tendrait à ouvrir la voie vers un investissement commun pour une société aujourd’hui trop fragmentée ?", "font": "helvetica"}
                     ],
                     "annotations": [],
-                    "image": "0-batiment_acceuillant_le_consevatoire_des_meules_et_paves_a_epernon."
+                    "image": "0-batiment_acceuillant_le_consevatoire_des_meules_et_paves_a_epernon.",
+                    "legend": "Bâtiment acceuillant le consevatoire des meules et pavés à Épernon."
                 },
                 {
                     "id": 1,
@@ -172,7 +183,8 @@
                         { "id": 0, "isNumbered": true, "annotationNumber": 4, "text": "Louise Nathalie Boucher, La muséification du patrimoine industriel : pour un projet de paysage créatif, dans «Muséologie et techniques Les techniques au musée », Ottawa, ICOFOM, janvier 2007, op. cit., p. 34." },
                         { "id": 1, "isNumbered": true, "annotationNumber": 5, "text": "Vincent Veschambre, «Inventions patrimoniales et enjeux sociaux », Perspective, 1, 2015, art. cité, p. 195." }
                     ],
-                    "image": "1a-salle_des_machines_au_compa_de_chartres."
+                    "image": "1a-salle_des_machines_au_compa_de_chartres.",
+                    "legend": "Salle des machines au COMPA de Chartres."
                 },
                 {
                     "id": 2,
@@ -186,7 +198,8 @@
                     "annotations": [
                         { "id": 0, "isNumbered": true, "annotationNumber": 3, "text": " Michel Chauvin, “Le patrimoine sous haute protection”, L’Écho républicain, 10 février 2013, (https://www.lechorepublicain.fr/epernon-28230/actualites/le-patrimoine-sous-haute-protection_1438409// consulté le 18 septembre 2022), art. cité."}
                     ],
-                    "image": "1b-exposition_sur_les_paves_au_consevatoire_des_meules_et_paves_a_epernon."
+                    "image": "1b-exposition_sur_les_paves_au_consevatoire_des_meules_et_paves_a_epernon.",
+                    "legend": "Exposition sur les pavés au consevatoire des meules et pavés à Épernon."
                 },
                 {
                     "id": 3,
@@ -196,7 +209,8 @@
                         { "id": 0, "text": "On peut donc constater l’existence d’un certain désin- térêt du public pour ces questions de patrimoine. À quoi peut-on attribuer cela? Une première hypothèse émerge : le manque de transversalité dans les processus de patrimonialisation. En effet, comme vu précédemment, le patrimoine se voit installer au sein d’un lieu d’exposition, pour donner à voir, mais pas forcément pour être vécu. En effet, pour se projeter dans une histoire patrimoniale, les éléments qui la constituent doivent faire partie du milieu, cela offre la possibilité d’une interaction entre le territoire et l’usager. Par exemple, les villes historiques s’intéressent à la dimension urbanistique de la patrimonialisation, elles cherchent à donner à leurs habitants et aux visiteurs une lecture de leur patrimoine au travers d’édifices architec- turaux, monuments... Toutes sortes d’éléments distinctifs qui permettent de mettre en valeur ce patrimoine au sein du territoire. Mais cela peut mener à une forme de sacra- lisation de celui-ci, et notamment une «sacralisation des objets patrimoniaux ». Cela découle d’une volonté qui consiste à placer une certaine spiritualité dans ce qui fait patrimoine, afin de projeter le sens de ces éléments de l’espace réel à l’espace imaginé. On peut imaginer qu’un tel processus peut permettre à chacun de s’approprier un patrimoine qui lui est propre, et ainsi d’être en mesure de se positionner par rapport à ce dernier. Cependant, un tel phénomène vient figer ce qui fait patrimoine, tant sur le plan temporel, que sur le plan spatial. En effet, cette action de sacraliser provoque une perte de droit sur ces éléments, car il ne serait plus personnifié, moins tangible. Cette sacralisation d’un patrimoine dépend également d’une volonté politique de valorisation touristique. Créer des marqueurs d’unicité, pour créer de l’attractivité, et ainsi instaurer un marché économique sur ces «objets de patrimoines». Les différents protocoles mis en place pour une patrimonialisation peuvent être contestables, car ils revêtent, le plus souvent, un intérêt de politique urbaine et touristique, plutôt qu’une volonté de trans- mission d’une culture. Cependant l’idée de transmission n’est-elle pas centrale dans cette notion de patrimoine ? Ne doit-on pas transmettre pour préserver, sauvegarder ce qui fait patrimoine ?", "classNames": ""}
                     ],
                     "annotations": [],
-                    "image": "1c-exposition_sur_les_pierres_de_meules_au_consevatoire_des_meules_et_paves_a_epernon."
+                    "image": "1c-exposition_sur_les_pierres_de_meules_au_consevatoire_des_meules_et_paves_a_epernon.",
+                    "legend": "Exposition sur les pierres de meules au consevatoire des meules et pavés à Épernon."
                 },
                 {
                     "id": 4,
@@ -213,7 +227,8 @@
                         { "id": 2, "text": "Claire Merleau-Ponty, “La transmission culturelle, nouveaux modes de médiation”, Bibliothèque Nationale de France, 2010" },
                         { "id": 3, "text": "Jean Davallon, “Comment se fabrique le patrimoine ?”, Sciences Humaines (Hors-série), 36, 2002" }
                     ],
-                    "image": "2a-cours_d_histoire_de_l_art_dans_le_cadre_des_paris_de_l_art."
+                    "image": "2a-cours_d_histoire_de_l_art_dans_le_cadre_des_paris_de_l_art.",
+                    "legend": "Cours d’histoire de l’art dans le cadre des Paris de l’art."
                 },
                 {
                     "id": 5,
@@ -225,7 +240,8 @@
                     "annotations": [
                         { "id": 0, "isNumbered": true, "annotationNumber": 7, "text": "Université Paris 1 Panthéon Sorbonne, “Master parcours Patrimoine culturel et technique”, Paris, 2008 (https://formations.pantheonsorbonne.fr/fr/catalogue-des-formations/master-M.html/ consulté le 19 novembre 2022)." }
                     ],
-                    "image": "2b-donnees_sur_les_cultures_scientifique_technique_et_industrielle_en_france_par_l_amscti."
+                    "image": "2b-donnees_sur_les_cultures_scientifique_technique_et_industrielle_en_france_par_l_amscti.",
+                    "legend": "Données sur les cultures scientifique, technique et industrielle en France par l’AMSCTI."
                 },
                 {
                     "id": 6,
@@ -243,7 +259,8 @@
                         { "id": 1, "isNumbered": true, "annotationNumber": 9, "text": "Édith Hallauer, “Du vernaculaire à la déprise d’oeuvre”, Thèse de doctorat en urbanisme dirigé par Thierry Paquot, Université Paris-Est, 2017" },
                         { "id": 2, "text": "Jean-Paul Duc (dir.), “Histoire des carrières d’Epernon”, Association Epernon Patrimoine et Alentours, Epernon, 2012" }
                     ],
-                    "image": "2c-transmission_des_savoir-faire_de_la_pierre_par_l_apprentissage_au_campus_bretagne_de_louvigne_du_desert."
+                    "image": "2c-transmission_des_savoir-faire_de_la_pierre_par_l_apprentissage_au_campus_bretagne_de_louvigne_du_desert.",
+                    "legend": "Transmission des savoir-faire de la pierre par l’apprentissage au Campus Bretagne de Louvigné du Désert."
                 },
                 {
                     "id": 7,
@@ -257,7 +274,8 @@
                         { "id": 1, "text": "Chaya Hurnath, “Appropriation et territorialisation du patrimoine : quels enjeux pour quelles ambitions ? Cas d’étude de l’île Maurice”. Thèse de doctorat en géographie dirigée par Jean Michel Jauze, Université de la Réunion, 2019." },
                         { "id": 2, "text": "Laurence Gillot, “Des ré-usages du patrimoine”, dans Histoire Urbaine, 46, 2016, p.177-179" }
                     ],
-                    "image": "3a-exposition_conserver_adapter_transmettre_au_pavillon_de_l'arsenal_a_paris."
+                    "image": "3a-exposition_conserver_adapter_transmettre_au_pavillon_de_l'arsenal_a_paris.",
+                    "legend": "Exposition Conserver adapter transmettre au Pavillon de l'Arsenal à Paris."
                 },
                 {
                     "id": 8,
@@ -270,7 +288,8 @@
                         { "id": 0, "isNumbered": true, "annotationNumber": 11, "text": "Unesco, “La Contribution du patrimoine mondial pour le développement durable”, novembre 2015 (https://whc.unesco.org/fr/developpementdurable/, consulté le 26 novembre 2022) art. cité." },
                         { "id": 1, "isNumbered": true, "annotationNumber": 12, "text": "Pavillon de l’Arsenal, “Ressources”, Paris, Faire, mars - mai 2022" }
                     ],
-                    "image": "3b-exposition_ressources_au_pavillon_de_l'arsenal_a_paris."
+                    "image": "3b-exposition_ressources_au_pavillon_de_l'arsenal_a_paris.",
+                    "legend": "Exposition Ressources au Pavillon de l'Arsenal à Paris."
                 },
                 {
                     "id": 9,
@@ -285,7 +304,8 @@
                         { "id": 1, "isNumbered": true, "annotationNumber": 14, "text": "Édith Hallauer, “Vers un designer permanent”, dans “Design écosocial, convivialités, pratiques situées et nouveaux communs”, Valenciennes, It:éditions, 2018, p. 91-110." },
                         { "id": 2, "text": "Caroline Bougourd, “La cité d’expériences à l'épreuve d’une traduction par le design”, Traduction & Design, 24, 2022." }
                     ],
-                    "image": "3c-atelier_luma_sol_perdu_recycler_des_terres_et_mineraux_devalorises_pour_developper_collectivement_des_productions_vertueuses_de_terres_cuites_et_crues."
+                    "image": "3c-atelier_luma_sol_perdu_recycler_des_terres_et_mineraux_devalorises_pour_developper_collectivement_des_productions_vertueuses_de_terres_cuites_et_crues.",
+                    "legend": "Atelier Luma, Sol Perdu, Recycler des terres et minéraux dévalorisés pour développer collectivement des productions vertueuses de terres cuites et crues."
                 },
                 {
                     "id": 10,
@@ -299,7 +319,8 @@
                         { "id": 1, "isNumbered": true, "annotationNumber": 14, "text": "Édith Hallauer, “Vers un designer permanent”, dans “Design écosocial, convivialités, pratiques situées et nouveaux communs”, Valenciennes, It:éditions, 2018, p. 91-110." },
                         { "id": 2, "text": "Caroline Bougourd, “La cité d’expériences à l'épreuve d’une traduction par le design”, Traduction & Design, 24, 2022." }
                     ],
-                    "image": "3c-atelier_luma_sol_perdu_recycler_des_terres_et_minéraux_dévalorisés_pour_développer_collectivement_des_productions_vertueuses_de_terres_cuites_et_crues..jpg"
+                    "image": "3c-atelier_luma_sol_perdu_recycler_des_terres_et_minéraux_dévalorisés_pour_développer_collectivement_des_productions_vertueuses_de_terres_cuites_et_crues.",
+                    "legend": "Atelier Luma, Sol Perdu, Recycler des terres et minéraux dévalorisés pour développer collectivement des productions vertueuses de terres cuites et crues."
                 }
             ]
         },
@@ -308,43 +329,13 @@
             "name": "boîte à outils",
             "template": "gallery",
             "title": "Boîte à outils : Revalorisation des territoires",
-            "text": "Dans le prolongement des travaux de John Dewey, et notamment de l’ouvrage Le public et ses problèmes, la présente démarche s’intéresse à notre capacité à nous associer pour contribuer à la formulation de nos concernements, et proposer des pratiques ou des réponses restées hors du champ des politiques publiques. Cette «boîte à outils» contributive présente un ensemble de démarches dédiées à la réhabilitation des savoir-faire techniques et culturels en tant que vecteurs de construction sociale.",
-            "images": [
-                { "id": 0, "src": "image_liste", "href": "#", "tag": "architecture", "text": "Biopierre" },
-                { "id": 1, "src": "image_liste", "href": "#", "tag": "design", "text": "Biopierre"  },
-                { "id": 2, "src": "image_liste", "href": "#", "tag": "design", "text": "Biopierre"  },
-                { "id": 3, "src": "image_liste", "href": "#", "tag": "art", "text": "Biopierre"  },
-                { "id": 4, "src": "image_liste", "href": "#", "tag": "architecture", "text": "Biopierre"  },
-                { "id": 5, "src": "image_liste", "href": "#", "tag": "art", "text": "Biopierre"  },
-                { "id": 6, "src": "image_liste", "href": "#", "tag": "architecture", "text": "Biopierre"  },
-                { "id": 7, "src": "image_liste", "href": "#", "tag": "art" ," text": "Biopierre" }
-            ],
-            "filters": [
-                { "id": 0, "name": "architecture" },
-                { "id": 1, "name": "design" },
-                { "id": 2, "name": "art" }
-            ]
+            "text": "Dans le prolongement des travaux de John Dewey, et notamment de l’ouvrage Le public et ses problèmes, la présente démarche s’intéresse à notre capacité à nous associer pour contribuer à la formulation de nos concernements, et proposer des pratiques ou des réponses restées hors du champ des politiques publiques. Cette «boîte à outils» contributive présente un ensemble de démarches dédiées à la réhabilitation des savoir-faire techniques et culturels en tant que vecteurs de construction sociale."
         },
         {
             "id": "archivage",
             "name": "archivage",
             "template": "gallery",
-            "title": "Archivage",
-            "images": [
-                { "id": 0, "src": "image_liste", "href": "#", "tag": "architecture", "text": "Biopierre" },
-                { "id": 1, "src": "image_liste", "href": "#", "tag": "design", "text": "Biopierre"  },
-                { "id": 2, "src": "image_liste", "href": "#", "tag": "design", "text": "Biopierre"  },
-                { "id": 3, "src": "image_liste", "href": "#", "tag": "art", "text": "Biopierre"  },
-                { "id": 4, "src": "image_liste", "href": "#", "tag": "architecture", "text": "Biopierre"  },
-                { "id": 5, "src": "image_liste", "href": "#", "tag": "art", "text": "Biopierre"  },
-                { "id": 6, "src": "image_liste", "href": "#", "tag": "architecture", "text": "Biopierre"  },
-                { "id": 7, "src": "image_liste", "href": "#", "tag": "art" ," text": "Biopierre" }
-            ],
-            "filters": [
-                { "id": 0, "name": "architecture" },
-                { "id": 1, "name": "design" },
-                { "id": 2, "name": "art" }
-            ]
+            "title": "Archivage"
         }
     ]
 }

@@ -150,8 +150,16 @@
 }
 
 
+.Text .main .right .legend {
+    text-align: center;
+    color:grey;
+    font-size: smaller;
+}
+
 .Text .main .right {
     width: 40%;
+    display: flex;
+    flex-direction: column;
 }
 
 .Text .main .left .text {
@@ -169,6 +177,16 @@
 }
 
 .Text .main .left .text span.alternate {
-    font-size: larger;
     font-style: italic;
+}
+
+.Text .main .left .text .annotations {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 15px;
+}
+
+.Text .main .left .text .annotations span.annotation {
+    font-size: x-small;
 }

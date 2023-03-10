@@ -71,6 +71,17 @@ const Text = (props: TextComponent) => {
                                     <span className={text.classNames}>{text.text}</span>
                                 ))
                             }
+
+                            <div className='annotations'>
+                                {
+                                    activePage.annotations && activePage.annotations.map((annotation: AnnotationsComponent) => (
+                                        <span className="annotation">
+                                            <sup>{annotation.annotationNumber}</sup>{annotation.text}
+                                        </span>
+                                    ))
+                                }
+                            </div>
+
                         </div>
 
                         <div className="stepper">
@@ -100,6 +111,7 @@ const Text = (props: TextComponent) => {
                         <div className='image'>
                             <Image src={activePage.image} dir={id} />
                         </div>
+                        <span className="legend">{activePage.legend}</span>
                     </div>
                 </div>
             </div>
