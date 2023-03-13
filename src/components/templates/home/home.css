@@ -151,7 +151,7 @@
 .Home .main .left .categories .link {
     display: flex;
     flex-direction: column;
-    width: fit-content;
+    max-width: fit-content;
     text-decoration: none;
 }
 
@@ -165,13 +165,17 @@
 
     bottom: 10px;
     right: 0;
+
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .Home .i18n .i18nButtons {
     cursor: pointer;
     margin: 0 2.5px;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .Home .i18n .i18nButtons.selected {
     font-weight: bolder;
+    font-family:Arial, Helvetica, sans-serif;
 }

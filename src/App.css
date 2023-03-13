@@ -45,13 +45,14 @@ html {
 }
 
 .link {
-  font-size: 1.65em;
+  font-size: 1.75em;
   line-height: 1.25;
   font-weight: bolder;
+  font-family: 'Degular Medium' !important;
 }
 
 .text span {
-  font-size: 1.1em;
+  font-size: 1.175em;
   line-height: 1.30;
   text-align: justify;
   hyphens: auto;
