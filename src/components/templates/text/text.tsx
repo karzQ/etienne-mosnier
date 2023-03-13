@@ -40,12 +40,7 @@ const Text = (props: TextComponent) => {
     };
 
     useEffect(() => {
-        console.log({props})
-    }, [])
-
-    useEffect(() => {
         setActivePage((val: any) => pages[pageNumber])
-        console.log({activePage})
     }, [pageNumber])
 
     useEffect(() => {

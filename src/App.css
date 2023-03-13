@@ -2,12 +2,12 @@
 
 * {
   box-sizing: border-box;
-  color: orangered
+  color: orangered;
+  font-family:'Degular Display Regular';
 }
 
 html {
   overflow: hidden;
-  font-family: 'Degular Display';
 }
 
 ::-webkit-scrollbar {
@@ -34,12 +34,14 @@ html {
 
 .titles h1 {
   font-size: 5em;
+  font-family: 'Degular Display Medium';
 }
 
 .titles h4 {
   margin-top: 0px;
   font-size: 1.75em;
   min-height: 20px;
+  font-family: 'Degular Display Regular'
 }
 
 .link {
@@ -95,6 +97,8 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  background-color: white;
 }
 
 .MuiLinearProgress-root.MuiLinearProgress-colorPrimary.MuiLinearProgress-determinate.MuiMobileStepper-progress.css-fj57lw-MuiLinearProgress-root-MuiMobileStepper-progress {

@@ -15,8 +15,6 @@ const Home = (props: HomeComponent) => {
     const [selectedLanguage, setSelectedLanguage] = React.useState(i18n.language)
 
     const handleSelectedLanguage = (language: string) => {
-        console.log({i18n})
-        console.log({language})
         setSelectedLanguage(value => language)
     }
 

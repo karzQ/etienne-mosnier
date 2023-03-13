@@ -3,9 +3,6 @@ import React, { Suspense, useEffect, useState } from "react";
 const Image = (props: any) => {
     const {src, dir} = props
     const [imagePath, setImagePath] = useState(src);
-
-    console.log({src, dir})
-
     useEffect(() => {
         (async () => {
             let path: any = null

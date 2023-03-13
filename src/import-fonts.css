@@ -1,27 +1,25 @@
 @font-face {
-    font-family: 'Degular Display Subtitle';
-    src: url('./assets/fonts/Degular Display Regular.ttf');
-}
-
-@font-face {
-    font-family: 'Degular Display Text';
+    font-family: 'Degular Display Medium';
     src: url('./assets/fonts/Degular Display Medium.ttf');
 }
 
 @font-face {
-    font-family: 'Degular Display Italic';
-    src: url('./assets/fonts/Degular Display Italic.ttf');
-    font-style: italic, oblique;
+    font-family: 'Degular Display Regular';
+    src: url('./assets/fonts/Degular Display Regular.ttf');
 }
 
 @font-face {
-    font-family: 'Degular Display Note';
-    src: url('./assets/fonts/Degular Display Light Italic.ttf');
-    font-style: italic, oblique;
+    font-family: 'Degular Medium';
+    src: url('./assets/fonts/Degular Medium.ttf');
 }
 
 @font-face {
-    font-family: 'Degular Display Title';
-    src: url('./assets/fonts/Degular Display Bold.ttf');
-    font-style: bold;
+    font-family: 'Degular Regular';
+    src: url('./assets/fonts/Degular Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Degular Italic';
+    src: url('./assets/fonts/Degular Italic.ttf');
+    font-style: italic, oblique;
 }

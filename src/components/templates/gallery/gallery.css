@@ -1,4 +1,4 @@
-.Gallery {
+/* .Gallery {
     display: grid;
 
     justify-content: center;
@@ -151,4 +151,88 @@
 
 .Gallery .rightSide .filters .filter-container .filter:hover {
     opacity: 0.5;
+} */
+
+.Gallery {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.Gallery .main {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    height: calc(85% - 100px);
+}
+
+.Gallery .main .left {
+    width: 30%;
+}
+.Gallery .main .right {
+    width: 70%;
+}
+
+.Gallery .footer {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    
+    justify-content: end;
+}
+
+.Gallery .cards {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+
+    justify-content: center;
+    align-content: center;
+
+    grid-template-columns: 50% 50%;
+    grid-gap: 15px;
+    
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    padding-top: calc(39% - 10px);
+}
+
+.Gallery .cards .card {
+    background-color:bisque;
+    /* height: calc(50% - 39.7px); */
+    width: calc(100% - 6px);
+    min-height: 265px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.css-v6mruo-MuiButtonBase-root-MuiButton-root {
+    color: orangered !important;
+    font-weight: bold;
+}
+
+.MuiModal-root .MuiBox-root.css-1wnsr1i .modalContent {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+
+.MuiModal-root .MuiBox-root.css-1wnsr1i .modalContent input {
+    color: black;
+}
+
+.MuiModal-root .MuiBox-root.css-1wnsr1i .modalButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
