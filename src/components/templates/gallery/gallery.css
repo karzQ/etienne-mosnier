@@ -203,18 +203,6 @@
     padding-top: calc(39% - 10px);
 }
 
-.Gallery .cards .card {
-    background-color:bisque;
-    /* height: calc(50% - 39.7px); */
-    width: calc(100% - 6px);
-    min-height: 265px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-
 .MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.css-v6mruo-MuiButtonBase-root-MuiButton-root {
     color: orangered !important;
     font-weight: bold;

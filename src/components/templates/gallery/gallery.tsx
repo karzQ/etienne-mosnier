@@ -3,6 +3,7 @@ import './gallery.css'
 import { Box, Button, Modal, Typography } from '@mui/material';
 import { GalleryComponent, ImageComponent } from '../../../vite-env';
 
+import Card from '../../Card/Card'
 import React from "react";
 
 const style = {
@@ -54,10 +55,13 @@ const Gallery = (props: GalleryComponent) => {
     }
 
     const handleValidate = async (data: any) => {
+        console.log({data, stfy: JSON.stringify(data)})
         const res = await fetch(`http://127.0.0.1:4000/api/add-card`, {
             method: "POST",
             headers: {
-                'Accept-Encoding': 'gzip, deflate, br'
+                'Content-Type': "multipart/form-data",
+                'accept-encoding': 'gzip, deflate, br',
+                'content-length': '69051'
             },
             body: JSON.stringify(data)
         })
@@ -111,9 +115,7 @@ const Gallery = (props: GalleryComponent) => {
                     <div className="cards">
                         {
                             cards && cards.length > 0 && cards.map((card: any, id: number) => (
-                                <div className='card'>
-                                    <span key={`${id}`}></span>
-                                </div>
+                                <Card {...card} />
                             ))
                         }
                     </div>
