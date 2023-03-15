@@ -34,20 +34,18 @@ const Gallery = (props: GalleryComponent) => {
 
     
     const handleForm = (field: string) => (e: any) => {
-        // let value: any = undefined
+        let value: any = undefined
 
-        // if (field === 'image') {
-        //     value = new FormData()
-        //     value.append("file", e.target)
-        //     console.log(e.target.value)
-        // } else {
-        //     value = e.target.value
-        // }
+        if (field === 'image') {
+            value = e.target.files[0]
+        } else {
+            value = e.target.value
+        }
         
-        // console.log({value})
+        console.log({value})
 
         const obj = {
-            [field]: e.target.value,
+            [field]: value,
             ...formData
             
         }
@@ -55,15 +53,14 @@ const Gallery = (props: GalleryComponent) => {
     }
 
     const handleValidate = async (data: any) => {
-        console.log({data, stfy: JSON.stringify(data)})
+        console.log({ data, stfy: JSON.stringify(data) })
+        const bodyFormData = new FormData()
+        for (const prop in data) {
+            bodyFormData.append(prop, data[prop])
+        }
         const res = await fetch(`http://127.0.0.1:4000/api/add-card`, {
             method: "POST",
-            headers: {
-                'Content-Type': "multipart/form-data",
-                'accept-encoding': 'gzip, deflate, br',
-                'content-length': '69051'
-            },
-            body: JSON.stringify(data)
+            body: bodyFormData
         })
         const search_res = await searchCards()
         setCards(val => search_res)
@@ -84,12 +81,9 @@ const Gallery = (props: GalleryComponent) => {
 
     React.useEffect(() => {
         (async () => {
-            const res: [] = await searchCards()
-            setCards(val => res)
+            const card_list: [] = await searchCards()
+            setCards(val => card_list)
         })()
-        // if (res?.data) {
-        //     setCards(res?.data)
-        // }
     }, [])
 
     React.useEffect(() => {
@@ -108,9 +102,6 @@ const Gallery = (props: GalleryComponent) => {
                         <span>{text}</span>
                     </div>
                 </div>
-                
-                
-
                 <div className='right'>
                     <div className="cards">
                         {

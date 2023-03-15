@@ -1,4 +1,5 @@
 .Card {
+    position: relative;
     background-color:bisque;
     width: calc(100% - 6px);
     min-height: 265px;
