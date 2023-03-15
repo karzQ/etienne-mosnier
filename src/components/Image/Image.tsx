@@ -1,3 +1,5 @@
+import './Image.css'
+
 import React, { Suspense, useEffect, useState } from "react";
 
 const Image = (props: any) => {
@@ -20,6 +22,7 @@ const Image = (props: any) => {
     return (
         <Suspense fallback='Loading..'>
             <img className="image" src={imagePath} />
+            
         </Suspense>
     )
 }

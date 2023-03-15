@@ -1,10 +1,12 @@
 .Card {
     position: relative;
     background-color:bisque;
-    width: calc(100% - 6px);
-    min-height: 265px;
+    width: fit-content;
+    max-width: 614px;
+    height: 265px;
 
     display: flex;
+    flex: 45%;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;

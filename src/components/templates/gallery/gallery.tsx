@@ -72,7 +72,7 @@ const Gallery = (props: GalleryComponent) => {
         
         try {
             console.log({ res })
-            return res.cards
+            return res.cards.filter((item: any) => item.type === type)
         } catch (err) {
             console.error({ err })
             return []
