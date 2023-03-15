@@ -53,7 +53,7 @@ const App = () => {
         <Header links={pages} setSelectedLink={setSelectedLink} />
         <CustomRoute {...activePage} setSelectedLink={setSelectedLink} />
         <div className='footer'>
-          <span>Etienne Mosnier | DNSEP 2023 | option design | Mention Design des communs | Objets connectés design des données | ÉSAD | École supérieure d’art et de design d’Orléans | www.esadorleans.fr</span>
+          <span>Etienne Mosnier | DNSEP 2023 | option design | Mention Design des communs | Objets connectés design des données | ÉSAD | École supérieure d’art et de design d’Orléans | www.esadorleans.fr | BY-NC-ND</span>
         </div>
                 
       </Router>

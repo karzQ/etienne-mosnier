@@ -172,6 +172,14 @@
 .Gallery .main .left {
     width: 30%;
 }
+
+
+.Gallery .main .left .text span {
+    display: flex;
+    width: 100%;
+    text-align: justify;
+}
+
 .Gallery .main .right {
     width: 70%;
 }

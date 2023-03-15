@@ -102,6 +102,11 @@ html {
   background-color: white;
 }
 
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeSmall.MuiButton-textSizeSmall.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeSmall.MuiButton-textSizeSmall {
+  font-family: 'Degular Display Regular';
+  font-size: 1em;
+}
+
 .MuiLinearProgress-root.MuiLinearProgress-colorPrimary.MuiLinearProgress-determinate.MuiMobileStepper-progress.css-fj57lw-MuiLinearProgress-root-MuiMobileStepper-progress {
   width: 70%;
 }

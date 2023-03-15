@@ -4,7 +4,7 @@
   },
   "hosting": {
     "site": "etienne-mosnier",
-    "public": "fb_public",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
