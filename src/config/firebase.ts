@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 
 import {getDownloadURL, getStorage, ref, uploadBytesResumable} from 'firebase/storage'
-import {getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite'
+import {getFirestore, collection, getDocs, addDoc, query, where } from 'firebase/firestore/lite'
 import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
@@ -19,9 +19,10 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 const storage = getStorage(app)
 
-export const getCards = async () => {
+export const getCards = async (type: string) => {
   const cardsCol = collection(db, 'cards')
-  const cardsSnapshot = await getDocs(cardsCol)
+  const q = query(cardsCol, where("type", "==", type));
+  const cardsSnapshot = await getDocs(q)
   const cardsList = cardsSnapshot.docs.map((doc: any) => doc.data())
   return cardsList
 }

@@ -56,7 +56,9 @@ const App = () => {
         <Route path='boite_a_outils' element={<Tools page={activePage} setActivePage={setActivePage} />}>
           <Route path=':cardId' element={<Text page={activePage} />} />
         </Route>
-        <Route path='archivage' element={<Archive page={activePage} setActivePage={setActivePage} />} />
+        <Route path='archivage' element={<Archive page={activePage} setActivePage={setActivePage} />}>
+          <Route path=':cardId' element={<Text page={activePage} />} />
+        </Route>
       </Routes>
       <div className='footer'>
         <span>Etienne Mosnier | DNSEP 2023 | option design | Mention Design des communs | Objets connectés design des données | ÉSAD | École supérieure d’art et de design d’Orléans | www.esadorleans.fr | CC-BY-SA</span>

@@ -60,14 +60,14 @@ const Gallery = (props: any) => {
         // setCards(val => res)
         
         await addCard({...data})
-        const res = await getCards()
+        const res = await getCards(type)
         setCards(val => res)
         handleClose()
     }
 
     React.useEffect(() => {
         (async () => {
-            const card_list: any[] = await getCards()
+            const card_list: any[] = await getCards(type)
             setCards(val => card_list)
         })()
     }, [])

@@ -46,7 +46,6 @@ const Tools = (props: any) => {
             value = e.target.value
         }
         const obj = {
-            // [field]: e.target.value,
             [field]: value,
             ...formData
             
@@ -57,14 +56,14 @@ const Tools = (props: any) => {
     const handleValidate = async (data: any) => {
         // For Firebase        
         await addCard({...data})
-        const res = await getCards()
+        const res = await getCards(type)
         setPages((val: any) => res)
         handleClose()
     }
 
     React.useEffect(() => {
         (async () => {
-            const card_list: any[] = await getCards()
+            const card_list: any[] = await getCards(type)
             setPages((val: any) => card_list)
         })()
 
