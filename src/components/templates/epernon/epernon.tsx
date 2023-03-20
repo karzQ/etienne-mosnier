@@ -1,21 +1,21 @@
-import './text.css'
+import './epernon.css'
 
-import { ApplySup, Capitalize } from '../../../helpers/functions'
+import { ApplySup } from '../../../helpers/functions'
 import { useCallback, useEffect, useState, useReducer } from "react";
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import Button from '@mui/material/Button';
 import Image from '../../Image/Image';
 import MobileStepper from '@mui/material/MobileStepper';
 import { useParams } from 'react-router-dom'
 
-const Text = (props: any) => {
+const Epernon = (props: any) => {
                                 
     const navigate = useNavigate()
-    const { page, setOpenedCard, close } = props
-    const { id, pages, nextPart, } = page
-    const [pageNumber, setPageNumber] = useState<number>(id ? +id : 0)
-    const [activePage, setActivePage] = useState<any>(pages[pageNumber])
+    const { page, onChange } = props
+    const { id, pages, nextPart } = page
+    const [pageNumber, setPageNumber] = useState<number>(0)
+    const [activePage, setActivePage] = useState<any>(pages[0])
 
     const handleUserKeyPress = useCallback((event: any) => {
         const { keyCode } = event;
@@ -28,12 +28,12 @@ const Text = (props: any) => {
     }, []);
 
     const handleNext = (num: number) => {
-        if (num === pages.length - 1 && nextPart) {
-            navigate(`/${nextPart.id}`)
-            setPageNumber(0)
-        } else {
+        // if (num === pages.length - 1 && nextPart) {
+        //     onChange(nextPart.id)
+        //     navigate(`/${nextPart.id}`)
+        // } else {
             setPageNumber((val: number) => val < pages.length-1 ? val + 1 : val);
-        }
+        // }
     };
 
     const handleBack = () => {
@@ -49,6 +49,15 @@ const Text = (props: any) => {
             return 'Continuer'
         }
     }
+
+    useEffect(() => {
+        setActivePage(pages[0])
+    }, [])
+
+    useEffect(() => {
+        console.log('Page X :', page)
+    }, [page])
+
     useEffect(() => {
         setActivePage((val: any) => pages[pageNumber])
     }, [pageNumber])
@@ -62,7 +71,7 @@ const Text = (props: any) => {
 
     return (
         <>
-            <div className='Text container'>
+            <div className='Epernon container'>
                 <div className="titles">
                     <h1>{activePage.title}</h1>
                     <h4>{activePage.subtitle}</h4>
@@ -75,12 +84,6 @@ const Text = (props: any) => {
                                 activePage.texts && activePage.texts.map((text: any) => (
                                     <span className={text.classNames} dangerouslySetInnerHTML={{__html: ApplySup(text.text)}}></span>
                                 ))
-                            }
-
-                            {
-                                !activePage.texts && activePage.text && (
-                                    <span dangerouslySetInnerHTML={{__html: ApplySup(activePage.text)}}></span>
-                                )
                             }
 
                             <div className='annotations'>
@@ -105,9 +108,18 @@ const Text = (props: any) => {
                                     display: 'flex', flexDirection: 'row',
                                     width: 500, justifyContent: 'space-between', gap: 2, paddingLeft: 0
                                 }}
+                                // nextButton={pageNumber === pages.length - 1 ?
+                                //     <Button size="small" onClick={() => handleNext(pageNumber)} disabled={pageNumber === pages.length - 1 && !nextPart}>
+                                //         Passer
+                                //     </Button>
+                                //     :
+                                //     <Button size="small" onClick={() => handleNext(pageNumber)} disabled={pageNumber === pages.length-1 && !nextPart}>
+                                //         {pageNumber === 0 ? 'Commencer' : 'Continuer'}
+                                //     </Button>
+                                // }
                                 nextButton={
-                                    <Button size="small" onClick={() => handleNext(pageNumber)} disabled={pageNumber === pages.length-1 && !nextPart}>
-                                        {handleTextNextButton(pageNumber)}
+                                    <Button size="small" onClick={() => handleNext(pageNumber)} disabled={pageNumber === pages.length-1}>
+                                        {pageNumber === 0 ? 'Commencer' : 'Continuer'}
                                     </Button>
                                 }
                                 backButton={
@@ -120,22 +132,14 @@ const Text = (props: any) => {
                     </div>
                     <div className={pageNumber == 0 ? "right intro" : "right"}>
                         <div className='image'>
-                            <Image online src={activePage.image} dir={id} />
+                            <Image src={activePage.image} dir={id} />
                         </div>
                         <span className="legend">{activePage.legend}</span>
                     </div>
-                </div>
-
-                <div className="footer">
-                    {
-                        close && (
-                            <Button onClick={() => setOpenedCard(false)}>Quitter</Button>
-                        )
-                    }
                 </div>
             </div>
         </>
     )
 }
 
-export default Text;
+export default Epernon;

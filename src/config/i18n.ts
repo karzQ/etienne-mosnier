@@ -28,7 +28,7 @@ i18n
         // if you're using a language detector, do not define the lng option
 
         fallbackLng: "fr",
-        debug: true,
+        debug: false,
         
         interpolation: {
             escapeValue: false // react already safes from xss

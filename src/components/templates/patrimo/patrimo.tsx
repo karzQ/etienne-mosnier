@@ -1,20 +1,22 @@
-import './text.css'
+import './patrimo.css'
 
 import { ApplySup, Capitalize } from '../../../helpers/functions'
-import { useCallback, useEffect, useState, useReducer } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
 import Button from '@mui/material/Button';
 import Image from '../../Image/Image';
 import MobileStepper from '@mui/material/MobileStepper';
 import { useParams } from 'react-router-dom'
+import { useTheme } from '@mui/material/styles';
 
-const Text = (props: any) => {
+const Patrimo = (props: any) => {
                                 
     const navigate = useNavigate()
-    const { page, setOpenedCard, close } = props
+    const {pageId} = useParams()
+    const { nextPage, page } = props
     const { id, pages, nextPart, } = page
-    const [pageNumber, setPageNumber] = useState<number>(id ? +id : 0)
+    const [pageNumber, setPageNumber] = useState<number>(pageId ? +pageId : 0)
     const [activePage, setActivePage] = useState<any>(pages[pageNumber])
 
     const handleUserKeyPress = useCallback((event: any) => {
@@ -30,7 +32,6 @@ const Text = (props: any) => {
     const handleNext = (num: number) => {
         if (num === pages.length - 1 && nextPart) {
             navigate(`/${nextPart.id}`)
-            setPageNumber(0)
         } else {
             setPageNumber((val: number) => val < pages.length-1 ? val + 1 : val);
         }
@@ -49,6 +50,11 @@ const Text = (props: any) => {
             return 'Continuer'
         }
     }
+
+    useEffect(() => {
+        console.log('Page X :', page)
+    }, [page])
+
     useEffect(() => {
         setActivePage((val: any) => pages[pageNumber])
     }, [pageNumber])
@@ -62,7 +68,7 @@ const Text = (props: any) => {
 
     return (
         <>
-            <div className='Text container'>
+            <div className='Patrimo container'>
                 <div className="titles">
                     <h1>{activePage.title}</h1>
                     <h4>{activePage.subtitle}</h4>
@@ -75,12 +81,6 @@ const Text = (props: any) => {
                                 activePage.texts && activePage.texts.map((text: any) => (
                                     <span className={text.classNames} dangerouslySetInnerHTML={{__html: ApplySup(text.text)}}></span>
                                 ))
-                            }
-
-                            {
-                                !activePage.texts && activePage.text && (
-                                    <span dangerouslySetInnerHTML={{__html: ApplySup(activePage.text)}}></span>
-                                )
                             }
 
                             <div className='annotations'>
@@ -120,22 +120,14 @@ const Text = (props: any) => {
                     </div>
                     <div className={pageNumber == 0 ? "right intro" : "right"}>
                         <div className='image'>
-                            <Image online src={activePage.image} dir={id} />
+                            <Image src={activePage.image} dir={id} />
                         </div>
                         <span className="legend">{activePage.legend}</span>
                     </div>
-                </div>
-
-                <div className="footer">
-                    {
-                        close && (
-                            <Button onClick={() => setOpenedCard(false)}>Quitter</Button>
-                        )
-                    }
                 </div>
             </div>
         </>
     )
 }
 
-export default Text;
+export default Patrimo;

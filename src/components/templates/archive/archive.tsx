@@ -1,4 +1,4 @@
-import './gallery.css'
+import './archive.css'
 
 import { getCards, addCard } from '../../../config/firebase'
 
@@ -19,9 +19,10 @@ const style = {
     p: 4,
   };
 
-const Gallery = (props: any) => {
+const Archive = (props: any) => {
 
-    const { title, text, id, setActivePage } = props
+    const { page } = props
+    const { title, text, id } = page
     const type = id
     
     const [cards, setCards] = React.useState<any[]>([]);
@@ -53,12 +54,7 @@ const Gallery = (props: any) => {
 
     const handleValidate = async (data: any) => {
         
-        // For Firebase
-
-        // await addCard({ ...data })
-        // const res = await getCards()
-        // setCards(val => res)
-        
+        // For Firebase        
         await addCard({...data})
         const res = await getCards()
         setCards(val => res)
@@ -74,16 +70,10 @@ const Gallery = (props: any) => {
 
     React.useEffect(() => {
         const card_list = cards;
-        setActivePage((val: any) => {
-            return {
-                'cards': card_list,
-                ...props
-            }
-        })
     }, [cards])
 
     return (
-        <div className='Gallery container'>
+        <div className='Archive container'>
             <div className="titles">
                 <h1>{title}</h1>
                 <h4></h4>
@@ -143,4 +133,4 @@ const Gallery = (props: any) => {
     )
 }
 
-export default Gallery;
+export default Archive;

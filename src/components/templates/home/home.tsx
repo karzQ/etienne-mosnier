@@ -1,17 +1,16 @@
 import './home.css'
 
-import { HomeComponent, LinkComponent } from '../../../vite-env';
-
-import { Link } from 'react-router-dom';
-import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { changeLanguage } from 'i18next';
 import { useTranslation } from 'react-i18next';
 
-const Home = (props: HomeComponent) => {
+const Home = (props: any) => {
 
+    const navigate = useNavigate()
     const { t, i18n } = useTranslation();
-    const { title, subtitle, links, setSelectedLink } = props;
-
+    const { page, onChange } = props
+    const { title, subtitle, links  } = page;
     const [selectedLanguage, setSelectedLanguage] = React.useState(i18n.language)
 
     const handleSelectedLanguage = (language: string) => {
@@ -32,11 +31,13 @@ const Home = (props: HomeComponent) => {
                 <div className="left">
                     <div className='categories'>
                         {
-                            links && links.length > 0 && links.map((link: LinkComponent, id: number) => (
-                                <Link key={`${id}-${link.id}`} to={`/${link.src}`} className='link' onClick={() => setSelectedLink(link.src)}>
-                                    <span>0{id+1} | {link.text}</span>
-                                </Link>
-                            ))
+                            links && links.length > 0 && links.map((link: any, id: number) => {
+                                return (
+                                    <Link key={`${id}-${link.id}`} to={`/${link.src}`} onClick={() => onChange(link.src)} className='link'>
+                                        <span>0{id + 1} | {link.text}</span>
+                                    </Link>
+                                )
+                            })
                         }
                     </div>
                 </div>
@@ -45,7 +46,6 @@ const Home = (props: HomeComponent) => {
                     <span>{t('abstract')}</span>
                 </div>
             </div>
-            {/* <span>Etienne Mosnier | DNSEP 2023 | option design | Mention Design des communs | Objets connectés design des données | ÉSAD | École supérieure d’art et de design d’Orléans | www.esadorleans.fr</span> */}
             <span className='i18n'>
                 <div className={selectedLanguage == 'fr' ? 'i18nButtons selected' : 'i18nButtons'} onClick={() => handleSelectedLanguage('fr')}>FR</div>
                 |

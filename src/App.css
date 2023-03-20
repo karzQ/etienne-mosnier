@@ -64,6 +64,11 @@ html {
   font-size: 1.6em;
 }
 
+.container .text span.alternate.italic {
+  font-style: italic;
+  font-family: 'Degular italic' !important;
+}
+
 .container {
   position: relative;
   top: 50px;
@@ -109,4 +114,10 @@ html {
 
 .MuiLinearProgress-root.MuiLinearProgress-colorPrimary.MuiLinearProgress-determinate.MuiMobileStepper-progress.css-fj57lw-MuiLinearProgress-root-MuiMobileStepper-progress {
   width: 70%;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeSmall.MuiButton-textSizeSmall.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeSmall.MuiButton-textSizeSmall.css-15oo7et-MuiButtonBase-root-MuiButton-root:nth-child(3) {
+  /* max-width: 220px !important; */
+  max-width: inherit;
+  width: max-content;
 }

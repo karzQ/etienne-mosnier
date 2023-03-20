@@ -1,11 +1,11 @@
-.Text .main {
+.Patrimo .main {
     display: flex;
     flex-direction: row;
 
     height: calc(100% - 85px);
 }
 
-.Text .main .left {
+.Patrimo .main .left {
     position: relative;
     
     height: inherit;
@@ -17,7 +17,7 @@
 }
 
 
-.Text .main .right .legend {
+.Patrimo .main .right .legend {
     font-size: smaller;
     color: initial;
     position: absolute;
@@ -27,7 +27,7 @@
 }
 
 
-.Text .main .right {
+.Patrimo .main .right {
     width: 40%;
     max-height: 575px;
     position: relative;
@@ -37,7 +37,7 @@
     flex-direction: column;
 }
 
-.Text .main .left .text {
+.Patrimo .main .left .text {
     position: relative;
     height: inherit;
 
@@ -47,34 +47,26 @@
     gap: 15px;
 }
 
-.Text .main .left .text span {
+.Patrimo .main .left .text span {
     hyphens: auto;
 }
 
-.Text .main .left .text span * {
+.Patrimo .main .left .text span * {
     color: initial;
     font-size: small
 }
 
-.Text .main .left .text .annotations {
+.Patrimo .main .left .text .annotations {
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding-top: 15px;
 }
 
-.Text .main .left .text .annotations span.annotation {
+.Patrimo .main .left .text .annotations span.annotation {
     font-size: x-small;
 }
 
 .MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeSmall.MuiButton-textSizeSmall.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeSmall.MuiButton-textSizeSmall.css-15oo7et-MuiButtonBase-root-MuiButton-root:nth-child(3) {
     /* width: inherit; */
-}
-
-.Text .footer {
-    width: 100%;
-    bottom: 5px;
-    left: 0;
-    
-    justify-content: end;
 }

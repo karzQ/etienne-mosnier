@@ -1,0 +1,76 @@
+.Tools {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.Tools .main {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    height: calc(85% - 100px);
+}
+
+.Tools .main .left {
+    width: 30%;
+}
+
+
+.Tools .main .left .text span {
+    display: flex;
+    width: 100%;
+    text-align: justify;
+}
+
+.Tools .main .right {
+    width: 70%;
+}
+
+.Tools .footer {
+    width: 100%;
+    bottom: 5px;
+    left: 0;
+    
+    justify-content: end;
+}
+
+.Tools .cards {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+
+    
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.css-v6mruo-MuiButtonBase-root-MuiButton-root {
+    color: orangered !important;
+    font-weight: bold;
+}
+
+.MuiModal-root .MuiBox-root.css-1wnsr1i .modalContent {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+
+.MuiModal-root .MuiBox-root.css-1wnsr1i .modalContent input {
+    color: black;
+}
+
+.MuiModal-root .MuiBox-root.css-1wnsr1i .modalButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

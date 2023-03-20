@@ -1,5 +1,4 @@
 import './header.css'
-import 'animate.css'
 
 import React, { useEffect } from "react";
 
@@ -9,7 +8,7 @@ import cailloux_gif from '../../assets/img/cailloux.gif'
 import cailloux_static from '../../assets/img/cailloux_fixed.png'
 
 const Header = (props: any) => {
-    const {links, setSelectedLink} = props
+    const {pages, setPage} = props
     const [isShown, setIsShown] = React.useState(false);
 
     return (
@@ -22,13 +21,13 @@ const Header = (props: any) => {
                 isShown && (
                     <div className="links">
                         {
-                            links && links.length > 0 && links.map((item: any, id: number) => (
-                                <>
-                                    <Link key={`${id}-${item.id}`} to={`/${item.id}`} onClick={() => setSelectedLink(item.id)}>{Capitalize(item.name)}</Link>
+                            pages && pages.length > 0 && pages.map((page: any, id: number) => (
+                                <React.Fragment key={`${id}-${page.id}`}>
+                                    <Link to={`/${page.id}`} onClick={() => setPage(page.id)}>{Capitalize(page.name)}</Link>
                                     {
-                                        id < links.length-1 ? <span className='separator'>|</span> : ''
+                                        id < pages.length-1 ? <span className='separator'>|</span> : ''
                                     }
-                                </>
+                                </React.Fragment>
                             ))
                         }
                     </div>

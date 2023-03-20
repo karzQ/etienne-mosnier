@@ -1,12 +1,11 @@
 import './Image.css'
-
 import React, { Suspense, useEffect, useState } from "react";
 
 const Image = (props: any) => {
-    const {src, dir} = props
-    const [imagePath, setImagePath] = useState(src);
+    const {src, dir, online} = props
+    const [imagePath, setImagePath] = useState('');
     useEffect(() => {
-        if (dir) {
+        if (dir && !online) {
             (async () => {
                 let path: any = null
                 if (dir) {
@@ -21,7 +20,7 @@ const Image = (props: any) => {
 
     return (
         <Suspense fallback='Loading..'>
-            <img className="image" src={imagePath} />
+            <img className="image" src={online ? src : imagePath} />
             
         </Suspense>
     )

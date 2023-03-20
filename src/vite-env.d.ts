@@ -41,7 +41,8 @@ export type PageComponent = {
     text?: string,
     texts?: SubTextComponent[],
     annotations?: AnnotationsComponent[],
-    image: ImageComponent
+    image: ImageComponent,
+    setActiveComponent: Function
 }
 
 export type GalleryComponent = {
@@ -51,7 +52,8 @@ export type GalleryComponent = {
     title: string,
     text: string,
     images: ImageComponent[],
-    filters: FiltersComponent[]
+    filters: FiltersComponent[],
+    setActiveComponent: Function
 }
 
 export type TextComponent = {
@@ -60,7 +62,9 @@ export type TextComponent = {
     template: string,
     title: string,
     image: ImageComponent,
-    pages: PageComponent[]
+    pages: PageComponent[],
+    nextPart?: string,
+    setSelectedLink: Function
 }
 
 export type HomeComponent = {
@@ -71,9 +75,6 @@ export type HomeComponent = {
     title: string,
     images: ImageComponent[],
     links: LinkComponent[],
-    setSelectedLink: Function
-}
-
-export type IntroComponent = {
-    
+    setSelectedLink: Function,
+    setActiveComponent: Function
 }

@@ -4,10 +4,17 @@ import Image from '../Image/Image';
 import React from 'react'
 
 const Card = (props: any) => {
-    const { _id, subtitle, image } = props;
+    const { page, setOpenedCard, setSelectedCard } = props;
+    const {_id, subtitle, image } = page
+    
+    const handleOpenCard = () => {
+        setSelectedCard((v: any) => page)
+        setOpenedCard(true)
+    }
+    
     return (
-        <div className='Card'>
-            <Image src={image} />
+        <div className='Card' onClick={() => handleOpenCard()}>
+            <Image online src={image} />
             {
                 _id && <span key={`${_id}`}>{subtitle}</span>
             }
