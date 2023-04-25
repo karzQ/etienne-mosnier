@@ -343,7 +343,8 @@
             "id": "archivage",
             "name": "archivage",
             "template": "gallery",
-            "title": "Archivage"
+            "title": "Journal de chantiers",
+            "text": "Par la mise en place d’une démarche expérimentale, nous chercherons donc à requalifier les savoirs et pratiques de la pierre qui ont eu cours sur le territoire d’Épernon. Cette recherche s’attachera à l'élaboration de protocoles ouverts, et contributifs, en déployant différents artefacts génériques, qui feront état d’une tentative de transcription, de réécriture de ce qui constitue ce patrimoine, dans des dimensions techniques et sociétales contemporaines, de nature cosmolocale. En tâchant de se déprendre de la maîtrise, et ainsi permettre la reprise de savoirs et savoir-faire dans un territoire de vie."
         }
     ]
 }

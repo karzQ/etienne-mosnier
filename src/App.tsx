@@ -47,17 +47,17 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header pages={pages} setPage={setPage} />
+      <Header key='header' pages={pages} setPage={setPage} />
       <Routes>
-        <Route index element={<Home page={activePage} onChange={(data: any) => setPage(data)} />} />
-        <Route path='accueil' element={<Home page={activePage} onChange={(data: any) => setPage(data)} />} />
-        <Route path='epernon' element={<Epernon page={activePage} onChange={(data: any) => nextPage(data)} />} />
-        <Route path='patrimonialisation' element={<Patrimo page={activePage} onChange={(data: any) => nextPage(data)} />} />
-        <Route path='boite_a_outils' element={<Tools page={activePage} setActivePage={setActivePage} />}>
-          <Route path=':cardId' element={<Text page={activePage} />} />
+        <Route index element={<Home key='home' page={activePage} onChange={(data: any) => setPage(data)} />} />
+        <Route path='accueil' element={<Home key='accueil' page={activePage} onChange={(data: any) => setPage(data)} />} />
+        <Route path='epernon' element={<Epernon key='epernon' page={activePage} onChange={(data: any) => nextPage(data)} />} />
+        <Route path='patrimonialisation' element={<Patrimo key='patrimonialisation' page={activePage} onChange={(data: any) => nextPage(data)} />} />
+        <Route path='boite_a_outils' element={<Tools key='tools' page={activePage} setActivePage={setActivePage} />}>
+          <Route path=':cardId' element={<Text key='toolCard' page={activePage} />} />
         </Route>
-        <Route path='archivage' element={<Archive page={activePage} setActivePage={setActivePage} />}>
-          <Route path=':cardId' element={<Text page={activePage} />} />
+        <Route path='archivage' element={<Archive key='archive' page={activePage} setActivePage={setActivePage} />}>
+          <Route path=':cardId' element={<Text key='archiveCard' page={activePage} />} />
         </Route>
       </Routes>
       <div className='footer'>

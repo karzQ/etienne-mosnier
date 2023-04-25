@@ -69,7 +69,7 @@ const Text = (props: any) => {
                 </div>
 
                 <div className="main">
-                    <div className={pageNumber == 0 ? "left intro" : "left"}>
+                    <div className={pageNumber == 0 && !setOpenedCard ? "left intro" : "left"}>
                         <div className="text">
                             {
                                 activePage.texts && activePage.texts.map((text: any) => (
@@ -118,7 +118,7 @@ const Text = (props: any) => {
                             />
                         </div>
                     </div>
-                    <div className={pageNumber == 0 ? "right intro" : "right"}>
+                    <div className={pageNumber == 0 && !setOpenedCard ? "right intro" : "right"}>
                         <div className='image'>
                             <Image online src={activePage.image} dir={id} />
                         </div>
