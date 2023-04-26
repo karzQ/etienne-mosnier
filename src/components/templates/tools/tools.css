@@ -53,6 +53,78 @@
     overflow-x: hidden;
 }
 
+.Tools .left .filter {
+    margin-top: 70px;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.Tools .left .filter .tags {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.Tools .left .filter .tags .tag {
+    text-align: center;
+    height: 35px;
+    width: fit-content;
+    padding: 6px 10px 0 10px;
+    color: black;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: 2px solid orangered;
+    user-select: none;
+}
+
+.Tools .left .filter .tags .tag.selected {
+    background-color: orangered;
+}
+
+.MuiBox-root .MuiFormControl-root .modal-content-right {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 20px
+}
+
+.MuiBox-root .MuiFormControl-root .modal-content-left {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    gap: 20px
+}
+
+.MuiBox-root .MuiFormControl-root .image-preview-container {
+    position: relative;
+    width: 100%;
+    height: 348px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: lightgray;
+}
+
+.MuiBox-root .modal-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+} 
+
 .MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.css-v6mruo-MuiButtonBase-root-MuiButton-root {
     color: orangered !important;
     font-weight: bold;

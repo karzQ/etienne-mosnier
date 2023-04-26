@@ -3,11 +3,32 @@
     background-color:bisque;
     width: fit-content;
     max-width: 614px;
-    height: 265px;
+    height: 497px;
 
     display: flex;
     flex: 45%;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+}
+
+.Card .image {
+    width: 100%;
+}
+
+.Card .card-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.Card .card-background .card-title {
+    position: absolute;
+    bottom: 0;
+    right: 25px;
+    color: white;
 }
