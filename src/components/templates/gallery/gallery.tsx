@@ -52,13 +52,6 @@ const Gallery = (props: any) => {
     }
 
     const handleValidate = async (data: any) => {
-        
-        // For Firebase
-
-        // await addCard({ ...data })
-        // const res = await getCards()
-        // setCards(val => res)
-        
         await addCard({...data})
         const res = await getCards(type)
         setCards(val => res)

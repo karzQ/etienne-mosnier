@@ -13,7 +13,7 @@ const Text = (props: any) => {
                                 
     const navigate = useNavigate()
     const { page, setOpenedCard, close } = props
-    const { id, pages, nextPart, } = page
+    const { id, pages, nextPart } = page
     const [pageNumber, setPageNumber] = useState<number>(id ? +id : 0)
     const [activePage, setActivePage] = useState<any>(pages[pageNumber])
 
@@ -60,6 +60,10 @@ const Text = (props: any) => {
         };
     }, [handleUserKeyPress]);
 
+    useEffect(() => {
+        console.log({props})
+    }, [])
+
     return (
         <>
             <div className='Text container'>
@@ -83,15 +87,25 @@ const Text = (props: any) => {
                                 )
                             }
 
-                            <div className='annotations'>
-                                {
-                                    activePage.annotations && activePage.annotations.map((annotation: any) => (
-                                        <span className="annotation">
-                                            <sup>{annotation.annotationNumber}</sup>{annotation.text}
-                                        </span>
-                                    ))
-                                }
-                            </div>
+                            {
+                                activePage?.annotations && (
+                                    <div className='annotations'>
+                                        {
+                                            activePage?.annotations.map((annotation: any) => (
+                                                <span className="annotation">
+                                                    <sup>{annotation.annotationNumber}</sup>{annotation.text}
+                                                </span>
+                                            ))
+                                        }
+                                    </div>
+                                )
+                            }
+
+                            {
+                                activePage?.references && (
+                                    <span>{activePage?.references}</span>
+                                )
+                            }
 
                         </div>
 
@@ -120,7 +134,7 @@ const Text = (props: any) => {
                     </div>
                     <div className={pageNumber == 0 && !setOpenedCard ? "right intro" : "right"}>
                         <div className='image'>
-                            <Image online src={activePage.image} dir={id} />
+                            <Image online src={activePage.image} zoomable dir={id} />
                         </div>
                         <span className="legend">{activePage.legend}</span>
                     </div>

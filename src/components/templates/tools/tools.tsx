@@ -16,8 +16,8 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 1200,
-    height: 700,
+    width: 1400,
+    height: 850,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -53,9 +53,10 @@ const Tools = (props: any) => {
     const type = id
     
     const [selectedFilters, setSelectedFilters] = React.useState<number[]>([])
-    const [tags, setTags] = React.useState<any[]>([...tags_data.tags]);
+    const [tags] = React.useState<any[]>([...tags_data.tags]);
     const [selectedTags, setSelectedTags] = React.useState<any[]>([]);
     const [pages, setPages] = React.useState<any[]>([]);
+    const [filteredPages, setFilteredPages] = React.useState<any[]>([]);
     const [openedCard, setOpenedCard] = React.useState<boolean>(false)
     const [selectedCard, setSelectedCard] = React.useState<any>(null);
     const [open, setOpen] = React.useState(false);
@@ -63,8 +64,8 @@ const Tools = (props: any) => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => {
         setFormData({ type })
-        setTags([])
         setOpen(false)
+        setSelectedTags([])
     };
     
     const handleForm = (field: string) => (e: any) => {
@@ -91,7 +92,7 @@ const Tools = (props: any) => {
         // For Firebase        
         await addCard({...data})
         const res = await getCards(type)
-        setPages((val: any) => res)
+        setPages(prev => res)
         handleClose()
     }
 
@@ -114,7 +115,7 @@ const Tools = (props: any) => {
     React.useEffect(() => {
         (async () => {
             const card_list: any[] = await getCards(type)
-            setPages((val: any) => card_list)
+            setPages(prev => card_list)
         })()
 
         return () => {
@@ -123,8 +124,34 @@ const Tools = (props: any) => {
     }, [])
 
     React.useEffect(() => {
-        console.log(formData)
+        console.log({selectedCard})
+    }, [selectedCard])
+
+    React.useEffect(() => {
+        console.log({formData})
     }, [formData])
+
+    React.useEffect(() => {
+        setFilteredPages(prev => pages && [...pages])
+    }, [pages])
+
+    React.useEffect(() => {
+        // console.log({filteredPages})
+    }, [filteredPages])
+
+    React.useEffect(() => {
+        if (selectedFilters.length > 0) {
+            setFilteredPages(prev => prev.filter((page: any) => {
+                selectedFilters.forEach((filter: any) => {
+                    if (page?.tags && page?.tags.includes(tags[filter])) {
+                        return page
+                    }
+                })
+            }))
+        } else {
+            setFilteredPages(prev => [...pages])
+        }
+    }, [selectedFilters])
 
     if (openedCard) {
         return <Text page={{pages, ...selectedCard}} setOpenedCard={setOpenedCard} close />
@@ -163,8 +190,8 @@ const Tools = (props: any) => {
                             rowHeight={200}
                             gap={1}>
                             {
-                                pages && pages.length > 0 && pages.map((page: any, id: number) => (
-                                    <Card id={id} pages={pages} page={page} setSelectedCard={setSelectedCard} setOpenedCard={setOpenedCard} />
+                                filteredPages && filteredPages.length > 0 && filteredPages.map((page: any, id: number) => (
+                                    <Card id={id} pages={filteredPages} page={page} setSelectedCard={setSelectedCard} setOpenedCard={setOpenedCard} />
                                 ))
                             }
                         </ImageList>
@@ -176,7 +203,7 @@ const Tools = (props: any) => {
         
                     <Modal open={open} onClose={handleClose}>
                         <Box sx={style}>
-                            <Typography id="modal-title" variant="h4">
+                            <Typography className='typo-title' id="modal-title" variant="h4">
                                 Créer un nouvel article
                             </Typography>
 
@@ -194,9 +221,12 @@ const Tools = (props: any) => {
                                         onBlur={(e: any) => !selectedTags.includes(e.target.value) && e.target.value !== '' ? setSelectedTags(prev => [...prev, e.target.value]) : ''}
                                         renderTags={(value: readonly string[], getTagProps) =>
                                             value.map((option: string, index: number) => (
-                                              <Chip variant="outlined" label={option} {...getTagProps({ index })} />
+                                              <Chip variant="outlined" onDelete={(item) => setSelectedTags(prev => prev.filter((tag: any) => prev.indexOf(tag) !== index))} label={option} />
                                             ))
                                           }
+                                        renderOption={(props, option) => (
+                                            <Box component="li" {...props} onClick={() => setSelectedTags(prev => [...prev, option])}>{option}</Box>
+                                            )}
                                         renderInput={(params) => (
                                             <TextField required {...params}
                                                 id="card-tags"
@@ -206,11 +236,10 @@ const Tools = (props: any) => {
                                         )} />
                                     
                                     <TextField required id="card-text" sx={{width: "100%"}} label="Texte" variant="outlined" multiline rows={10} onBlur={handleForm('text')} />
+                                    <TextField required id="card-annotations" sx={{width: "100%"}} label="Références" variant="outlined" multiline rows={6} onBlur={handleForm('references')} />
                                 </div>
 
-                                <div className='modal-content-right'>
-                                    <TextField required id="card-legend" label="Légende" variant="outlined" onBlur={handleForm('legend')} />
-                                    <Button component="label"
+                                <div className='modal-content-right'><Button sx={{ marginBottom: "19px"}} component="label"
                                         variant="outlined">
                                         <>
                                             {
@@ -223,6 +252,15 @@ const Tools = (props: any) => {
                                             <input required name="image" hidden type="file" onChange={handleForm('image')} />
                                         </>
                                     </Button>
+                                    <div className='image-preview-container'>
+                                        {
+                                            formData?.['image'] ? (
+                                                <img className='image-preview' src={URL.createObjectURL(formData['image'])} />
+                                            ) : "Aucune image"
+                                        }
+                                    </div>
+                                    <TextField required id="card-legend" label="Légende" variant="outlined" onBlur={handleForm('legend')} />
+                                    
                                 </div>
                             </FormControl>
 

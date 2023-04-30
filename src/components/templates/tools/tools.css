@@ -107,7 +107,7 @@
 .MuiBox-root .MuiFormControl-root .image-preview-container {
     position: relative;
     width: 100%;
-    height: 348px;
+    height: 403px;
     border-radius: 5px;
     border: 1px solid lightgray;
     display: flex;
@@ -115,7 +115,13 @@
     align-items: center;
     justify-content: center;
     color: black;
-    background-color: lightgray;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.MuiBox-root .MuiFormControl-root .image-preview-container .image-preview {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 .MuiBox-root .modal-buttons {
