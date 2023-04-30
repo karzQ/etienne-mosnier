@@ -1,107 +1,3 @@
-/* .Home {
-    width: 100%;
-    height: 100%;
-    
-    display: flex;
-    flex-direction: column;
-}
-
-.Home .main {
-    width: inherit;
-    height: inherit;
-
-    display: grid;
-
-    justify-content: center;
-    align-content: center;
-
-    grid-auto-columns: 1fr;
-    grid-auto-rows: 1fr;
-    grid-auto-flow: column;
-    grid-gap: 39.7px;
-}
-
-.Home .main .leftSide, .rightSide {
-    position: relative;
-    height: 52%;
-    align-self: center;
-}
-
-.Home .main .leftSide {
-    display: flex;
-    flex-direction: row;
-}
-
-.Home .main .leftSide .left, .leftSide .right {
-    position: relative;
-    width: 50%;
-    height: 50%;
-
-    display: flex;
-
-    flex-direction: column;
-    align-self: auto;
-}
-
-.Home .main .leftSide .left {
-    height: 100%;
-    padding-right: 19.85px;
-    text-align: right;
-}
-
-.Home .main .leftSide .left .projectName{
-    margin-top: 0;
-    margin-bottom: 40px;
-    font-weight: bold;
-    font-size: xxx-large;
-    line-height: normal;
-    word-spacing: 100vw;
-}
-
-.Home .main .leftSide .left .subtitles {
-    display: flex;
-    flex-direction: column;
-    align-items: right;
-    gap: 10px;
-}
-
-.Home .main .leftSide .left .subtitles .subtitle {
-    margin-top: 0;
-    font-size: x-large;
-    line-height: normal;
-}
-
-
-.Home .main .leftSide .right {
-    padding-left: 19.85px;
-    font-size: small;
-}
-
-.Home .main .rightSide {
-    display: grid;
-    
-    grid-auto-columns: 1fr;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 1fr;
-    grid-gap: 12px;
-}
-
-.Home .footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.Home .footer .i18n {
-    display: flex;
-    flex-direction: row;
-}
-
-.Home .footer .i18n .i18nButtons {
-    cursor: pointer;
-    margin: 0 2.5px;
-} */
-
 .Home {
     position: relative;
     width: 100%;
@@ -153,6 +49,10 @@
     flex-direction: column;
     max-width: fit-content;
     text-decoration: none;
+}
+
+.Home .main .left .categories .link:hover {
+    text-decoration: underline;
 }
 
 .Home .i18n {

@@ -82,11 +82,15 @@
     user-select: none;
 }
 
+.Tools .left .filter .tags .tag:hover, .tag.selected:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 .Tools .left .filter .tags .tag.selected {
     background-color: orangered;
 }
 
-.MuiBox-root .MuiFormControl-root .modal-content-right {
+.MuiBox-root.MuiFormControl-root .modal-content-right {
     width: 55%;
     display: flex;
     flex-direction: column;
@@ -94,7 +98,7 @@
     gap: 20px
 }
 
-.MuiBox-root .MuiFormControl-root .modal-content-left {
+.MuiBox-root.MuiFormControl-root .modal-content-left {
     width: 45%;
     display: flex;
     flex-direction: column;
@@ -104,7 +108,7 @@
     gap: 20px
 }
 
-.MuiBox-root .MuiFormControl-root .image-preview-container {
+.MuiBox-root.MuiFormControl-root .image-preview-container {
     position: relative;
     width: 100%;
     height: 403px;
@@ -118,7 +122,7 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.MuiBox-root .MuiFormControl-root .image-preview-container .image-preview {
+.MuiBox-root.MuiFormControl-root .image-preview-container .image-preview {
     height: 100%;
     width: 100%;
     object-fit: contain;
@@ -136,19 +140,23 @@
     font-weight: bold;
 }
 
-.MuiModal-root .MuiBox-root.css-1wnsr1i .modalContent {
+.MuiModal-root.MuiBox-root .modalContent {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 }
 
 
-.MuiModal-root .MuiBox-root.css-1wnsr1i .modalContent input {
+.MuiModal-root.MuiBox-root .modalContent input {
     color: black;
 }
 
-.MuiModal-root .MuiBox-root.css-1wnsr1i .modalButtons {
+.MuiModal-root.MuiBox-root .modalButtons {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+ul.MuiImageList-root.MuiImageList-standard > div.Card:nth-child(n+3) {
+    margin-top: 7px;
 }
