@@ -16,6 +16,7 @@ const Patrimo = (props: any) => {
     const {pageId} = useParams()
     const { nextPage, page } = props
     const { id, pages, nextPart, } = page
+    console.log({page})
     const [pageNumber, setPageNumber] = useState<number>(pageId ? +pageId : 0)
     const [activePage, setActivePage] = useState<any>(pages[pageNumber])
 

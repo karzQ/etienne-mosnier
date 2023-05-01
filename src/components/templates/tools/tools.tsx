@@ -88,18 +88,17 @@ const Tools = (props: any) => {
     }
 
     const handleValidateArticle = async (data: any) => {
-        // For Firebase
         await addCard({...data})
         const res = await getCards(type)
         setPages(prev => res)
         handleCloseArticle()
     }
 
-    const handleAddFilter = (index: number) => {
-        if (selectedFilters.includes(index)) {
-            setSelectedFilters(prev => [...prev].filter(item => item !== index))
+    const handleAddFilter = (tag: number) => {
+        if (selectedFilters.includes(tag)) {
+            setSelectedFilters(prev => [...prev].filter(item => item !== tag))
         } else {
-            setSelectedFilters(prev => [...prev, index])
+            setSelectedFilters(prev => [...prev, tag])
         }
     }
 
@@ -121,7 +120,6 @@ const Tools = (props: any) => {
 
     React.useEffect(() => {
         setFilteredPages(prev => pages && [...pages])
-        console.log({pages})
     }, [pages])
 
     const applyFilters = (data: any[], filters: any[]) => {
@@ -144,7 +142,8 @@ const Tools = (props: any) => {
 
     React.useEffect(() => {
         if (selectedFilters.length > 0) {
-            setFilteredPages(prev => prev.filter((obj: any) => obj?.tags?.some((tag: any) => filteredPages.includes(tag))))
+            console.log({selectedFilters})
+            setFilteredPages(prev => pages.filter((page: any) => selectedFilters.includes(page?.tags[0])))
         } else {
             setFilteredPages(prev => [...pages])
         }
@@ -170,7 +169,7 @@ const Tools = (props: any) => {
                             <div className='tags'>
                                 {
                                     tags.map((tag: any, index: number) => (
-                                        <div className={handleSelectedFilter(index)} onClick={() => handleAddFilter(index)}>
+                                        <div className={handleSelectedFilter(index)} onClick={() => handleAddFilter(tag)}>
                                             {tag}
                                         </div>
                                     ))
