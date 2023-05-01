@@ -15,9 +15,24 @@
 
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
-.cailloux {
+.header .left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header .right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-right: 60px;
+}
+
+.header .left .cailloux {
     width: 80px;
     height: 80px;
 
@@ -29,7 +44,7 @@
     height: auto;
 } */
 
-.links {
+.header .left .links {
     display: flex;
     gap: 5px;
     color: orangered;
@@ -38,12 +53,12 @@
     animation-duration: 2s;
 }
 
-.links a {
+.header .left .links a {
     text-decoration: inherit;
     color: orangered;
 }
 
-.links .separator {
+.header .left .links .separator {
     user-select: none;
     -webkit-user-select: none;
 }

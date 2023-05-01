@@ -45,7 +45,7 @@ const Patrimo = (props: any) => {
         if (pageNum == 0) {
             return 'Commencer'
         } else if (pageNum === pages.length - 1 && nextPart) {
-            return 'Passer'
+            return 'Suite'
         } else {
             return 'Continuer'
         }

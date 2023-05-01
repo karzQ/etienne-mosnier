@@ -15,3 +15,8 @@ export const theme = createTheme({
       },
     },
 });
+
+export interface Login {
+  login?: string
+  password?: string
+}

@@ -1,3 +1,15 @@
+.Text .titles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Text .titles>.right {
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+}
+
 .Text .main {
     display: flex;
     flex-direction: row;

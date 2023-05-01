@@ -8,12 +8,20 @@ import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import { theme } from './config/config'
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import userReducer from './reducers/userReducer';
+
+const store = createStore(userReducer);
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <Router>
-        <App />
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <App />
+        </Router>
+      </Provider>
     </ThemeProvider>
   </React.StrictMode>
 )

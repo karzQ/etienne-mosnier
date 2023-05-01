@@ -1,8 +1,10 @@
 // Import the functions you need from the SDKs you need
-
+import {onSnapshot} from 'firebase/firestore'
 import {getDownloadURL, getStorage, ref, uploadBytesResumable} from 'firebase/storage'
-import {getFirestore, collection, getDocs, addDoc, query, where } from 'firebase/firestore/lite'
+import {getFirestore, collection, getDocs, addDoc, query, where, orderBy } from 'firebase/firestore/lite'
 import { initializeApp } from "firebase/app";
+import { getAuth, signOut, signInWithEmailAndPassword } from "firebase/auth";
+import { Login } from './config';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,12 +20,42 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 const storage = getStorage(app)
+const auth = getAuth()
+export let connectedUser: any = null;
 
+export const SignIn = async (data: Login) => {
+  try {
+    if (data.login && data.password) {
+      return await signInWithEmailAndPassword(auth, data.login, data.password)
+    }
+  } catch (error) {
+    console.log({ error })
+  }
+}
+
+export const SignOut = async () => {
+  return await signOut(auth)
+}
+
+export const getDocument = async () => {
+  const colref = collection(db, 'cards')
+  const q = query(colref, orderBy('title'))
+  onSnapshot(q, (snapshot) => {
+    console.log({snapshot})
+    // const items:any[] = []
+    // snapshot.docs.forEach((doc) => {
+    //   items.push({...doc.data(), id: doc.id})
+    // })
+    // console.log({items})
+  })
+}
+ 
 export const getCards = async (type: string) => {
   const cardsCol = collection(db, 'cards')
   const q = query(cardsCol, where("type", "==", type));
   const cardsSnapshot = await getDocs(q)
   const cardsList = cardsSnapshot.docs.map((doc: any) => doc.data())
+  console.log({ db, cardsCol, q, cardsSnapshot, cardsList })
   return cardsList
 }
 
@@ -67,8 +99,10 @@ export const addCard = async (card: any) => {
     console.log(`URL available at ${url}`)
 
     try {
-      const docRef = await addDoc(collection(db, 'cards'), { ...card, image: url })
-      console.log(`New Card written, with ID: ${docRef.id}`)
+      const d = new Date()
+      const created_at = `${d.getFullYear()}-${d.getDate()}-${(d.getMonth()+1)}`
+      const docRef = await addDoc(collection(db, 'cards'), { ...card, created_at, image: url })
+      console.log(`New article written, with ID: ${docRef.id}`)
     } catch (e: any) {
       console.error('Error adding Card:', e)
     }

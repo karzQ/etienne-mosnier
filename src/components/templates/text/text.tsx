@@ -68,9 +68,19 @@ const Text = (props: any) => {
         <>
             <div className='Text container'>
                 <div className="titles">
-                    <h1>{activePage.title}</h1>
-                    <h4>{activePage.subtitle}</h4>
+                    <div className="left">
+                        <h1>{activePage.title}</h1>
+                        <h4>{activePage.subtitle}</h4>
+                    </div>
+
+                    <div className="right">
+                        <div className='connected-buttons'>
+                            {/* <Button >Editer</Button>
+                            <Button >Supprimer</Button> */}
+                        </div>
+                    </div>
                 </div>
+                
 
                 <div className="main">
                     <div className={pageNumber == 0 && !setOpenedCard ? "left intro" : "left"}>

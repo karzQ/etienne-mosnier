@@ -4,6 +4,12 @@
     flex-direction: column;
 }
 
+.Tools .connected-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .Tools .main {
     position: relative;
 

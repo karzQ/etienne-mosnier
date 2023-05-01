@@ -44,7 +44,7 @@ const Epernon = (props: any) => {
         if (pageNum == 0) {
             return 'Commencer'
         } else if (pageNum === pages.length - 1 && nextPart) {
-            return 'Passer'
+            return 'Suite'
         } else {
             return 'Continuer'
         }
@@ -108,17 +108,9 @@ const Epernon = (props: any) => {
                                     display: 'flex', flexDirection: 'row',
                                     width: 500, justifyContent: 'space-between', gap: 2, paddingLeft: 0
                                 }}
-                                // nextButton={pageNumber === pages.length - 1 ?
-                                //     <Button size="small" onClick={() => handleNext(pageNumber)} disabled={pageNumber === pages.length - 1 && !nextPart}>
-                                //         Passer
-                                //     </Button>
-                                //     :
-                                //     <Button size="small" onClick={() => handleNext(pageNumber)} disabled={pageNumber === pages.length-1 && !nextPart}>
-                                //         {pageNumber === 0 ? 'Commencer' : 'Continuer'}
-                                //     </Button>
-                                // }
                                 nextButton={
-                                    <Button size="small" onClick={() => handleNext(pageNumber)} disabled={pageNumber === pages.length-1}>
+                                    <Button  size="small" onClick={() => handleNext(pageNumber)} disabled={pageNumber === pages.length-1}>
+                                        {/* {handleTextNextButton(pageNumber)} */}
                                         {pageNumber === 0 ? 'Commencer' : 'Continuer'}
                                     </Button>
                                 }

@@ -1,17 +1,15 @@
 import './tools.css'
 
-import { getCards, addCard } from '../../../config/firebase'
-
-import { Autocomplete, Box, Button, Chip, FormControl, IconButton, ImageList, ImageListItem, ImageListItemBar, InputBase, InputLabel, Modal, TextField, Typography } from '@mui/material';
-import CancelIcon from '@mui/icons-material/Cancel';
+import { getCards, addCard, getDocument } from '../../../config/firebase'
+import { Autocomplete, Box, Button, Chip, FormControl, ImageList, Modal, TextField, Typography } from '@mui/material';
 import tags_data from '../../../data/tags.json';
-
 import Card from '../../Card/Card'
-import React, { SyntheticEvent } from "react";
+import React from "react";
 import Text from '../text/text'
-import Image from '../../Image/Image';
+import { useSelector } from 'react-redux';
 
-const style = {
+
+const boxArticleStyle = {
     position: 'absolute' as 'absolute',
     top: '50%',
     left: '50%',
@@ -26,7 +24,7 @@ const style = {
     p: 4,
 };
 
-const formStyle = {
+const formArticleStyle = {
     position: 'relative',
     display: 'flex',
     flexDirection: 'row',
@@ -59,16 +57,17 @@ const Tools = (props: any) => {
     const [filteredPages, setFilteredPages] = React.useState<any[]>([]);
     const [openedCard, setOpenedCard] = React.useState<boolean>(false)
     const [selectedCard, setSelectedCard] = React.useState<any>(null);
-    const [open, setOpen] = React.useState(false);
-    const [formData, setFormData] = React.useState<Card>({});
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => {
-        setFormData({ type })
-        setOpen(false)
+    const [openArticle, setOpenArticle] = React.useState(false);
+    const [formArticle, setFormArticle] = React.useState<Card>({});
+    const handleOpenArticle = () => setOpenArticle(true);
+    const handleCloseArticle = () => {
+        setFormArticle({ type })
+        setOpenArticle(false)
         setSelectedTags([])
-    };
+    }
+    const user = useSelector((state: any) => state.user)
     
-    const handleForm = (field: string) => (e: any) => {
+    const handleFormArticle = (field: string) => (e: any) => {
         let value: any = undefined
 
         if (field === 'image') {
@@ -80,20 +79,20 @@ const Tools = (props: any) => {
             value = e.target.value
         }
         const obj = {
-            ...formData,
+            ...formArticle,
             [field]: value
             
         }
         console.log({obj})
-        setFormData(val => obj)
+        setFormArticle(val => obj)
     }
 
-    const handleValidate = async (data: any) => {
-        // For Firebase        
+    const handleValidateArticle = async (data: any) => {
+        // For Firebase
         await addCard({...data})
         const res = await getCards(type)
-        setPages(prev => res)
-        handleClose()
+        setPages(res)
+        handleCloseArticle()
     }
 
     const handleAddFilter = (index: number) => {
@@ -115,39 +114,40 @@ const Tools = (props: any) => {
     React.useEffect(() => {
         (async () => {
             const card_list: any[] = await getCards(type)
-            setPages(prev => card_list)
-        })()
+            console.log({card_list})
+            setPages(card_list)
 
-        return () => {
-            setSelectedCard((val: any) => null)
-        }
+            const res2 = await getDocument()
+            console.log({res2})
+        })()
     }, [])
 
     React.useEffect(() => {
-        console.log({selectedCard})
-    }, [selectedCard])
-
-    React.useEffect(() => {
-        console.log({formData})
-    }, [formData])
-
-    React.useEffect(() => {
         setFilteredPages(prev => pages && [...pages])
+        console.log({pages})
     }, [pages])
 
-    React.useEffect(() => {
-        // console.log({filteredPages})
-    }, [filteredPages])
+    const applyFilters = (data: any[], filters: any[]) => {
+        const arr: any[] = []
+
+        data.forEach((page: any) => {
+            filters.forEach((filter: any) => {
+                if (page?.tags?.includes(tags[filter])) {
+                    console.log({ page, filter: tags[filter] })
+                    
+                    if (arr.length > 0) {
+                        if (!arr.some((obj: any) => obj.title === page.title)) arr.push(page)
+                    }
+                }
+            })
+        })
+
+        return arr
+    }
 
     React.useEffect(() => {
         if (selectedFilters.length > 0) {
-            setFilteredPages(prev => prev.filter((page: any) => {
-                selectedFilters.forEach((filter: any) => {
-                    if (page?.tags && page?.tags.includes(tags[filter])) {
-                        return page
-                    }
-                })
-            }))
+            setFilteredPages(prev => prev.filter((obj: any) => obj?.tags?.some((tag: any) => filteredPages.includes(tag))))
         } else {
             setFilteredPages(prev => [...pages])
         }
@@ -162,6 +162,7 @@ const Tools = (props: any) => {
                     <h1>{title}</h1>
                     <h4></h4>
                 </div>
+                
                 <div className="main">
                     <div className="left">
                         <div className="text">
@@ -199,18 +200,20 @@ const Tools = (props: any) => {
                 </div>
             
                 <div className="footer">
-                    <Button onClick={handleOpen}>Contribuer</Button>
+                    {
+                        user !== null && <Button onClick={handleOpenArticle}>Contribuer</Button>
+                    }
         
-                    <Modal open={open} onClose={handleClose}>
-                        <Box sx={style}>
+                    <Modal open={openArticle} onClose={handleCloseArticle}>
+                        <Box sx={boxArticleStyle}>
                             <Typography className='typo-title' id="modal-title" variant="h4">
                                 Créer un nouvel article
                             </Typography>
 
-                            <FormControl sx={formStyle} required>
+                            <FormControl sx={formArticleStyle} required>
                                 <div className='modal-content-left'>
-                                    <TextField required id="card-title" sx={{width: "100%"}} label="Titre" variant="outlined" onBlur={handleForm('title')} />
-                                    <TextField required id="card-subtitle" sx={{width: "100%"}} label="Sous-titre" variant="outlined" onBlur={handleForm('subtitle')} />
+                                    <TextField required id="card-title" sx={{width: "100%"}} label="Titre" variant="outlined" onBlur={handleFormArticle('title')} />
+                                    <TextField required id="card-subtitle" sx={{width: "100%"}} label="Sous-titre" variant="outlined" onBlur={handleFormArticle('subtitle')} />
                                     <Autocomplete id='auto-tags'
                                         sx={{ width: "100%" }}
                                         multiple
@@ -232,41 +235,41 @@ const Tools = (props: any) => {
                                                 id="card-tags"
                                                 label="Tags"
                                                 variant="outlined"
-                                                onBlur={() => handleForm('tags')(selectedTags)} />
+                                                onBlur={() => handleFormArticle('tags')(selectedTags)} />
                                         )} />
                                     
-                                    <TextField required id="card-text" sx={{width: "100%"}} label="Texte" variant="outlined" multiline rows={10} onBlur={handleForm('text')} />
-                                    <TextField required id="card-annotations" sx={{width: "100%"}} label="Références" variant="outlined" multiline rows={6} onBlur={handleForm('references')} />
+                                    <TextField required id="card-text" sx={{width: "100%"}} label="Texte" variant="outlined" multiline rows={10} onBlur={handleFormArticle('text')} />
+                                    <TextField required id="card-annotations" sx={{width: "100%"}} label="Références" variant="outlined" multiline rows={6} onBlur={handleFormArticle('references')} />
                                 </div>
 
                                 <div className='modal-content-right'><Button sx={{ marginBottom: "19px"}} component="label"
                                         variant="outlined">
                                         <>
                                             {
-                                                formData?.['image'] ?
-                                                    formData?.['image']['name']
+                                                formArticle?.['image'] ?
+                                                    formArticle?.['image']['name']
                                                     : <>Choisir une image&nbsp;<div style={{ color: 'red' }}>*</div></>
                                                 
                                             }
                                             
-                                            <input required name="image" hidden type="file" onChange={handleForm('image')} />
+                                            <input required name="image" hidden type="file" onChange={handleFormArticle('image')} />
                                         </>
                                     </Button>
                                     <div className='image-preview-container'>
                                         {
-                                            formData?.['image'] ? (
-                                                <img className='image-preview' src={URL.createObjectURL(formData['image'])} />
+                                            formArticle?.['image'] ? (
+                                                <img className='image-preview' src={URL.createObjectURL(formArticle['image'])} />
                                             ) : "Aucune image"
                                         }
                                     </div>
-                                    <TextField required id="card-legend" label="Légende" variant="outlined" onBlur={handleForm('legend')} />
+                                    <TextField required id="card-legend" label="Légende" variant="outlined" onBlur={handleFormArticle('legend')} />
                                     
                                 </div>
                             </FormControl>
 
                             <div className='modal-buttons'>
-                                <Button id="modal-modal-title" sx={{ mt: 2 }} onClick={handleClose}>Fermer</Button>
-                                <Button id="modal-modal-description" sx={{ mt: 2 }} onClick={() => handleValidate({ ...formData, type })}>Valider</Button>
+                                <Button id="modal-modal-title" sx={{ mt: 2 }} onClick={handleCloseArticle}>Fermer</Button>
+                                <Button id="modal-modal-description" sx={{ mt: 2 }} onClick={() => handleValidateArticle({ ...formArticle, type })}>Valider</Button>
                             </div>
                         </Box>
                     </Modal>
