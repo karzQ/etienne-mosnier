@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
-import {onSnapshot} from 'firebase/firestore'
 import {getDownloadURL, getStorage, ref, uploadBytesResumable} from 'firebase/storage'
-import {getFirestore, collection, getDocs, addDoc, query, where, orderBy } from 'firebase/firestore/lite'
+import {getFirestore, collection, getDocs, addDoc, query, where, deleteDoc, doc } from 'firebase/firestore/lite'
 import { initializeApp } from "firebase/app";
 import { getAuth, signOut, signInWithEmailAndPassword } from "firebase/auth";
 import { Login } from './config';
@@ -37,26 +36,22 @@ export const SignOut = async () => {
   return await signOut(auth)
 }
 
-export const getDocument = async () => {
-  const colref = collection(db, 'cards')
-  const q = query(colref, orderBy('title'))
-  onSnapshot(q, (snapshot) => {
-    console.log({snapshot})
-    // const items:any[] = []
-    // snapshot.docs.forEach((doc) => {
-    //   items.push({...doc.data(), id: doc.id})
-    // })
-    // console.log({items})
-  })
-}
- 
 export const getCards = async (type: string) => {
+  const arr: any[] = []
   const cardsCol = collection(db, 'cards')
   const q = query(cardsCol, where("type", "==", type));
   const cardsSnapshot = await getDocs(q)
   const cardsList = cardsSnapshot.docs.map((doc: any) => doc.data())
-  console.log({ db, cardsCol, q, cardsSnapshot, cardsList })
-  return cardsList
+  for (let i = 0; i < cardsList.length; i++) {
+    arr.push({...cardsList[i], _id: cardsSnapshot?.docs[i].id})
+  }
+  return arr
+}
+
+export const deleteCard = async (id: string) => {
+  const docRef = doc(db, "cards", id)
+  await deleteDoc(docRef)
+  console.log(`Successfully deleted Card ${id}.`)
 }
 
 export const addCard = async (card: any) => {

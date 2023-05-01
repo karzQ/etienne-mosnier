@@ -8,6 +8,25 @@ import Button from '@mui/material/Button';
 import Image from '../../Image/Image';
 import MobileStepper from '@mui/material/MobileStepper';
 import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import Typography from '@mui/material/Typography/Typography';
+import Modal from '@mui/material/Modal/Modal';
+import Box from '@mui/material/Box/Box';
+import { deleteCard } from '../../../config/firebase';
+
+const boxValidationStyle = {
+    position: 'absolute' as 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    bgcolor: 'background.paper',
+    boxShadow: 12,
+    p: 4,
+};
 
 const Text = (props: any) => {
                                 
@@ -16,6 +35,8 @@ const Text = (props: any) => {
     const { id, pages, nextPart } = page
     const [pageNumber, setPageNumber] = useState<number>(id ? +id : 0)
     const [activePage, setActivePage] = useState<any>(pages[pageNumber])
+    const [openValidation, setOpenValidation] = useState<boolean>(false)
+    const user = useSelector((state: any) => state.user)
 
     const handleUserKeyPress = useCallback((event: any) => {
         const { keyCode } = event;
@@ -49,6 +70,21 @@ const Text = (props: any) => {
             return 'Continuer'
         }
     }
+
+    const handleDeleteCard = async () => {
+        await deleteCard(activePage._id)
+        setOpenedCard(false)
+        setOpenValidation(false)
+    }
+    
+    const handleOpenValidation = () => {
+        setOpenValidation(true)
+    }
+
+    const handleCloseValidation = () => {
+        setOpenValidation(false)
+    }
+
     useEffect(() => {
         setActivePage((val: any) => pages[pageNumber])
     }, [pageNumber])
@@ -60,10 +96,6 @@ const Text = (props: any) => {
         };
     }, [handleUserKeyPress]);
 
-    useEffect(() => {
-        console.log({props})
-    }, [])
-
     return (
         <>
             <div className='Text container'>
@@ -74,10 +106,14 @@ const Text = (props: any) => {
                     </div>
 
                     <div className="right">
-                        <div className='connected-buttons'>
-                            {/* <Button >Editer</Button>
-                            <Button >Supprimer</Button> */}
-                        </div>
+                        {
+                            user && (
+                                <div className='connected-buttons'>
+                                    <Button onClick={handleOpenValidation}>Supprimer</Button>
+                                </div>
+                            )
+                        }
+                        
                     </div>
                 </div>
                 
@@ -158,7 +194,29 @@ const Text = (props: any) => {
                     }
                 </div>
             </div>
-        </>
+
+            <Modal open={openValidation} onClose={handleCloseValidation}>
+                <Box sx={boxValidationStyle}>
+                    <Typography sx={{marginBottom: 3}} className='typo-title' id="modal-title" variant="h4">
+                        Supprimer l'article
+                    </Typography>
+
+                    <Typography sx={{color: "black", marginBottom: 1}}>
+                        Êtes-vous sûr de vouloir supprimer cet article ? 
+                    </Typography>
+
+                    <div>
+                        <Button id="modal-modal-title"
+                            sx={{ mt: 2 }}
+                            onClick={handleCloseValidation}>Non</Button>
+                        
+                        <Button id="modal-modal-description"
+                            sx={{ mt: 2 }}
+                            onClick={() => handleDeleteCard()}>Oui</Button>
+                    </div>
+                </Box>
+            </Modal>
+</>
     )
 }
 

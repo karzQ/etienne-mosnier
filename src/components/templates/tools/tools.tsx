@@ -1,6 +1,6 @@
 import './tools.css'
 
-import { getCards, addCard, getDocument } from '../../../config/firebase'
+import { getCards, addCard } from '../../../config/firebase'
 import { Autocomplete, Box, Button, Chip, FormControl, ImageList, Modal, TextField, Typography } from '@mui/material';
 import tags_data from '../../../data/tags.json';
 import Card from '../../Card/Card'
@@ -91,7 +91,7 @@ const Tools = (props: any) => {
         // For Firebase
         await addCard({...data})
         const res = await getCards(type)
-        setPages(res)
+        setPages(prev => res)
         handleCloseArticle()
     }
 
@@ -116,9 +116,6 @@ const Tools = (props: any) => {
             const card_list: any[] = await getCards(type)
             console.log({card_list})
             setPages(card_list)
-
-            const res2 = await getDocument()
-            console.log({res2})
         })()
     }, [])
 
