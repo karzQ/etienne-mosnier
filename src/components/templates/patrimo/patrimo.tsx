@@ -8,7 +8,6 @@ import Button from '@mui/material/Button';
 import Image from '../../Image/Image';
 import MobileStepper from '@mui/material/MobileStepper';
 import { useParams } from 'react-router-dom'
-import { useTheme } from '@mui/material/styles';
 
 const Patrimo = (props: any) => {
                                 
@@ -16,7 +15,6 @@ const Patrimo = (props: any) => {
     const {pageId} = useParams()
     const { nextPage, page } = props
     const { id, pages, nextPart, } = page
-    console.log({page})
     const [pageNumber, setPageNumber] = useState<number>(pageId ? +pageId : 0)
     const [activePage, setActivePage] = useState<any>(pages[pageNumber])
 
@@ -55,10 +53,6 @@ const Patrimo = (props: any) => {
             return 'Continuer'
         }
     }
-
-    useEffect(() => {
-        console.log('Page X :', page)
-    }, [page])
 
     useEffect(() => {
         setActivePage((val: any) => pages[pageNumber])

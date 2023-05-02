@@ -1,24 +1,61 @@
 import './archive.css'
 
+import { v4 as uuidv4 } from 'uuid';
 import { getCards, addCard } from '../../../config/firebase'
-
-import { Box, Button, Modal, Typography } from '@mui/material';
-
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ToggleButton from '@mui/material/ToggleButton';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import { Autocomplete, Box, Button, Chip, FormControl, IconButton, ImageList, Modal, TextField, Typography } from '@mui/material';
+import tags_data from '../../../data/tags.json';
 import Card from '../../Card/Card'
 import React from "react";
 import Text from '../text/text'
+import { useSelector } from 'react-redux';
+import Carousel from 'react-material-ui-carousel';
 
-const style = {
+
+const boxArticleStyle = {
     position: 'absolute' as 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: 1400,
+    height: 850,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
     bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
+    boxShadow: 12,
     p: 4,
-  };
+};
+
+const formArticleStyle = {
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'row',
+    height: '100%',
+    width: '100%',
+    paddingTop: 5,
+    gap: 3
+}
+
+interface annotation {
+    id: string
+    text: string
+}
+
+interface Card {
+    title?: string
+    subtitle?: string
+    tag?: string
+    text?: string
+    image?: any
+    legend?: string
+    type?: string,
+    annotations?: annotation[]
+}
 
 const Archive = (props: any) => {
 
@@ -26,55 +63,95 @@ const Archive = (props: any) => {
     const { title, text, id } = page
     const type = id
     
+    const [annotations, setAnnotations] = React.useState<annotation[]>([])
     const [pages, setPages] = React.useState<any[]>([]);
+    const [filteredPages, setFilteredPages] = React.useState<any[]>([]);
     const [openedCard, setOpenedCard] = React.useState<boolean>(false)
     const [selectedCard, setSelectedCard] = React.useState<any>(null);
-    const [open, setOpen] = React.useState(false);
-    const [formData, setFormData] = React.useState({});
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => {
-        setFormData({type})
-        setOpen(false)
-    };
+    const [openArticle, setOpenArticle] = React.useState(false);
+    const [formArticle, setFormArticle] = React.useState<Card>({});
+    const [images, setImages] = React.useState<any[]>([]);
+    const handleOpenArticle = () => setOpenArticle(true);
+    const handleCloseArticle = () => {
+        setFormArticle({ type })
+        setOpenArticle(false)
+        setAnnotations([])
+    }
+    const user = useSelector((state: any) => state.user)
     
-    const handleForm = (field: string) => (e: any) => {
+    const handleFormArticle = (field: string) => (e: any) => {
         let value: any = undefined
 
         if (field === 'image') {
+            if (!e || !e.target.files[0]) return;
             value = e.target.files[0]
+        } else if (field === 'tags') {
+            value = e
         } else {
             value = e.target.value
         }
         const obj = {
-            [field]: value,
-            ...formData
+            ...formArticle,
+            [field]: value
             
         }
-        setFormData(val => obj)
+        setFormArticle(val => obj)
+    }
+    
+    const handleAddImage = (e: any) => {
+        const file = e.target.files[0]
+        setImages(prev => [...prev, {...file, _id: uuidv4()}])
     }
 
-    const handleValidate = async (data: any) => {
-        // For Firebase        
+    const handleRemoveImage = (image: any) => (e: any) => {
+        setImages(prev => prev.filter((item: any) => item.id === image.id))
+    }
+
+    const handleAddAnnotation = () => {
+        setAnnotations(prev => [...prev, { id: uuidv4(), text: '' }])
+    }
+
+    const handleDeleteAnnotation = (id: string) => {
+        setAnnotations(prev => prev.filter((item: annotation) => item.id !== id))
+    }
+
+    const handleEditAnnotation = (item: annotation) => (e: any) => {
+        setAnnotations(prev => prev.map((el: any) => {
+            if (el.id === item.id) {
+                return {...el, text: e.target.value}
+            }
+            return el
+        }))
+    }
+
+    const handleValidateArticle = async (data: any) => {
         await addCard({...data})
         const res = await getCards(type)
-        setPages((val: any) => res)
-        handleClose()
+        setPages(prev => res)
+        handleCloseArticle()
+    }
+    
+    const handleImage = (image: any) => {
+        return URL.createObjectURL({...image})
     }
 
     React.useEffect(() => {
         (async () => {
             const card_list: any[] = await getCards(type)
-            setPages((val: any) => card_list)
+            setPages(card_list)
         })()
-
-        return () => {
-            setSelectedCard((val: any) => null)
-        }
     }, [])
 
+    React.useEffect(() => {
+        handleFormArticle('annotations')({target: {value: annotations}})
+    }, [annotations])
+
+    React.useEffect(() => {
+        setFilteredPages(prev => pages && [...pages])
+    }, [pages])
 
     if (openedCard) {
-        return <Text page={{pages, ...selectedCard}} setOpenedCard={setOpenedCard} close />
+        return <Text onChange={(id: string) => id ? setFilteredPages(prev => prev.filter((item) => item._id !== id)) : null } page={{pages, ...selectedCard}} setOpenedCard={setOpenedCard} close />
     } else {
         return (
             <div className='Archive container'>
@@ -82,6 +159,7 @@ const Archive = (props: any) => {
                     <h1>{title}</h1>
                     <h4></h4>
                 </div>
+                
                 <div className="main">
                     <div className="left">
                         <div className="text">
@@ -89,46 +167,122 @@ const Archive = (props: any) => {
                         </div>
                     </div>
                     <div className='right'>
-                        <div className="cards">
+                        <ImageList
+                            sx={{
+                                marginTop: 0,
+                                width: "100%",
+                                height: "100%"
+                            }}
+                            rowHeight={200}
+                            gap={1}>
                             {
-                                pages && pages.length > 0 && pages.map((page: any, id: number) => (
-                                    <Card id={id} pages={pages} page={page} setSelectedCard={setSelectedCard} setOpenedCard={setOpenedCard} />
+                                filteredPages && filteredPages.length > 0 && filteredPages.map((page: any, id: number) => (
+                                    <Card id={id} pages={filteredPages} page={page} setSelectedCard={setSelectedCard} setOpenedCard={setOpenedCard} />
                                 ))
                             }
-                        </div>
+                        </ImageList>
                     </div>
                 </div>
             
                 <div className="footer">
-                    
-                    <Button onClick={handleOpen}>Créer +</Button>
+                    {
+                        user !== null && <Button onClick={handleOpenArticle}>Créer</Button>
+                    }
         
-                    <Modal open={open}
-                        onClose={handleClose}
-                        aria-labelledby="modal-modal-title"
-                        aria-describedby="modal-modal-description">
-                        <Box sx={style}>
-                            <Typography id="modal-modal-title" variant="h6" component="h2">
-                                Créer une nouvelle card
+                    <Modal open={openArticle} onClose={handleCloseArticle}>
+                        <Box sx={boxArticleStyle}>
+                            <Typography className='typo-title' id="modal-title" variant="h4">
+                                Créer un nouvel article
                             </Typography>
 
-                            <div className='modalContent'>
-                                <label htmlFor="title">Titre</label>
-                                <input name="title" type="text" onBlur={handleForm('title')} />
+                            <FormControl sx={formArticleStyle} required>
+                                <div className='modal-content-left'>
+                                    <TextField required id="card-title" sx={{width: "100%"}} label="Titre" variant="outlined" onBlur={handleFormArticle('title')} />
+                                    <TextField required id="card-subtitle" sx={{width: "100%"}} label="Sous-titre" variant="outlined" onBlur={handleFormArticle('subtitle')} />                                    
+                                    <TextField required id="card-text" sx={{width: "100%"}} label="Texte" variant="outlined" multiline rows={6} onBlur={handleFormArticle('text')} />
+                                    <div className='annotations'>
+                                        <div className='top'>
+                                            <Typography  sx={{color: 'gray', display: 'flex'}} variant='subtitle1'>Annotations&nbsp;<div style={{color: "red"}}>*</div></Typography>
+                                            <IconButton size='small' onClick={handleAddAnnotation} >
+                                                <AddIcon />
+                                            </IconButton>
+                                        </div>
 
-                                <label htmlFor="subtitle">Sous-titre</label>
-                                <input name='subtitle' type="text" onBlur={handleForm('subtitle')} />
+                                        <div className="annotations-list">
+                                            {
+                                                annotations.length > 0 ? annotations.map((annotation: any, index: number) => (
+                                                    <div key={index} className='annotation'>
+                                                        <TextField sx={{ width: 509 }}
+                                                            size='small'
+                                                            id='card-annotation-text'
+                                                            label="Texte"
+                                                            variant='outlined'
+                                                            type='text'
+                                                            onBlur={handleEditAnnotation(annotation)} />
+                                                        
+                                                        <IconButton size='small' onClick={() => handleDeleteAnnotation(annotation.id)} >
+                                                            <RemoveCircleIcon sx={{fill: 'red'}} />
+                                                        </IconButton>
+                                                    </div>
+                                                )) : (<span style={{color: 'black', width: '100%', textAlign: 'center'}}>Pas de référence</span>)
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
 
-                                <label htmlFor="text">Texte</label>
-                                <input name='text' type="text" onBlur={handleForm('text')} />
-                            
-                                <label htmlFor="image">Image</label>
-                                <input name="image" type="file" onChange={handleForm('image')} />
-                            </div>
+                                <div className='modal-content-right'>
+                                    {/* <div className='image-selector'>
+                                        <Button sx={{ marginBottom: "19px" }} component="label"
+                                            variant="outlined">
+                                            <>
+                                                {
+                                                    formArticle?.['image'] ?
+                                                        formArticle?.['image']['name']
+                                                        : <>Choisir une image&nbsp;<div style={{ color: 'red' }}>*</div></>
+                                                    
+                                                }
+                                                
+                                                <input required name="image" hidden type="file" onChange={handleAddImage} />
+                                            </>
+                                        </Button>
+                                        {
+                                            images.length > 0 && images.map((image: any, index: number) => (
+                                                <Chip key={index} sx={{width: 'fit-content'}} variant="outlined" label={image.name} onDelete={handleRemoveImage(image)} />
+                                            ))
+                                        }
+                                    </div>
+                                    
+                                    <div className='image-preview-container'>
+                                        {
+                                            images.length > 0 ? (
+                                                <Carousel sx={{ width: '100%', height: '100%', objectFit: 'contain'}}
+                                                    navButtonsAlwaysVisible
+                                                    fullHeightHover
+                                                    NextIcon={<ArrowForwardIosIcon/>}
+                                                    PrevIcon={<ArrowBackIosIcon/>}>
+                                                    {
+                                                        images.map((image: any, index: number) => (
+                                                            <img key={index} className='image-preview' src={handleImage({...image})} />
+                                                        ))
+                                                    }
+                                                </Carousel>
+                                            ) : (<>Aucune image</>)
+                                        }
+                                        
+                                    </div> */}
+                                    <TextField required id="card-legend" label="Légende" variant="outlined" onBlur={handleFormArticle('legend')} />
+                                    
+                                </div>
+                            </FormControl>
 
-                            <div className='modalButtons'>
-                                <Button id="modal-modal-title" sx={{ mt: 2 }} onClick={handleClose}>Fermer</Button>
-                                <Button id="modal-modal-description" sx={{ mt: 2 }} onClick={() => handleValidate({ ...formData, type })}>Valider</Button>
+                            <div className='modal-buttons'>
+                                <Button id="modal-button-close"
+                                    sx={{ mt: 2, color: 'orangered' }}
+                                    onClick={handleCloseArticle}>Fermer</Button>
+                                
+                                <Button id="modal-button-validate"
+                                    sx={{ mt: 2, color: 'orangered' }}
+                                    onClick={() => handleValidateArticle({ ...formArticle, type })}>Valider</Button>
                             </div>
                         </Box>
                     </Modal>

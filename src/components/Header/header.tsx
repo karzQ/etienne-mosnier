@@ -55,7 +55,7 @@ const Header = (props: any) => {
     }
 
     const handleSignOut = async () => {
-        const res = await SignOut()
+        await SignOut()
         handleDispatch(null, UserActions.CLEAR_CURRENT_USER)
     }
 

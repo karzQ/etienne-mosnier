@@ -21,7 +21,6 @@ const App = () => {
   const nextPage = (pageName: string) => {
     setActivePage((val: any) => pages.filter((page: any) => {
       if (page?.nextPart) {
-        console.log({ next: page.nextPart, pageName })
         return page.nextPart.id === pageName
       }
     } )[0])

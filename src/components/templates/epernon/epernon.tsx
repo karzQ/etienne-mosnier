@@ -52,7 +52,6 @@ const Epernon = (props: any) => {
  
     useEffect(() => {
         setActivePage(pages[0])
-        console.log({page})
     }, [])
 
     useEffect(() => {

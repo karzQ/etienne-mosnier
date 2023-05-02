@@ -98,6 +98,10 @@ const Tools = (props: any) => {
         setFormArticle(val => obj)
     }
 
+    const handleImage = (image: any) => {
+        return URL.createObjectURL(image)
+    }
+
     const handleAddAnnotation = () => {
         setAnnotations(prev => [...prev, { id: uuidv4(), text: '' }])
     }
@@ -109,7 +113,6 @@ const Tools = (props: any) => {
     const handleEditAnnotation = (item: annotation) => (e: any) => {
         const arr = annotations.map((el: any) => {
             if (el.id === item.id) {
-                console.log({item, value: e.target.value})
                 return {...el, text: e.target.value}
             }
             return el
@@ -117,7 +120,6 @@ const Tools = (props: any) => {
 
         setAnnotations(prev => prev.map((el: any) => {
             if (el.id === item.id) {
-                console.log({item, value: e.target.value})
                 return {...el, text: e.target.value}
             }
             return el
@@ -164,7 +166,6 @@ const Tools = (props: any) => {
 
     React.useEffect(() => {
         if (selectedFilters.length > 0) {
-            console.log({selectedFilters})
             setFilteredPages(prev => pages.filter((page: any) => selectedFilters.includes(page?.tag)))
         } else {
             setFilteredPages(prev => [...pages])
@@ -305,7 +306,7 @@ const Tools = (props: any) => {
                                     <div className='image-preview-container'>
                                         {
                                             formArticle?.['image'] ? (
-                                                <img className='image-preview' src={URL.createObjectURL(formArticle['image'])} />
+                                                <img className='image-preview' src={handleImage(formArticle['image'])} />
                                             ) : "Aucune image"
                                         }
                                     </div>

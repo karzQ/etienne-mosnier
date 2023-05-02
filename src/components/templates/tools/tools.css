@@ -141,7 +141,7 @@
 .MuiBox-root .MuiFormControl-root .modal-content-left .annotations {
     position: relative;
     width: 100%;
-    max-height: 251px;
+    height: 251px;
     
     display: flex;
     flex-direction: column;

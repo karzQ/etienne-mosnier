@@ -53,6 +53,13 @@
     overflow-x: hidden;
 }
 
+.image-selector {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.css-v6mruo-MuiButtonBase-root-MuiButton-root {
     color: orangered !important;
     font-weight: bold;
