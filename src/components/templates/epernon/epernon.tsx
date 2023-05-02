@@ -1,6 +1,6 @@
 import './epernon.css'
 
-import { ApplySup } from '../../../helpers/functions'
+import { ApplySup, Capitalize } from '../../../helpers/functions'
 import { useCallback, useEffect, useState, useReducer } from "react";
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -10,9 +10,9 @@ import MobileStepper from '@mui/material/MobileStepper';
 import { useParams } from 'react-router-dom'
 
 const Epernon = (props: any) => {
-                                
+    
     const navigate = useNavigate()
-    const { page, onChange } = props
+    const { page, onChange, setPage } = props
     const { id, pages, nextPart } = page
     const [pageNumber, setPageNumber] = useState<number>(0)
     const [activePage, setActivePage] = useState<any>(pages[0])
@@ -28,12 +28,8 @@ const Epernon = (props: any) => {
     }, []);
 
     const handleNext = (num: number) => {
-        // if (num === pages.length - 1 && nextPart) {
-        //     onChange(nextPart.id)
-        //     navigate(`/${nextPart.id}`)
-        // } else {
-            setPageNumber((val: number) => val < pages.length-1 ? val + 1 : val);
-        // }
+        setPageNumber((val: number) => val < pages.length-1 ? val + 1 : val);
+        
     };
 
     const handleBack = () => {
@@ -50,13 +46,14 @@ const Epernon = (props: any) => {
         }
     }
 
+    const handleNextPart = () => {
+        navigate(`/${nextPart.id}`)
+    }
+ 
     useEffect(() => {
         setActivePage(pages[0])
+        console.log({page})
     }, [])
-
-    useEffect(() => {
-        console.log('Page X :', page)
-    }, [page])
 
     useEffect(() => {
         setActivePage((val: any) => pages[pageNumber])
@@ -110,7 +107,6 @@ const Epernon = (props: any) => {
                                 }}
                                 nextButton={
                                     <Button  size="small" onClick={() => handleNext(pageNumber)} disabled={pageNumber === pages.length-1}>
-                                        {/* {handleTextNextButton(pageNumber)} */}
                                         {pageNumber === 0 ? 'Commencer' : 'Continuer'}
                                     </Button>
                                 }
@@ -128,6 +124,14 @@ const Epernon = (props: any) => {
                         </div>
                         <span className="legend">{activePage.legend}</span>
                     </div>
+                </div>
+
+                <div className="footer">
+                    <Button sx={pageNumber !== pages.length - 1 ? { color: 'lightgray' } : null}
+                        disabled={pageNumber !== pages.length - 1}
+                        onClick={handleNextPart}>
+                        Suivant
+                    </Button>
                 </div>
             </div>
         </>

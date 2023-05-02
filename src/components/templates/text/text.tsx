@@ -31,7 +31,7 @@ const boxValidationStyle = {
 const Text = (props: any) => {
                                 
     const navigate = useNavigate()
-    const { page, setOpenedCard, close } = props
+    const { page, setOpenedCard, close, onChange } = props
     const { id, pages, nextPart } = page
     const [pageNumber, setPageNumber] = useState<number>(id ? +id : 0)
     const [activePage, setActivePage] = useState<any>(pages[pageNumber])
@@ -75,6 +75,7 @@ const Text = (props: any) => {
         await deleteCard(activePage._id)
         setOpenedCard(false)
         setOpenValidation(false)
+        onChange(activePage._id)
     }
     
     const handleOpenValidation = () => {
@@ -139,7 +140,11 @@ const Text = (props: any) => {
                                         {
                                             activePage?.annotations.map((annotation: any) => (
                                                 <span className="annotation">
-                                                    <sup>{annotation.annotationNumber}</sup>{annotation.text}
+                                                    {
+                                                        annotation.annotationNumber
+                                                        ? <><sup>{annotation.annotationNumber}</sup>{annotation.text}</>
+                                                        : <>{annotation.text}</>
+                                                    }
                                                 </span>
                                             ))
                                         }

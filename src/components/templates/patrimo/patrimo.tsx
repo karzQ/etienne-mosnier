@@ -42,6 +42,10 @@ const Patrimo = (props: any) => {
         setPageNumber((val: number) => val > 0 ? val - 1 : val);
     };
 
+    const handleNextPart = () => {
+        navigate(`/${nextPart.id}`)
+    }
+
     const handleTextNextButton = (pageNum: number) => {
         if (pageNum == 0) {
             return 'Commencer'
@@ -107,8 +111,8 @@ const Patrimo = (props: any) => {
                                     width: 500, justifyContent: 'space-between', gap: 2, paddingLeft: 0
                                 }}
                                 nextButton={
-                                    <Button size="small" onClick={() => handleNext(pageNumber)} disabled={pageNumber === pages.length-1 && !nextPart}>
-                                        {handleTextNextButton(pageNumber)}
+                                    <Button size="small" onClick={() => handleNext(pageNumber)} disabled={pageNumber === pages.length-1}>
+                                        {pageNumber === 0 ? 'Commencer' : 'Continuer'}
                                     </Button>
                                 }
                                 backButton={
@@ -125,6 +129,13 @@ const Patrimo = (props: any) => {
                         </div>
                         <span className="legend">{activePage.legend}</span>
                     </div>
+                </div>
+                <div className="footer">
+                    <Button sx={pageNumber !== pages.length - 1 ? { color: 'lightgray' } : null}
+                        disabled={pageNumber !== pages.length - 1}
+                        onClick={handleNextPart}>
+                        Suivant
+                    </Button>
                 </div>
             </div>
         </>

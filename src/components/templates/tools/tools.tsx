@@ -1,7 +1,11 @@
 import './tools.css'
 
+import { v4 as uuidv4 } from 'uuid';
 import { getCards, addCard } from '../../../config/firebase'
-import { Autocomplete, Box, Button, Chip, FormControl, ImageList, Modal, TextField, Typography } from '@mui/material';
+import ToggleButton from '@mui/material/ToggleButton';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import { Autocomplete, Box, Button, Chip, FormControl, IconButton, ImageList, Modal, TextField, Typography } from '@mui/material';
 import tags_data from '../../../data/tags.json';
 import Card from '../../Card/Card'
 import React from "react";
@@ -34,14 +38,20 @@ const formArticleStyle = {
     gap: 3
 }
 
+interface annotation {
+    id: string
+    text: string
+}
+
 interface Card {
     title?: string
     subtitle?: string
-    tags?: string[]
+    tag?: string
     text?: string
     image?: any
     legend?: string
-    type?: string
+    type?: string,
+    annotations?: annotation[]
 }
 
 const Tools = (props: any) => {
@@ -50,8 +60,9 @@ const Tools = (props: any) => {
     const { title, text, id } = page
     const type = id
     
-    const [selectedFilters, setSelectedFilters] = React.useState<number[]>([])
+    const [selectedFilters, setSelectedFilters] = React.useState<string[]>([])
     const [tags] = React.useState<any[]>([...tags_data.tags]);
+    const [annotations, setAnnotations] = React.useState<annotation[]>([])
     const [selectedTags, setSelectedTags] = React.useState<any[]>([]);
     const [pages, setPages] = React.useState<any[]>([]);
     const [filteredPages, setFilteredPages] = React.useState<any[]>([]);
@@ -64,6 +75,7 @@ const Tools = (props: any) => {
         setFormArticle({ type })
         setOpenArticle(false)
         setSelectedTags([])
+        setAnnotations([])
     }
     const user = useSelector((state: any) => state.user)
     
@@ -83,8 +95,33 @@ const Tools = (props: any) => {
             [field]: value
             
         }
-        console.log({obj})
         setFormArticle(val => obj)
+    }
+
+    const handleAddAnnotation = () => {
+        setAnnotations(prev => [...prev, { id: uuidv4(), text: '' }])
+    }
+
+    const handleDeleteAnnotation = (id: string) => {
+        setAnnotations(prev => prev.filter((item: annotation) => item.id !== id))
+    }
+
+    const handleEditAnnotation = (item: annotation) => (e: any) => {
+        const arr = annotations.map((el: any) => {
+            if (el.id === item.id) {
+                console.log({item, value: e.target.value})
+                return {...el, text: e.target.value}
+            }
+            return el
+        })
+
+        setAnnotations(prev => prev.map((el: any) => {
+            if (el.id === item.id) {
+                console.log({item, value: e.target.value})
+                return {...el, text: e.target.value}
+            }
+            return el
+        }))
     }
 
     const handleValidateArticle = async (data: any) => {
@@ -94,7 +131,7 @@ const Tools = (props: any) => {
         handleCloseArticle()
     }
 
-    const handleAddFilter = (tag: number) => {
+    const handleAddFilter = (tag: string) => {
         if (selectedFilters.includes(tag)) {
             setSelectedFilters(prev => [...prev].filter(item => item !== tag))
         } else {
@@ -102,10 +139,10 @@ const Tools = (props: any) => {
         }
     }
 
-    const handleSelectedFilter = (index: number) => {
-        if (!selectedFilters.includes(index)) {
+    const handleSelectedFilter = (tag: string) => {
+        if (!selectedFilters.includes(tag)) {
             return 'tag'
-        } else if (selectedFilters.includes(index)) {
+        } else if (selectedFilters.includes(tag)) {
             return 'tag selected'
         }
     }
@@ -113,44 +150,29 @@ const Tools = (props: any) => {
     React.useEffect(() => {
         (async () => {
             const card_list: any[] = await getCards(type)
-            console.log({card_list})
             setPages(card_list)
         })()
     }, [])
 
     React.useEffect(() => {
+        handleFormArticle('annotations')({target: {value: annotations}})
+    }, [annotations])
+
+    React.useEffect(() => {
         setFilteredPages(prev => pages && [...pages])
     }, [pages])
-
-    const applyFilters = (data: any[], filters: any[]) => {
-        const arr: any[] = []
-
-        data.forEach((page: any) => {
-            filters.forEach((filter: any) => {
-                if (page?.tags?.includes(tags[filter])) {
-                    console.log({ page, filter: tags[filter] })
-                    
-                    if (arr.length > 0) {
-                        if (!arr.some((obj: any) => obj.title === page.title)) arr.push(page)
-                    }
-                }
-            })
-        })
-
-        return arr
-    }
 
     React.useEffect(() => {
         if (selectedFilters.length > 0) {
             console.log({selectedFilters})
-            setFilteredPages(prev => pages.filter((page: any) => selectedFilters.includes(page?.tags[0])))
+            setFilteredPages(prev => pages.filter((page: any) => selectedFilters.includes(page?.tag)))
         } else {
             setFilteredPages(prev => [...pages])
         }
     }, [selectedFilters])
 
     if (openedCard) {
-        return <Text page={{pages, ...selectedCard}} setOpenedCard={setOpenedCard} close />
+        return <Text onChange={(id: string) => id ? setFilteredPages(prev => prev.filter((item) => item._id !== id)) : null } page={{pages, ...selectedCard}} setOpenedCard={setOpenedCard} close />
     } else {
         return (
             <div className='Tools container'>
@@ -169,7 +191,7 @@ const Tools = (props: any) => {
                             <div className='tags'>
                                 {
                                     tags.map((tag: any, index: number) => (
-                                        <div className={handleSelectedFilter(index)} onClick={() => handleAddFilter(tag)}>
+                                        <div className={handleSelectedFilter(tag)} onClick={() => handleAddFilter(tag)}>
                                             {tag}
                                         </div>
                                     ))
@@ -225,17 +247,46 @@ const Tools = (props: any) => {
                                           }
                                         renderOption={(props, option) => (
                                             <Box component="li" {...props} onClick={() => setSelectedTags(prev => [...prev, option])}>{option}</Box>
-                                            )}
+                                        )}
                                         renderInput={(params) => (
                                             <TextField required {...params}
                                                 id="card-tags"
                                                 label="Tags"
                                                 variant="outlined"
-                                                onBlur={() => handleFormArticle('tags')(selectedTags)} />
+                                                onBlur={() => handleFormArticle('tag')(selectedTags)} />
                                         )} />
                                     
-                                    <TextField required id="card-text" sx={{width: "100%"}} label="Texte" variant="outlined" multiline rows={10} onBlur={handleFormArticle('text')} />
-                                    <TextField required id="card-annotations" sx={{width: "100%"}} label="Références" variant="outlined" multiline rows={6} onBlur={handleFormArticle('references')} />
+                                    <TextField required id="card-text" sx={{width: "100%"}} label="Texte" variant="outlined" multiline rows={6} onBlur={handleFormArticle('text')} />
+                                    <div className='annotations'>
+                                        <div className='top'>
+                                            <Typography  sx={{color: 'gray', display: 'flex'}} variant='subtitle1'>Annotations&nbsp;<div style={{color: "red"}}>*</div></Typography>
+                                        
+
+                                            <IconButton size='small' onClick={handleAddAnnotation} >
+                                                <AddIcon />
+                                            </IconButton>
+                                        </div>
+
+                                        <div className="annotations-list">
+                                            {
+                                                annotations.length > 0 ? annotations.map((annotation: any, index: number) => (
+                                                    <div key={index} className='annotation'>
+                                                        <TextField sx={{ width: 509 }}
+                                                            size='small'
+                                                            id='card-annotation-text'
+                                                            label="Texte"
+                                                            variant='outlined'
+                                                            type='text'
+                                                            onBlur={handleEditAnnotation(annotation)} />
+                                                        
+                                                        <IconButton size='small' onClick={() => handleDeleteAnnotation(annotation.id)} >
+                                                            <RemoveCircleIcon sx={{fill: 'red'}} />
+                                                        </IconButton>
+                                                    </div>
+                                                )) : (<span style={{color: 'black', width: '100%', textAlign: 'center'}}>Pas de référence</span>)
+                                            }
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div className='modal-content-right'><Button sx={{ marginBottom: "19px"}} component="label"
@@ -264,8 +315,13 @@ const Tools = (props: any) => {
                             </FormControl>
 
                             <div className='modal-buttons'>
-                                <Button id="modal-modal-title" sx={{ mt: 2 }} onClick={handleCloseArticle}>Fermer</Button>
-                                <Button id="modal-modal-description" sx={{ mt: 2 }} onClick={() => handleValidateArticle({ ...formArticle, type })}>Valider</Button>
+                                <Button id="modal-button-close"
+                                    sx={{ mt: 2, color: 'orangered' }}
+                                    onClick={handleCloseArticle}>Fermer</Button>
+                                
+                                <Button id="modal-button-validate"
+                                    sx={{ mt: 2, color: 'orangered' }}
+                                    onClick={() => handleValidateArticle({ ...formArticle, type })}>Valider</Button>
                             </div>
                         </Box>
                     </Modal>

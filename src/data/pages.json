@@ -10,7 +10,7 @@
                 { "id": 0, "src": "epernon", "text": "Epernon et son industrie" },
                 { "id": 1, "src": "patrimonialisation", "text": "Réactiver un patrimoine"  },
                 { "id": 2, "src": "boite_a_outils", "text": "Boîte à outils : Reprises"  },
-                { "id": 3, "src": "archivage", "text": "Archivage de la pratique"  }
+                { "id": 3, "src": "journal_des_chantiers", "text": "Journal des chantiers"  }
             ]
         },
         {
@@ -334,16 +334,16 @@
             "template": "gallery",
             "title": "Boîte à outils : Revalorisation des territoires",
             "nextPart": {
-                "id": "archivage",
-                "text": "Archivage"
+                "id": "journal_des_chantiers",
+                "text": "Journal des chantiers"
             },
             "text": "Comment vivre consciemment et collectivement les transformations de nos territoires ? Comment y prendre part, au-delà de nos places et de nos assignations, et saisir ensemble les enjeux qui nous traversent ? Comment les identifier, les formuler ? Dans le prolongement des travaux de John Dewey, et notamment de l’ouvrage Le public et ses problèmes, la présente démarche s’intéresse à notre capacité à nous associer pour contribuer à la formulation de nos concernements, et proposer des pratiques ou des réponses restées hors du champs des politiques publiques. Cette « boîte à outils » contributive présente un ensemble de démarches dédiées à la réhabilitation des savoir-faire techniques et culturels en tant que vecteurs de construction sociale."
         },
         {
-            "id": "archivage",
-            "name": "archivage",
+            "id": "journal_des_chantiers",
+            "name": "journal des chantiers",
             "template": "gallery",
-            "title": "Journal de chantiers",
+            "title": "Journal des chantiers",
             "text": "Par la mise en place d’une démarche expérimentale, nous chercherons donc à requalifier les savoirs et pratiques de la pierre qui ont eu cours sur le territoire d’Épernon. Cette recherche s’attachera à l'élaboration de protocoles ouverts, et contributifs, en déployant différents artefacts génériques, qui feront état d’une tentative de transcription, de réécriture de ce qui constitue ce patrimoine, dans des dimensions techniques et sociétales contemporaines, de nature cosmolocale. En tâchant de se déprendre de la maîtrise, et ainsi permettre la reprise de savoirs et savoir-faire dans un territoire de vie."
         }
     ]
