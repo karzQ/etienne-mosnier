@@ -41,7 +41,7 @@
 
 .Text .main .right {
     width: 40%;
-    max-height: 575px;
+    height: fit-content;
     position: relative;
     overflow: hidden;
 

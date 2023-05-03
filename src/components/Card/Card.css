@@ -1,9 +1,6 @@
 .Card {
     position: relative;
     background-color:bisque;
-    width: fit-content;
-    max-width: 614px;
-    height: 497px;
 
     display: flex;
     flex: 45%;

@@ -197,14 +197,9 @@ const Tools = (props: any) => {
                         </div>
                     </div>
                     <div className='right'>
-                        <ImageList
-                            sx={{
-                                marginTop: 0,
-                                width: "100%",
-                                height: "100%"
-                            }}
+                        <ImageList className='imageList'
                             rowHeight={200}
-                            gap={1}>
+                            gap={10}>
                             {
                                 filteredPages && filteredPages.length > 0 && filteredPages.map((page: any, id: number) => (
                                     <Card key={id} id={id}
