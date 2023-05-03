@@ -77,15 +77,15 @@ const Epernon = (props: any) => {
                     <div className={pageNumber == 0 ? "left intro" : "left"}>
                         <div className="text">
                             {
-                                activePage.texts && activePage.texts.map((text: any) => (
-                                    <span className={text.classNames} dangerouslySetInnerHTML={{__html: ApplySup(text.text)}}></span>
+                                activePage.texts && activePage.texts.map((text: any, index: number) => (
+                                    <span key={index} className={text.classNames} dangerouslySetInnerHTML={{__html: ApplySup(text.text)}}></span>
                                 ))
                             }
 
                             <div className='annotations'>
                                 {
-                                    activePage.annotations && activePage.annotations.map((annotation: any) => (
-                                        <span className="annotation">
+                                    activePage.annotations && activePage.annotations.map((annotation: any, index: number) => (
+                                        <span key={index} className="annotation">
                                             <sup>{annotation.annotationNumber}</sup>{annotation.text}
                                         </span>
                                     ))

@@ -85,8 +85,6 @@ const Tools = (props: any) => {
         if (field === 'image') {
             if (!e || !e.target.files[0]) return;
             value = e.target.files[0]
-        } else if (field === 'tags') {
-            value = e
         } else {
             value = e.target.value
         }
@@ -111,13 +109,6 @@ const Tools = (props: any) => {
     }
 
     const handleEditAnnotation = (item: annotation) => (e: any) => {
-        const arr = annotations.map((el: any) => {
-            if (el.id === item.id) {
-                return {...el, text: e.target.value}
-            }
-            return el
-        })
-
         setAnnotations(prev => prev.map((el: any) => {
             if (el.id === item.id) {
                 return {...el, text: e.target.value}
@@ -173,7 +164,10 @@ const Tools = (props: any) => {
     }, [selectedFilters])
 
     if (openedCard) {
-        return <Text onChange={(id: string) => id ? setFilteredPages(prev => prev.filter((item) => item._id !== id)) : null } page={{pages, ...selectedCard}} setOpenedCard={setOpenedCard} close />
+        return <Text onChange={(id: string) => id ? setFilteredPages(prev => prev.filter((item) => item._id !== id)) : null}
+            page={{ ...selectedCard, pages, id: pages.indexOf(pages.filter((item: any) => item._id === selectedCard._id)[0]) }}
+            setOpenedCard={setOpenedCard}
+            close />
     } else {
         return (
             <div className='Tools container'>
@@ -192,7 +186,9 @@ const Tools = (props: any) => {
                             <div className='tags'>
                                 {
                                     tags.map((tag: any, index: number) => (
-                                        <div className={handleSelectedFilter(tag)} onClick={() => handleAddFilter(tag)}>
+                                        <div key={index}
+                                            className={handleSelectedFilter(tag)}
+                                            onClick={() => handleAddFilter(tag)}>
                                             {tag}
                                         </div>
                                     ))
@@ -211,7 +207,11 @@ const Tools = (props: any) => {
                             gap={1}>
                             {
                                 filteredPages && filteredPages.length > 0 && filteredPages.map((page: any, id: number) => (
-                                    <Card id={id} pages={filteredPages} page={page} setSelectedCard={setSelectedCard} setOpenedCard={setOpenedCard} />
+                                    <Card key={id} id={id}
+                                        pages={filteredPages}
+                                        page={page}
+                                        setSelectedCard={setSelectedCard}
+                                        setOpenedCard={setOpenedCard} />
                                 ))
                             }
                         </ImageList>
@@ -254,7 +254,7 @@ const Tools = (props: any) => {
                                                 id="card-tags"
                                                 label="Tags"
                                                 variant="outlined"
-                                                onBlur={() => handleFormArticle('tag')(selectedTags)} />
+                                                onBlur={() => handleFormArticle('tag')({target: {value: selectedTags[0]}})} />
                                         )} />
                                     
                                     <TextField required id="card-text" sx={{width: "100%"}} label="Texte" variant="outlined" multiline rows={6} onBlur={handleFormArticle('text')} />

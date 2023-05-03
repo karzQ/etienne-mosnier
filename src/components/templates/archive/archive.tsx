@@ -85,8 +85,6 @@ const Archive = (props: any) => {
         if (field === 'image') {
             if (!e || !e.target.files[0]) return;
             value = e.target.files[0]
-        } else if (field === 'tags') {
-            value = e
         } else {
             value = e.target.value
         }

@@ -52,12 +52,8 @@ const App = () => {
         <Route path='accueil' element={<Home key='home' page={activePage} onChange={(data: any) => setPage(data)} />} />
         <Route path='epernon' element={<Epernon key='epernon' page={activePage} onChange={(data: any) => nextPage(data)} />} />
         <Route path='patrimonialisation' element={<Patrimo key='patrimonialisation' page={activePage} onChange={(data: any) => nextPage(data)} />} />
-        <Route path='boite_a_outils' element={<Tools key='tools' page={activePage} setActivePage={setActivePage} />}>
-          <Route path=':cardId' element={<Text key='toolCard' page={activePage} />} />
-        </Route>
-        <Route path='journal_des_chantiers' element={<Archive key='archive' page={activePage} setActivePage={setActivePage} />}>
-          <Route path=':cardId' element={<Text key='archiveCard' page={activePage} />} />
-        </Route>
+        <Route path='boite_a_outils' element={<Tools key='tools' page={activePage} setActivePage={setActivePage} />}/>
+        <Route path='journal_des_chantiers' element={<Archive key='archive' page={activePage} setActivePage={setActivePage} />}/>
       </Routes>
       <div className='footer'>
         <span>Etienne Mosnier | emosnier@esad-orleans.fr | DNSEP 2023 | option design | Mention Design des communs | Objets connectés design des données | ÉSAD | École supérieure d’art et de design d’Orléans | www.esadorleans.fr | CC-BY-SA</span>
