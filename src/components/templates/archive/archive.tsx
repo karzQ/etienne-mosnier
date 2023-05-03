@@ -184,7 +184,7 @@ const Archive = (props: any) => {
             
                 <div className="footer">
                     {
-                        user !== null && <Button onClick={handleOpenArticle}>Créer</Button>
+                        user !== null && <Button onClick={handleOpenArticle}>Contribuer</Button>
                     }
         
                     <Modal open={openArticle} onClose={handleCloseArticle}>
