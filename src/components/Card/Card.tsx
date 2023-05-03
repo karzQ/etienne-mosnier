@@ -5,7 +5,7 @@ import React from 'react'
 
 const Card = (props: any) => {
     const { page, setOpenedCard, setSelectedCard } = props;
-    const { _id, subtitle, image } = page
+    const { image } = page
     const [isShown, setIsShown] = React.useState<boolean>(false)
     
     const handleOpenCard = () => {

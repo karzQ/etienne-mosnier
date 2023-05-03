@@ -123,8 +123,8 @@ const Text = (props: any) => {
                     <div className={pageNumber == 0 && !setOpenedCard ? "left intro" : "left"}>
                         <div className="text">
                             {
-                                activePage.texts && activePage.texts.map((text: any) => (
-                                    <span className={text.classNames} dangerouslySetInnerHTML={{__html: ApplySup(text.text)}}></span>
+                                activePage.texts && activePage.texts.map((text: any, index: number) => (
+                                    <span key={index} className={text.classNames} dangerouslySetInnerHTML={{__html: ApplySup(text.text)}}></span>
                                 ))
                             }
 
