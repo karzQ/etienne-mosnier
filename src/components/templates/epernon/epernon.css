@@ -63,18 +63,10 @@
     padding-top: 15px;
 }
 
-.Epernon .main .left .text .annotations span.annotation {
-    font-size: 0.89em;
-}
-
 .Epernon .footer {
     width: 100%;
     bottom: 5px;
     left: 0;
     
     justify-content: end;
-}
-
-.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeSmall.MuiButton-textSizeSmall.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeSmall.MuiButton-textSizeSmall.css-15oo7et-MuiButtonBase-root-MuiButton-root:nth-child(3) {
-    /* width: inherit; */
 }

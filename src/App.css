@@ -89,6 +89,10 @@ html {
   width: 30%;
 }
 
+.main .left .annotations span.annotation {
+  font-size: 0.89em;
+}
+
 .container .main .right.intro {
   width: 70%;
 }
