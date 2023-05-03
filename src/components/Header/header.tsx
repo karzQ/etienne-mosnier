@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import cailloux_gif from '../../assets/img/cailloux.gif'
 import cailloux_static from '../../assets/img/cailloux_fixed.png'
 import { Box, Button, FormControl, Modal, TextField, Typography } from '@mui/material';
-import {UserActions} from '../../reducers/userReducer';
+import {ReducerActions} from '../../reducers/appReducer';
 import { Login } from '../../config/config';
 import { SignIn, SignOut } from '../../config/firebase';
 import { useSelector, useDispatch } from 'react-redux';
@@ -56,7 +56,7 @@ const Header = (props: any) => {
 
     const handleSignOut = async () => {
         await SignOut()
-        handleDispatch(null, UserActions.CLEAR_CURRENT_USER)
+        handleDispatch(null, ReducerActions.CLEAR_CURRENT_USER)
     }
 
     const handleValidateLogin = async (data: Login) => {
@@ -65,7 +65,7 @@ const Header = (props: any) => {
             if (res?.error || !res) {
                 setError(true)
             } else {
-                handleDispatch({ ...res?.user }, UserActions.SET_CURRENT_USER)
+                handleDispatch({ ...res?.user }, ReducerActions.SET_CURRENT_USER)
                 handleCloseLogin()
             }
         }

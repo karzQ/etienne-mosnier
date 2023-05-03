@@ -10,9 +10,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import userReducer from './reducers/userReducer';
+import appReducer from './reducers/appReducer';
 
-const store = createStore(userReducer);
+const store = createStore(appReducer);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
