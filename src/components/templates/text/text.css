@@ -75,14 +75,6 @@
     padding-top: 15px;
 }
 
-.Text .main .left .text .annotations span.annotation {
-    font-size: x-small;
-}
-
-.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeSmall.MuiButton-textSizeSmall.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeSmall.MuiButton-textSizeSmall.css-15oo7et-MuiButtonBase-root-MuiButton-root:nth-child(3) {
-    /* width: inherit; */
-}
-
 .Text .footer {
     width: 100%;
     bottom: 5px;
