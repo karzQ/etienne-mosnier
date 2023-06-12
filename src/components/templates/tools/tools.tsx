@@ -61,7 +61,7 @@ const Tools = (props: any) => {
     const type = id
     
     const [selectedFilters, setSelectedFilters] = React.useState<string[]>([])
-    const [tags] = React.useState<any[]>([...tags_data.tags]);
+    const [tags] = React.useState<any[]>([...tags_data.tags.tools]);
     const [annotations, setAnnotations] = React.useState<annotation[]>([])
     const [selectedTags, setSelectedTags] = React.useState<any[]>([]);
     const [pages, setPages] = React.useState<any[]>([]);
@@ -285,7 +285,8 @@ const Tools = (props: any) => {
                                     </div>
                                 </div>
 
-                                <div className='modal-content-right'><Button sx={{ marginBottom: "19px"}} component="label"
+                                <div className='modal-content-right'>
+                                    <Button sx={{ marginBottom: "19px" }} component="label"
                                         variant="outlined">
                                         <>
                                             {

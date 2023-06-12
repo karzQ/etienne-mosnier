@@ -63,14 +63,15 @@ const Archive = (props: any) => {
     const { title, text, id } = page
     const type = id
     
+    const [selectedFilters, setSelectedFilters] = React.useState<string[]>([])
     const [annotations, setAnnotations] = React.useState<annotation[]>([])
     const [pages, setPages] = React.useState<any[]>([]);
+    const [tags] = React.useState<any[]>([...tags_data.tags.archive]);
     const [filteredPages, setFilteredPages] = React.useState<any[]>([]);
     const [openedCard, setOpenedCard] = React.useState<boolean>(false)
     const [selectedCard, setSelectedCard] = React.useState<any>(null);
     const [openArticle, setOpenArticle] = React.useState(false);
     const [formArticle, setFormArticle] = React.useState<Card>({});
-    const [images, setImages] = React.useState<any[]>([]);
     const handleOpenArticle = () => setOpenArticle(true);
     const handleCloseArticle = () => {
         setFormArticle({ type })
@@ -94,15 +95,6 @@ const Archive = (props: any) => {
             
         }
         setFormArticle(val => obj)
-    }
-    
-    const handleAddImage = (e: any) => {
-        const file = e.target.files[0]
-        setImages(prev => [...prev, {...file, _id: uuidv4()}])
-    }
-
-    const handleRemoveImage = (image: any) => (e: any) => {
-        setImages(prev => prev.filter((item: any) => item.id === image.id))
     }
 
     const handleAddAnnotation = () => {
@@ -130,7 +122,23 @@ const Archive = (props: any) => {
     }
     
     const handleImage = (image: any) => {
-        return URL.createObjectURL({...image})
+        return URL.createObjectURL(image)
+    }
+
+    const handleAddFilter = (tag: string) => {
+        if (selectedFilters.includes(tag)) {
+            setSelectedFilters(prev => [...prev].filter(item => item !== tag))
+        } else {
+            setSelectedFilters(prev => [...prev, tag])
+        }
+    }
+
+    const handleSelectedFilter = (tag: string) => {
+        if (!selectedFilters.includes(tag)) {
+            return 'tag'
+        } else if (selectedFilters.includes(tag)) {
+            return 'tag selected'
+        }
     }
 
     React.useEffect(() => {
@@ -148,6 +156,14 @@ const Archive = (props: any) => {
         setFilteredPages(prev => pages && [...pages])
     }, [pages])
 
+    React.useEffect(() => {
+        if (selectedFilters.length > 0) {
+            setFilteredPages(prev => pages.filter((page: any) => selectedFilters.includes(page?.tag)))
+        } else {
+            setFilteredPages(prev => [...pages])
+        }
+    }, [selectedFilters])
+
     if (openedCard) {
         return <Text onChange={(id: string) => id ? setFilteredPages(prev => prev.filter((item) => item._id !== id)) : null } page={{pages, ...selectedCard}} setOpenedCard={setOpenedCard} close />
     } else {
@@ -162,6 +178,20 @@ const Archive = (props: any) => {
                     <div className="left">
                         <div className="text">
                             <span>{text}</span>
+                        </div>
+                        <div className='filter'>
+                            <h2>Thèmes :</h2>
+                            <div className='tags'>
+                                {
+                                    tags.map((tag: any, index: number) => (
+                                        <div key={index}
+                                            className={handleSelectedFilter(tag)}
+                                            onClick={() => handleAddFilter(tag)}>
+                                            {tag}
+                                        </div>
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
                     <div className='right'>
@@ -229,45 +259,26 @@ const Archive = (props: any) => {
                                 </div>
 
                                 <div className='modal-content-right'>
-                                    {/* <div className='image-selector'>
-                                        <Button sx={{ marginBottom: "19px" }} component="label"
-                                            variant="outlined">
-                                            <>
-                                                {
-                                                    formArticle?.['image'] ?
-                                                        formArticle?.['image']['name']
-                                                        : <>Choisir une image&nbsp;<div style={{ color: 'red' }}>*</div></>
-                                                    
-                                                }
+                                    <Button sx={{ marginBottom: "19px" }} component="label"
+                                        variant="outlined">
+                                        <>
+                                            {
+                                                formArticle?.['image'] ?
+                                                    formArticle?.['image']['name']
+                                                    : <>Choisir une image&nbsp;<div style={{ color: 'red' }}>*</div></>
                                                 
-                                                <input required name="image" hidden type="file" onChange={handleAddImage} />
-                                            </>
-                                        </Button>
-                                        {
-                                            images.length > 0 && images.map((image: any, index: number) => (
-                                                <Chip key={index} sx={{width: 'fit-content'}} variant="outlined" label={image.name} onDelete={handleRemoveImage(image)} />
-                                            ))
-                                        }
-                                    </div>
-                                    
+                                            }
+                                            
+                                            <input required name="image" hidden type="file" onChange={handleFormArticle('image')} />
+                                        </>
+                                    </Button>
                                     <div className='image-preview-container'>
                                         {
-                                            images.length > 0 ? (
-                                                <Carousel sx={{ width: '100%', height: '100%', objectFit: 'contain'}}
-                                                    navButtonsAlwaysVisible
-                                                    fullHeightHover
-                                                    NextIcon={<ArrowForwardIosIcon/>}
-                                                    PrevIcon={<ArrowBackIosIcon/>}>
-                                                    {
-                                                        images.map((image: any, index: number) => (
-                                                            <img key={index} className='image-preview' src={handleImage({...image})} />
-                                                        ))
-                                                    }
-                                                </Carousel>
-                                            ) : (<>Aucune image</>)
+                                            formArticle?.['image'] ? (
+                                                <img className='image-preview' src={handleImage(formArticle['image'])} />
+                                            ) : "Aucune image"
                                         }
-                                        
-                                    </div> */}
+                                    </div>
                                     <TextField required id="card-legend" label="Légende" variant="outlined" onBlur={handleFormArticle('legend')} />
                                     
                                 </div>
