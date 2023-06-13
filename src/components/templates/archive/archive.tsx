@@ -67,6 +67,7 @@ const Archive = (props: any) => {
     const [annotations, setAnnotations] = React.useState<annotation[]>([])
     const [pages, setPages] = React.useState<any[]>([]);
     const [tags] = React.useState<any[]>([...tags_data.tags.archive]);
+    const [selectedTags, setSelectedTags] = React.useState<any[]>([]);
     const [filteredPages, setFilteredPages] = React.useState<any[]>([]);
     const [openedCard, setOpenedCard] = React.useState<boolean>(false)
     const [selectedCard, setSelectedCard] = React.useState<any>(null);
@@ -76,6 +77,7 @@ const Archive = (props: any) => {
     const handleCloseArticle = () => {
         setFormArticle({ type })
         setOpenArticle(false)
+        setSelectedTags([])
         setAnnotations([])
     }
     const user = useSelector((state: any) => state.user)
@@ -165,7 +167,10 @@ const Archive = (props: any) => {
     }, [selectedFilters])
 
     if (openedCard) {
-        return <Text onChange={(id: string) => id ? setFilteredPages(prev => prev.filter((item) => item._id !== id)) : null } page={{pages, ...selectedCard}} setOpenedCard={setOpenedCard} close />
+        return <Text onChange={(id: string) => id ? setFilteredPages(prev => prev.filter((item) => item._id !== id)) : null}
+            page={{ ...selectedCard, pages, id: pages.indexOf(pages.filter((item: any) => item._id === selectedCard._id)[0]) }}
+            setOpenedCard={setOpenedCard}
+            close />
     } else {
         return (
             <div className='Archive container'>
@@ -227,7 +232,31 @@ const Archive = (props: any) => {
                                 <div className='modal-content-left'>
                                     <TextField required id="card-title" sx={{width: "100%"}} label="Titre" variant="outlined" onBlur={handleFormArticle('title')} />
                                     <TextField required id="card-subtitle" sx={{width: "100%"}} label="Sous-titre" variant="outlined" onBlur={handleFormArticle('subtitle')} />                                    
-                                    <TextField required id="card-text" sx={{width: "100%"}} label="Texte" variant="outlined" multiline rows={6} onBlur={handleFormArticle('text')} />
+                                    <Autocomplete id='auto-tags'
+                                        sx={{ width: "100%" }}
+                                        multiple
+                                        value={selectedTags}
+                                        options={tags}
+                                        filterSelectedOptions
+                                        getOptionLabel={(option) => option}
+                                        onBlur={(e: any) => !selectedTags.includes(e.target.value) && e.target.value !== '' ? setSelectedTags(prev => [...prev, e.target.value]) : ''}
+                                        renderTags={(value: readonly string[], getTagProps) =>
+                                            value.map((option: string, index: number) => (
+                                              <Chip variant="outlined" onDelete={(item) => setSelectedTags(prev => prev.filter((tag: any) => prev.indexOf(tag) !== index))} label={option} />
+                                            ))
+                                          }
+                                        renderOption={(props, option) => (
+                                            <Box component="li" {...props} onClick={() => setSelectedTags(prev => [...prev, option])}>{option}</Box>
+                                        )}
+                                        renderInput={(params) => (
+                                            <TextField required {...params}
+                                                id="card-tags"
+                                                label="Tags"
+                                                variant="outlined"
+                                                onBlur={() => handleFormArticle('tag')({target: {value: selectedTags[0]}})} />
+                                        )} />
+                                    
+                                    <TextField required id="card-text" sx={{ width: "100%" }} label="Texte" variant="outlined" multiline rows={6} onBlur={handleFormArticle('text')} />
                                     <div className='annotations'>
                                         <div className='top'>
                                             <Typography  sx={{color: 'gray', display: 'flex'}} variant='subtitle1'>Annotations&nbsp;<div style={{color: "red"}}>*</div></Typography>
