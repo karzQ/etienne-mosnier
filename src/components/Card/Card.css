@@ -1,12 +1,11 @@
 .Card {
     position: relative;
-    background-color:bisque;
-
     display: flex;
     flex: 45%;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+    min-height: 400px;
 
     cursor: pointer;
 }
