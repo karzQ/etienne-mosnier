@@ -45,7 +45,12 @@ export const getCards = async (type: string) => {
   for (let i = 0; i < cardsList.length; i++) {
     arr.push({...cardsList[i], _id: cardsSnapshot?.docs[i].id})
   }
-  return arr.sort((a: any, b: any) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
+
+  if (arr[0].order) {
+    return arr.sort((a: any, b: any) => a.order - b.order)
+  } else {
+    return arr.sort((a: any, b: any) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
+  }
 }
 
 export const deleteCard = async (id: string) => {
